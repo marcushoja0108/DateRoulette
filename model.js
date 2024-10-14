@@ -66,7 +66,7 @@ const model = {
             maxPrice: 300,
             fromTime: "18:00",
             description: "Gå på kino",
-            Picture: "kino.jpg",
+            Picture: "dateImage/kino.jpg",
         },
 
         {   Name: "piknik i parken", 
@@ -75,7 +75,7 @@ const model = {
             maxPrice: 0, 
             fromTime: "11:00", 
             description: "Nyt en piknik med hjemmelaget mat i parken", 
-            Picture: "park.jpg" },
+            Picture: "dateImage/park.jpg" },
 
         {   Name: "museumstur", 
             home: false, 
@@ -83,7 +83,7 @@ const model = {
             maxPrice: 200, 
             fromTime: "10:00", 
             description: "Besøk et lokalt museum", 
-            Picture: "museum.jpg" },
+            Picture: "dateImage/museum.jpg" },
         
         {   Name: "hjemmekino", 
             home: true, 
@@ -91,7 +91,7 @@ const model = {
             maxPrice: 0, 
             fromTime: "19:00", 
             description: "Se en film hjemme med popcorn", 
-            Picture: "home_theater.jpg" },
+            Picture: "dateImage/home_theater.jpg" },
         
         {   Name: "tur i skogen", 
             home: false, 
@@ -99,7 +99,7 @@ const model = {
             maxPrice: 0, 
             fromTime: "09:00", 
             description: "Gå en tur i skogen og nyt naturen", 
-            Picture: "forest.jpg" },
+            Picture: "dateImage/forest.jpg" },
         
         {   Name: "baking", 
             home: true, 
@@ -107,7 +107,7 @@ const model = {
             maxPrice: 150, 
             fromTime: "11:00", 
             description: "Bak noe godt sammen", 
-            Picture: "baking.jpg" },
+            Picture: "dateImage/baking.jpg" },
         
         {   Name: "brettspillkveld", 
             home: true, 
@@ -115,7 +115,7 @@ const model = {
             maxPrice: 0, 
             fromTime: "20:00", 
             description: "Spill brettspill hjemme", 
-            Picture: "boardgames.jpg" },
+            Picture: "dateImage/boardgames.jpg" },
         
         {   Name: "kafébesøk", 
             home: false, 
@@ -123,7 +123,7 @@ const model = {
             maxPrice: 100, 
             fromTime: "11:00", 
             description: "Nyt kaffe og kake på en koselig kafé", 
-            Picture: "cafe.jpg" },
+            Picture: "dateImage/cafe.jpg" },
         
         {   Name: "konsert i parken", 
             home: false, 
@@ -131,7 +131,7 @@ const model = {
             maxPrice: 0, 
             fromTime: "11:00", 
             description: "Hør på en gratis konsert i parken", 
-            Picture: "concert.jpg" },
+            Picture: "dateImage/concert.jpg" },
         
         {   Name: "sightseeing", 
             home: false, 
@@ -139,7 +139,7 @@ const model = {
             maxPrice: 0, 
             fromTime: "10:00", 
             description: "Utforsk en ny del av byen", 
-            Picture: "sightseeing.jpg" },
+            Picture: "dateImage/sightseeing.jpg" },
         
         {   Name: "lesekveld", 
             home: true, 
@@ -147,7 +147,7 @@ const model = {
             maxPrice: 0, 
             fromTime: "20:00", 
             description: "Les bøker sammen", 
-            Picture: "reading.jpg" },
+            Picture: "dateImage/reading.jpg" },
         
         {   Name: "fotosafari", 
             home: false, 
@@ -155,7 +155,7 @@ const model = {
             maxPrice: 0, 
             fromTime: "09:00", 
             description: "Ta bilder av naturen", 
-            Picture: "photosafari.jpg" },
+            Picture: "dateImage/photosafari.jpg" },
         
         {   Name: "kunst og håndverk", 
             home: true, 
@@ -163,7 +163,7 @@ const model = {
             maxPrice: 100, 
             fromTime: "08:00", 
             description: "Lag noe kreativt sammen", 
-            Picture: "crafting.jpg" },
+            Picture: "dateImage/crafting.jpg" },
         
         {   Name: "fugletitting", 
             home: false, 
@@ -171,14 +171,14 @@ const model = {
             maxPrice: 0, 
             fromTime: "08:00", 
             description: "Observer fugler i naturen", 
-            Picture: "birdwatching.jpg" },
+            Picture: "dateImage/birdwatching.jpg" },
         
         {   Name: "matlagingskurs hjemme", 
             home: true, timeSpent: 3, 
             maxPrice: 200, 
             fromTime: "12:0", 
             description: "Lag en ny oppskrift sammen", 
-            Picture: "cooking_class.jpg" },
+            Picture: "dateImage/cooking_class.jpg" },
         
         {   Name: "sykkeltur", 
             home: false, 
@@ -186,7 +186,7 @@ const model = {
             maxPrice: 0, 
             fromTime: null, 
             description: "Ta en sykkeltur i nærområdet", 
-            Picture: "biking.jpg" },
+            Picture: "dateImage/biking.jpg" },
         
         {   Name: "frivillig arbeid", 
             home: false, 
@@ -194,7 +194,7 @@ const model = {
             maxPrice: 0, 
             fromTime: "10:00", 
             description: "Gjøre frivillig arbeid sammen", 
-            Picture: "volunteering.jpg" },
+            Picture: "dateImage/volunteering.jpg" },
         
         {   Name: "hagearbeid", 
             home: true, 
@@ -202,7 +202,7 @@ const model = {
             maxPrice: 0, 
             fromTime: "09:00", 
             description: "Jobbe i hagen sammen", 
-            Picture: "gardening.jpg" },
+            Picture: "dateImage/gardening.jpg" },
         
         {   Name: "samtalekveld", 
             home: true, 
@@ -210,7 +210,7 @@ const model = {
             maxPrice: 0, 
             fromTime: "20:00", 
             description: "Ha dype samtaler", 
-            Picture: "talking.jpg" },
+            Picture: "dateImage/talking.jpg" },
         
         {   Name: "vin- og ostekveld", 
             home: true, 
@@ -218,7 +218,7 @@ const model = {
             maxPrice: 400, 
             fromTime: "19:00", 
             description: "Nyt vin og ost hjemme", 
-            Picture: "wine_cheese.jpg" },
+            Picture: "dateImage/wine_cheese.jpg" },
         
         {   Name: "besøk en gård", 
             home: false, 
@@ -226,7 +226,7 @@ const model = {
             maxPrice: 100, 
             fromTime: null, 
             description: "Besøk en lokal gård", 
-            Picture: "farm_visit.jpg" },
+            Picture: "dateImage/farm_visit.jpg" },
         
         {   Name: "loppemarked", 
             home: false, 
@@ -234,7 +234,7 @@ const model = {
             maxPrice: 50, 
             fromTime: "09:00", 
             description: "Dra på loppemarked", 
-            Picture: "flea_market.jpg" },
+            Picture: "dateImage/flea_market.jpg" },
         
         {   Name: "standup-show", 
             home: false, 
@@ -242,7 +242,7 @@ const model = {
             maxPrice: 200, 
             fromTime: "16:00", 
             description: "Se et standup-show", 
-            Picture: "standup.jpg" },
+            Picture: "dateImage/standup.jpg" },
         
         {   Name: "puzzle-kveld", 
             home: true, 
@@ -250,7 +250,7 @@ const model = {
             maxPrice: 100, 
             fromTime: "19:00", 
             description: "Legg puslespill sammen", 
-            Picture: "puzzle.jpg" },
+            Picture: "dateImage/puzzle.jpg" },
         
         {   Name: "treningssenter", 
             home: false, 
@@ -258,7 +258,7 @@ const model = {
             maxPrice: 100, 
             fromTime: "09:00", 
             description: "Tren sammen på senteret", 
-            Picture: "gym.jpg" },
+            Picture: "dateImage/gym.jpg" },
         
         {   Name: "klatring", 
             home: false, 
@@ -266,7 +266,7 @@ const model = {
             maxPrice: 150, 
             fromTime: "10:00", 
             description: "Prøv klatring", 
-            Picture: "climbing.jpg" },
+            Picture: "dateImage/climbing.jpg" },
         
         {   Name: "badminton", 
             home: false, 
@@ -274,7 +274,7 @@ const model = {
             maxPrice: 0, 
             fromTime: "09:00", 
             description: "Spill badminton i parken", 
-            Picture: "badminton.jpg" },
+            Picture: "dateImage/badminton.jpg" },
         
         {   Name: "frisbeegolf", 
             home: false, 
@@ -282,7 +282,7 @@ const model = {
             maxPrice: 50, 
             fromTime: null, 
             description: "Spill frisbeegolf", 
-            Picture: "frisbeegolf.jpg" },
+            Picture: "dateImage/frisbeegolf.jpg" },
         
         {   Name: "utendørs yoga", 
             home: false, 
@@ -290,7 +290,7 @@ const model = {
             maxPrice: 0, 
             fromTime: "09:00", 
             description: "Gjør yoga utendørs", 
-            Picture: "yoga.jpg" },
+            Picture: "dateImage/yoga.jpg" },
         
         {   Name: "spakveld", 
             home: true, 
@@ -298,7 +298,7 @@ const model = {
             maxPrice: 200, 
             fromTime: "19:00", 
             description: "Ha en spakveld hjemme", 
-            Picture: "spa.jpg" },
+            Picture: "dateImage/spa.jpg" },
         
         {   Name: "kajakkpadling", 
             home: false, 
@@ -306,7 +306,7 @@ const model = {
             maxPrice: 300, 
             fromTime: "12:00", 
             description: "Prøv kajakkpadling", 
-            Picture: "kayaking.jpg" },
+            Picture: "dateImage/kayaking.jpg" },
         
         {   Name: "opera", 
             home: false, 
@@ -314,7 +314,7 @@ const model = {
             maxPrice: 200, 
             fromTime: '18:00', 
             description: "Gå på opera", 
-            Picture: "opera.jpg" },
+            Picture: "dateImage/opera.jpg" },
         
         { 
             Name: "teaterstykke", 
@@ -323,7 +323,7 @@ const model = {
             maxPrice: 250, 
             fromTime: '18:00', 
             description: "Se et teaterstykke", 
-            Picture: "theater.jpg" },
+            Picture: "dateImage/theater.jpg" },
             
         { 
             Name: "slakkline", 
@@ -332,7 +332,7 @@ const model = {
             maxPrice: 0, 
             fromTime: '14:00', 
             description: "Prøv slakkline i parken", 
-            Picture: "slackline.jpg" },
+            Picture: "dateImage/slackline.jpg" },
         
         { 
             Name: "middag ute", 
@@ -341,7 +341,7 @@ const model = {
             maxPrice: 500, 
             fromTime: '17:00', 
             description: "Spis middag på restaurant", 
-            Picture: "dinner_out.jpg" },
+            Picture: "dateImage/dinner_out.jpg" },
         
         { 
             Name: "historisk vandring", 
@@ -350,7 +350,7 @@ const model = {
             maxPrice: 0, 
             fromTime: '12:00', 
             description: "Gå en historisk vandring", 
-            Picture: "historic_walk.jpg" },
+            Picture: "dateImage/historic_walk.jpg" },
         
         { 
             Name: "bingo", 
@@ -359,7 +359,7 @@ const model = {
             maxPrice: 50, 
             fromTime: '10:00', 
             description: "Spill bingo", 
-            Picture: "bingo.jpg" },
+            Picture: "dateImage/bingo.jpg" },
         
         { 
             Name: "utendørs skøyting", 
@@ -368,7 +368,7 @@ const model = {
             maxPrice: 100, 
             fromTime: '15:00', 
             description: "Skøyte utendørs", 
-            Picture: "ice_skating.jpg" },
+            Picture: "dateImage/ice_skating.jpg" },
         
         { 
             Name: "bygge møbler sammen", 
@@ -377,7 +377,7 @@ const model = {
             maxPrice: 0, 
             fromTime: '13:00',
             description: "Bygg møbler sammen", 
-            Picture: "building_furniture.jpg" 
+            Picture: "dateImage/building_furniture.jpg" 
         },
         
         { 
@@ -387,7 +387,7 @@ const model = {
             maxPrice: 150, 
             fromTime: '10:00', 
             description: "Mal utendørs", 
-            Picture: "outdoor_painting.jpg" 
+            Picture: "dateImage/outdoor_painting.jpg" 
         },
         { 
             Name: "romantisk middag hjemme", 
@@ -396,7 +396,7 @@ const model = {
             maxPrice: 300, 
             fromTime: '18:00', 
             description: "Lag en romantisk middag hjemme", 
-            Picture: "dinner_home.jpg" 
+            Picture: "dateImage/dinner_home.jpg" 
         },
 
         { 
@@ -406,7 +406,7 @@ const model = {
             maxPrice: 2000, 
             fromTime: '09:00', 
             description: "Ta en tur i luftballong", 
-            Picture: "hot_air_balloon.jpg" 
+            Picture: "dateImage/hot_air_balloon.jpg" 
         },
 
         { 
@@ -416,7 +416,7 @@ const model = {
             maxPrice: 2000, 
             fromTime: '09:00', 
             description: "Ta en weekendtur sammen", 
-            Picture: "weekend_trip.jpg" 
+            Picture: "dateImage/weekend_trip.jpg" 
         },
 
         { 
@@ -426,7 +426,7 @@ const model = {
             maxPrice: 300, 
             fromTime: '10:00', 
             description: "Delta på dansekurs sammen", 
-            Picture: "dance_class.jpg" 
+            Picture: "dateImage/dance_class.jpg" 
         }
 
         ,{ Name: "gokart", 
@@ -435,7 +435,7 @@ const model = {
             maxPrice: 500, 
             fromTime: '14:00', 
             description: "Kjør gokart", 
-            Picture: "gokart.jpg" }
+            Picture: "dateImage/gokart.jpg" }
 
         ,{ Name: "kampsport", 
             home: false, 
@@ -443,7 +443,7 @@ const model = {
             maxPrice: 300, 
             fromTime: '16:00', 
             description: "Prøv kampsport", 
-            Picture: "martial_arts.jpg" }
+            Picture: "dateImage/martial_arts.jpg" }
 
         ,{ Name: "dyrehagebesøk", 
             home: false, 
@@ -451,7 +451,7 @@ const model = {
             maxPrice: 400, 
             fromTime: '09:00', 
             description: "Besøk dyrehagen", 
-            Picture: "zoo.jpg" }
+            Picture: "dateImage/zoo.jpg" }
 
         ,{ Name: "matlagingskurs", 
             home: false, 
@@ -459,7 +459,7 @@ const model = {
             maxPrice: 600, 
             fromTime: '15:00', 
             description: "Delta på et matlagingskurs", 
-            Picture: "cooking_class.jpg" }
+            Picture: "dateImage/cooking_class.jpg" }
 
         ,{ Name: "småflytur", 
             home: false, 
@@ -467,7 +467,7 @@ const model = {
             maxPrice: 2000, 
             fromTime: '08:00', 
             description: "Ta en tur i småfly", 
-            Picture: "small_plane.jpg" }
+            Picture: "dateImage/small_plane.jpg" }
 
         ,{ Name: "klatrepark", 
             home: false, 
@@ -475,7 +475,7 @@ const model = {
             maxPrice: 400, 
             fromTime: '11:00', 
             description: "Besøk en klatrepark", 
-            Picture: "climbing_park.jpg" }
+            Picture: "dateImage/climbing_park.jpg" }
 
         ,{ Name: "spadag", 
             home: false, 
@@ -483,7 +483,7 @@ const model = {
             maxPrice: 2000, 
             fromTime: '08:00', 
             description: "Tilbring en dag på spa", 
-            Picture: "spa_day.jpg" }
+            Picture: "dateImage/spa_day.jpg" }
         ]
     }
 }
