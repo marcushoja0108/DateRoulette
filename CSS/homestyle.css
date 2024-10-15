@@ -1,0 +1,47 @@
+.header-img{
+    width: 150px;
+}
+.Box-left {
+
+    width: 90px;
+    height: 90px;
+    margin-left: 10px;
+    
+}
+.Box-right {
+
+    width: 90px;
+    height: 90px;
+    margin-right: 10px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    background-color: #BE013C;
+    position: fixed;
+    top: 0px;
+}
+.text{
+    position: relative;
+    top: 90px;
+}
+
+
+.filter-img{
+    max-width: 120px;
+}
+
+
+.profile-img{ 
+    max-width: 120px;
+}
+
+.wheel{
+    margin: auto;
+    width: 350px;
+    margin-top: 30%;
+}
