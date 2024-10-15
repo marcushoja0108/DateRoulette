@@ -1,7 +1,7 @@
 const model = {
     app: {
         loggedinuserID: null,
-        pages: ["HomePage", "Login", "infopage", "memory"],
+        pages: ["HomePage", "Login", "infopage", "memory", "ongoingDate"],
         currentpage: "Login"
     },
 
@@ -44,6 +44,7 @@ const model = {
                     adress: "getacademny",
                     eMail: "martinskal@paadate.no",
                     phone: "69696969",
+                    ongoingDate: false,
                     doneDates: ['kino'],
                     finishedDates: [
                         {

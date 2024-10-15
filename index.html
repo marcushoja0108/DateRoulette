@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Roulette</title>
+    <link rel="stylesheet" href="CSS/homestyle.css">
+    <link rel="stylesheet" href="CSS/infostyle.css">
+    <link rel="stylesheet" href="CSS/loginstyle.css">
+    <link rel="stylesheet" href="CSS/mainstyle.css">
+    <link rel="stylesheet" href="CSS/memorystyle.css">
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        function changeView(){
+            if (model.app.currentpage == "HomePage") updateHomeView();      
+            else if (model.app.currentpage == "infopage") updateInfoView();      
+            else if (model.app.currentpage == "memory") updateMemoryView();      
+            else if (model.app.currentpage == "Login") updateLoginView();      
+            else if (model.app.currentpage == "ongoingDate") updateOngoingView();      
+        }
+    </script>
+    <script src="homecontroller.js"></script>
+    <script src="infocontroller.js"></script>
+    <script src="logincontroller.js"></script>
+    <script src="memorycontroller.js"></script>
+    <script src="homeview.js"></script>
+    <script src="infoview.js"></script>
+    <script src="loginview.js"></script>
+    <script src="memoryview.js"></script>
+   
+</body>
+</html>
