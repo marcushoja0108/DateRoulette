@@ -1,8 +1,8 @@
 updateHomeView();
 function updateHomeView(){
-    document.getElementById('app').innerHTML = `
+    document.getElementById('app').innerHTML = /*HTML*/ `
     <div class="header">
-    <div class="Box-left">
+    <div class="Box-left" onclick="updateFilterView()">
         <img class='filter-img' height = 90px src="filter.png"/>
     </div>
         <img class='header-img' src="th2.png"/>
@@ -13,16 +13,15 @@ function updateHomeView(){
        
         <h2 class="text">Homeview</h2>
 
-        <div class='wheel'>
-        <img width='350px' src='wheel.png'>
-        </div>
+        ${randomContent()}
+       
     `;
 }
 
-function createFilterPage(){
-    document.getElementById('app').innerHTML = `
+function updateFilterView(){
+    document.getElementById('app').innerHTML = /*HTML*/ `
     <div class="header">
-    <div class="Box-left">
+    <div class="Box-left" onclick="updateHomeView()">
         <img class='filter-img' height = 90px src="back.png"/>
     </div>
         <img class='header-img' src="th2.png"/>
@@ -31,5 +30,16 @@ function createFilterPage(){
         </div>
     </div>
     
+
+    <div class="filterGrid">
+        <div class="filterItem">
+        ${createMaxPrice()}
+        </div>
+        <div class="filterItem">${createLocation()}</div>
+        <div class="filterItem">Tidsbruk</div>
+        <div class="filterItem">Fra kl:</div>
+    </div>
+    <div class="confirmChangesButton" onclick="updateHomeView()">
+    Bekreft endringer</div>
     `;
 }
