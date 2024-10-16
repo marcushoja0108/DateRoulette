@@ -1,4 +1,80 @@
-function goLogin(){
-    model.app.currentpage = model.app.pages[1];
-    changeView();
+function goLogin() {
+  model.app.currentpage = model.app.pages[1];
+  changeView();
+}
+
+function registerUser() {
+  model.input.register.name = document.getElementById("name").value;
+  model.input.register.phone = document.getElementById("PhoneNummer").value;
+  model.input.register.address = document.getElementById("Address").value;
+  model.input.register.birthday = document.getElementById("birthday").value;
+  model.input.register.eMail = document.getElementById("Email").value;
+  model.input.register.password = document.getElementById("Rpassword").value;
+  model.input.register.secondPassword =
+    document.getElementById("repeat-password").value;
+  console.log(model.input.register.secondPassword);
+
+  emptyReg();
+  function emptyReg() {
+    if (!model.input.register.eMail) {
+      alert("mail not filled in");
+    } else if (!model.input.register.name) {
+      alert("name not filled in");
+    } else if (!model.input.register.address) {
+      alert("address not filled in");
+    } else if (!model.input.register.password) {
+      alert("password not filled in");
+    } else if (!model.input.register.birthday) {
+      alert("birthday not filled in");
+    } else {
+      mail();
+    }
+  }
+  function mail() {
+    const parts = model.input.register.eMail.split("@");
+
+    if (model.input.register.eMail.includes(" ")) {
+      return false;
+    } else if (parts.length !== 2) {
+      return false;
+    } else if (!parts[1].includes(".")) {
+      return false;
+    } else if (parts[0].includes(".")) {
+      return false;
+    } else if (parts[1].endsWith(".")) {
+      return false;
+    } else {
+      for (let index = 0; index < model.data.users.length; index++)
+        if (model.data.users[index].eMail === model.input.register.eMail.value) {
+          alert("mail in use");
+        }
+    }phone()
+  }
+
+  function phone() {
+    for (let index = 0; index < model.data.users.length; index++)
+      if (model.data.users[index].phone === model.input.register.phone.value) {
+        alert("PhoneNummer in use");
+      } else {
+        pushuser();
+      }
+  }
+
+  function pushuser() {
+    if (model.input.register.password === model.input.register.secondPassword) {
+      model.data.users.push({
+        name: model.input.register.name,
+        password: model.input.register.password,
+        birthday: model.input.register.birthday,
+        adress: model.input.register.address,
+        eMail: model.input.register.eMail,
+        phone: model.input.register.phone,
+        ongoingDate: false,
+        doneDates: [],
+        finishedDates: [],
+      });
+    } else {
+      alert("Password dont match");
+    }
+  }
 }
