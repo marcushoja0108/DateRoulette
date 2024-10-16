@@ -1,0 +1,103 @@
+
+.ongoingGrid {
+/*min-height: 100vh;*/
+display: flex;
+flex-wrap: wrap;
+flex-direction: column;
+align-items: center;
+margin-top: 100px;
+text-align: center;
+}
+.ongoingCard {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 500px;
+    width: 90%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.ongoingCard img {
+    background-size: contain;
+    height: 100%;
+    border-radius: 10px;
+}
+.ongoingCheck{
+    position: relative;
+    z-index: 2;
+    bottom: 90px;
+    transition: 0.3s ease;
+}
+.ratingCard {
+    border-radius: 10px;
+    border: 1px solid black;
+    height: 400px;
+    width: 90%;
+    margin-top: 10px;
+}
+.star-rating {
+    display: inline-flex;
+    direction: rtl;
+}
+
+.star-rating input {
+    display: none;
+}
+
+.star-rating label {
+    font-size: 70px;
+    color: #ccc;
+}
+
+.star-rating input:checked ~ label {
+    color: gold;
+}
+.onGoingComment input {
+    font-size: large;
+    height: 80px;
+    width: 80%;
+    border: 1px solid black;
+    border-radius: 10px;
+    line-height: 1.5;
+    padding: 5px;
+    vertical-align: top;
+}
+
+.onGoingButtons {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+.onGoingFile input::file-selector-button {
+    width: 80px;
+    height: 30px;
+    padding: 0;
+    margin: 10px;
+    border: none;
+    background-color: #BE013C;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+}
+.ongoingCancelRating {
+    width: 80px;
+    height: 30px;
+    padding: 0;
+    margin: 30px;
+    border: none;
+    background-color: #BE013C;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+}
+.onGoingButtons button {
+    width: 120px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: #BE013C;
+    color: white;
+    border: none;
+    font-size: 18px;
+}
