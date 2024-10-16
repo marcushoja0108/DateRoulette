@@ -43,5 +43,77 @@
 .wheel{
     margin: auto;
     width: 350px;
-    margin-top: 30%;
+    margin-top: 10%;
+}
+.spinButton{
+    margin: auto;
+    margin-top: 25%;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: larger;
+    border: solid  2px black;
+    width: 100px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #ffb443;
+}
+.randomDateContainer{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 20%;
+    font-weight: bolder;
+    font-size:x-large;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+    height: 60vh;
+    
+    
+}
+.randomDateImage{
+    width: 90%;
+    margin-top: 4%;
+    border-radius: 40px;
+    padding: 5px;
+    background-color: white;
+}
+
+
+/* filterpage */
+.filterGrid{
+    margin-top: 25%;
+    height: 60vh;
+    justify-content: center;
+    display: grid;
+    padding: 5px;
+    align-content: space-evenly;
+    gap: 2%;
+    
+
+}
+.filterItem{
+    display: flex;
+    flex-direction: column;
+    border: solid 1px black;
+    width: 85vw;
+    height: 8vh;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-weight:900;
+    background-color: bisque;
+    
+}
+.confirmChangesButton{
+    display: flex;
+    justify-content: center;
+    border: solid black 2px;
+    background-color: rgb(113, 206, 113);
+    width: 130px;
+    padding: 4px;
+    margin: 5%;
+    border-radius: 12px;
 }
