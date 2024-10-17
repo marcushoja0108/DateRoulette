@@ -44,21 +44,21 @@ function registerUser() {
     } else if (parts[1].endsWith(".")) {
       return false;
     } else {
-      for (let index = 0; index < model.data.users.length; index++)
-        if (model.data.users[index].eMail === model.input.register.eMail.value) {
+      for (let index = 0; index < model.data.users.length; index++){
+        if (model.data.users[index].eMail === model.input.register.eMail) {
           alert("mail in use");
-        }
-    }phone()
+          break;
+        }}
+      phone()};
   }
 
   function phone() {
-    for (let index = 0; index < model.data.users.length; index++)
-      if (model.data.users[index].phone === model.input.register.phone.value) {
+    for (let index = 0; index < model.data.users.length; index++){
+      if (model.data.users[index].phone === model.input.register.phone) {
         alert("PhoneNummer in use");
-      } else {
-        pushuser();
-      }
-  }
+        break;
+      }}pushuser()
+  };
 
   function pushuser() {
     if (model.input.register.password === model.input.register.secondPassword) {
