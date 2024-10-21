@@ -11,9 +11,8 @@ function registerUser() {
   model.input.register.birthday = document.getElementById("birthday").value;
   model.input.register.eMail = document.getElementById("REmail").value;
   model.input.register.password = document.getElementById("Rpassword").value;
-  model.input.register.secondPassword =
-    document.getElementById("repeat-password").value;
-  console.log(model.input.register.secondPassword);
+  model.input.register.secondPassword = document.getElementById("repeat-password").value;
+
 
   //filter if slots are empty
   emptyReg();
@@ -87,6 +86,8 @@ function registerUser() {
       });
       loginW();
       alert("user registered");
+      
+      
     } else {
       alert("Password dont match");
     }
@@ -105,8 +106,9 @@ function logincheck() {
   );
 
   if (user) {
-    model.app.loggedinuserID = user.id;
+    model.app.loggedinuserID = user.ID;
     goHome();
+    console.log(model.app.loggedinuserID);
   } else {
     alert("Invalid email or password");
   }
