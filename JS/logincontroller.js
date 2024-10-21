@@ -5,11 +5,11 @@ function goLogin() {
 
 //take the inputs into register
 function registerUser() {
-  model.input.register.name = document.getElementById("name").value;
+  model.input.register.name = document.getElementById("Rname").value;
   model.input.register.phone = document.getElementById("PhoneNummer").value;
   model.input.register.address = document.getElementById("Address").value;
   model.input.register.birthday = document.getElementById("birthday").value;
-  model.input.register.eMail = document.getElementById("Email").value;
+  model.input.register.eMail = document.getElementById("REmail").value;
   model.input.register.password = document.getElementById("Rpassword").value;
   model.input.register.secondPassword = document.getElementById("repeat-password").value;
   console.log(model.input.register.secondPassword);
@@ -80,4 +80,9 @@ function registerUser() {
       alert("Password dont match");
     }
   }
+}
+
+function logincheck(){
+  model.input.login.eMail = document.getElementById("LEmail").value;
+  model.input.login.password = document.getElementById("LPassword").value;
 }

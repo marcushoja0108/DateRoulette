@@ -5,7 +5,7 @@ function updateLoginView() {
   <div class="login">
      <img class='loginheader-img' src="th4.png"/>
      <div class="buttons">
-     <button class="" onclick=" login()">log in</button>
+     <button class="" onclick=" loginW()">log in</button>
      <button class="" onclick="signup()">Sign up</button>
      </div>
   </div>
@@ -13,7 +13,7 @@ function updateLoginView() {
     `;
 }
 
-function login(){
+function loginW(){
     document.getElementById("app").innerHTML = /*html*/ `
     <div class="logcontainer"> 
     <div class="login">
@@ -37,9 +37,9 @@ function signup(){
     <div class="logcontainer"> 
         <div class="login">
             <img class='loginheader-img' src="th4.png"/>
-            <div class="buttons" id="Rname">
+            <div class="buttons">
             Name
-            <input type="text" id="name">
+            <input type="text" id="Rname">
             PhoneNummer
             <input type="text"id="PhoneNummer">
             Address
@@ -47,7 +47,7 @@ function signup(){
             birthday
             <input  type="date"id="birthday">
             Email
-            <input type="text" id="Email">
+            <input type="text" id="REmail">
             password
             <input type="text" id="Rpassword">
             repeat-password
@@ -55,7 +55,7 @@ function signup(){
     
              <button class="" onclick="registerUser()">Sign up</button>
             Have a user?
-            <button class="" onclick="login()">log in</button>
+            <button class="" onclick="loginW()">log in</button>
     
             </div>
         </div>
