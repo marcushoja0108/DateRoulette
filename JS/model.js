@@ -1,9 +1,9 @@
 const model = {
     app: {
-        loggedinuserID: null,
+        loggedinuserID: 0,
         pages: ["HomePage", "Login", "infopage", "memory", "ongoingDate"],
         currentpage: "HomePage",
-        selectedDate: 0,
+        selectedDate: null,
     },
 
     input: {
@@ -39,6 +39,7 @@ const model = {
         users:
             [
                 {
+                    ID: 0,
                     name: "Martin",
                     password: "MartinErKul",
                     birthday: '13.10.16',
