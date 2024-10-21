@@ -3,7 +3,7 @@ const model = {
         loggedinuserID: 0,
         pages: ["HomePage", "Login", "infopage", "memory", "ongoingDate"],
         currentpage: "Login",
-        selectedDate: null,
+        selectedDate: 0,
     },
 
     input: {
