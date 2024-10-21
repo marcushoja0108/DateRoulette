@@ -22,7 +22,7 @@ function loginW(){
     Email
     <input type="text" id="LEmail" >
     password
-    <input type="text" id="LPassword">
+    <input type="password" id="LPassword">
     <button class="" onclick="logincheck()">log in</button>
     Dont have a account?
     <button class="" onclick="signup()">Sign up</button>
@@ -51,7 +51,7 @@ function signup(){
             password
             <input type="text" id="Rpassword">
             repeat-password
-             <input type="text" id="repeat-password">
+             <input type="password" id="repeat-password">
     
              <button class="" onclick="registerUser()">Sign up</button>
             Have a user?
