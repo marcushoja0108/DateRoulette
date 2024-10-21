@@ -3,17 +3,42 @@ function goHome(){
     changeView();
 }
 
-// let randomDateName = '';
-// let rng = null;
-function randomDate(){
-    let Dates = model.data.Dates;
-    model.app.selectedDate = Math.floor(Math.random() * Dates.length);
-    updateHomeView()
+function openFilter(){
+    model.input.filter.isOpen = true;
+    updateHomeView();
 }
 
+function backToHome(){
+    model.input.filter.isOpen = false;
+    updateHomeView();
+}
+
+function randomDate(){
+    
+    let searchResult = filterRandomDate()
+    
+    if(searchResult.length > 0){
+        let rng = Math.floor(Math.random() * searchResult.length);
+        let randomSelected = searchResult[rng];
+        model.app.selectedDate = randomSelected
+        console.log(model.app.selectedDate)
+    }
+    else{
+        console.log('ingen resultat')
+    }
+}
+
+function filterRandomDate(){
+
+   return  model.data.Dates.filter(date => date.home === model.input.filter.home &&
+        date.maxPrice <= model.input.filter.maxPrice &&
+        date.timeSpent <= model.input.filter.timeUsage &&
+        date.fromTime >= model.input.filter.fromTime
+   )
+}
+
+
 function randomContent(){
-    let selectedDate = model.app.selectedDate
-    if(selectedDate == null){
         let html = /*HTML*/`
         <div class="spinButton" onclick="randomDate()">SPIN</div>
         <div class='wheel'>
@@ -21,39 +46,38 @@ function randomContent(){
         </div>
         `;
         return html;
-    }
-    else{
-        let html = /*HTML*/`
-        <div class="randomDateContainer">
-            <div>${model.data.Dates[selectedDate].Name}</div>
-            
-            <img class="randomDateImage" onclick="goInfo()"
-            src="${model.data.Dates[model.app.selectedDate].Picture}">
-        </div>
-        `;
-        return html;
-    }
 }
 
 // default filters
-let maxPriceFilter = 200
-let homeFilter = true
 function createMaxPrice(){
      let html = /*HTML*/ `  
         MaksPris
-        <input type="range" min="0" max="2000" value=${maxPriceFilter}
-        onchange="setMaxPrice(this.value) updateFilterView()">
-        ${maxPriceFilter}
+        <input type="range" min="0" max="2000" value=${model.input.filter.maxPrice}
+        onchange="setMaxPrice(this.value)">
+        ${createMaxPriceContent()}
         `;
         return html
     }
 
 function setMaxPrice(value){
-    maxPriceFilter = value;
+    model.input.filter.maxPrice = value;
+    createFilterView();
+}
+function createMaxPriceContent(){
+    if(model.input.maxPrice == 0){
+        let html = 'Gratis';
+        return html
+    }
+    else{
+        let html = /*HTML*/ `
+        ${model.input.filter.maxPrice} kr
+        `;
+        return html
+    }
 }
 
 function createLocation(){
-    if(homeFilter == true){
+    if(model.input.filter.home == true){
         let html = /*HTML*/`
             <div onclick="changeHomeFilter()">Hjemme</div>
         `;
@@ -68,12 +92,48 @@ function createLocation(){
 }
 
 function changeHomeFilter(){
-    if(homeFilter == true){
-        homeFilter = false
-        updateFilterView()
+    if(model.input.filter.home == true){
+        model.input.filter.home = false
+        createFilterView()
     }
     else{
-        homeFilter = true
-        updateFilterView()
+        model.input.filter.home = true
+        createFilterView()
     }
+}
+
+function createTimeUsage(){
+    let html = /*HTML*/ `
+    Tidsbruk
+    <input type="range" min="1" max="5" value=${model.input.filter.timeUsage}
+    onchange="setMaxTime(this.value)">
+    ${model.input.filter.timeUsage} ${createTimeContent()}
+    `;
+    return html
+}
+function createTimeContent(){
+    if(model.input.filter.timeUsage == 1){
+        let html = 'time'
+        return html;
+    }
+    else{
+        let html = 'timer'
+        return html;
+    }
+}
+
+function setMaxTime(value){
+    model.input.filter.timeUsage = value;
+    createFilterView();
+}
+
+function createFromTime(){
+    let html = /*HTML*/ `
+    Fra kl
+        <input type="range" min="0" max="23" value = ${model.input.filter.fromTime}
+        onchange="model.input.filter.fromTime = this.value; updateHomeView()">
+        ${model.input.filter.fromTime}.00
+    
+    `;
+    return html
 }

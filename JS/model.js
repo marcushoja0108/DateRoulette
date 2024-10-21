@@ -2,7 +2,7 @@ const model = {
     app: {
         loggedinuserID: 0,
         pages: ["HomePage", "Login", "infopage", "memory", "ongoingDate"],
-        currentpage: "ongoingDate",
+        currentpage: "HomePage",
         selectedDate: 0,
     },
 
@@ -24,9 +24,9 @@ const model = {
         filter: {
             isOpen: false,
             home: true,
-            timeUsage: null,
-            maxPrice: null,
-            fromTime: null,
+            timeUsage: 1,
+            maxPrice: 200,
+            fromTime: 15,
         },
         endDate: {
             rating: null,

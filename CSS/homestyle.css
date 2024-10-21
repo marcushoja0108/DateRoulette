@@ -43,11 +43,11 @@
 .wheel{
     margin: auto;
     width: 350px;
-    margin-top: 10%;
+    margin-top: 5vh;
 }
 .spinButton{
     margin: auto;
-    margin-top: 25%;
+    margin-top: 20vh;
     display: flex;
     justify-content: center;
     font-weight: bold;
@@ -107,6 +107,13 @@
     background-color: bisque;
     
 }
+.inputTimeBox{
+    font-size: larger;
+    font-weight: bold;
+    padding: 3px;
+    border-radius: 4px;
+}
+
 .confirmChangesButton{
     display: flex;
     justify-content: center;
