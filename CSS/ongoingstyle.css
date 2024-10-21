@@ -1,6 +1,5 @@
 
 .ongoingGrid {
-/*min-height: 100vh;*/
 display: flex;
 flex-wrap: wrap;
 flex-direction: column;
@@ -13,21 +12,23 @@ text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 500px;
-    width: 90%;
+    width: 95%;
     overflow: hidden;
-    border-radius: 10px;
 }
-.ongoingCard img {
-    background-size: contain;
-    height: 100%;
+
+.ongoingCardImg{
     border-radius: 10px;
+    width: 100%;
 }
 .ongoingCheck{
     position: relative;
     z-index: 2;
     bottom: 90px;
     transition: 0.3s ease;
+}
+.ongoingCheck img {
+    width: 100%;
+    height: 100%;
 }
 .ratingCard {
     border-radius: 10px;

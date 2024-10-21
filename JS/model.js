@@ -52,7 +52,7 @@ const model = {
                         {
                             Name: "kino",
                             Rating: 2,
-                            day: '14.10.24',
+                            day: '14.10.2024, 11:08:13',
                             comment: 'Koselig, men dårlig film.',
                             memoryPicture: 'img1051.jpg',
                         },
