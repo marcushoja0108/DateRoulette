@@ -3,17 +3,17 @@ function goHome(){
     changeView();
 }
 
-let randomDateName = '';
-let rng = null;
+// let randomDateName = '';
+// let rng = null;
 function randomDate(){
     let Dates = model.data.Dates;
-    rng = Math.floor(Math.random() * Dates.length);
-    randomDateName = Dates[rng].Name;
+    model.app.selectedDate = Math.floor(Math.random() * Dates.length);
     updateHomeView()
 }
 
 function randomContent(){
-    if(rng == null){
+    let selectedDate = model.app.selectedDate
+    if(selectedDate == null){
         let html = /*HTML*/`
         <div class="spinButton" onclick="randomDate()">SPIN</div>
         <div class='wheel'>
@@ -25,10 +25,10 @@ function randomContent(){
     else{
         let html = /*HTML*/`
         <div class="randomDateContainer">
-            <div>${randomDateName}</div>
+            <div>${model.data.Dates[selectedDate].Name}</div>
             
             <img class="randomDateImage" onclick="goInfo()"
-            src="${model.data.Dates[rng].Picture}">
+            src="${model.data.Dates[model.app.selectedDate].Picture}">
         </div>
         `;
         return html;
@@ -42,11 +42,15 @@ function createMaxPrice(){
      let html = /*HTML*/ `  
         MaksPris
         <input type="range" min="0" max="2000" value=${maxPriceFilter}
-        oninput="maxPriceFilter = this.value; updateFilterView()">
+        onchange="setMaxPrice(this.value) updateFilterView()">
         ${maxPriceFilter}
         `;
         return html
     }
+
+function setMaxPrice(value){
+    maxPriceFilter = value;
+}
 
 function createLocation(){
     if(homeFilter == true){
