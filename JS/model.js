@@ -2,7 +2,7 @@ const model = {
     app: {
         loggedinuserID: 0,
         pages: ["HomePage", "Login", "infopage", "memory", "ongoingDate"],
-        currentpage: "Login",
+        currentpage: "memory",
         selectedDate: 0,
     },
 
@@ -54,7 +54,7 @@ const model = {
                             Rating: 2,
                             day: '14.10.2024, 11:08:13',
                             comment: 'Koselig, men dårlig film.',
-                            memoryPicture: 'img1051.jpg',
+                            memoryPicture: "dateImage/kino.jpg",
                         },
                     ],
                 }
