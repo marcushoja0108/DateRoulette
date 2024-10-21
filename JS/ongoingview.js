@@ -1,4 +1,3 @@
-updateOngoingView();
 function updateOngoingView(){
     document.getElementById('app').innerHTML = `
     <div class="header">
@@ -8,16 +7,15 @@ function updateOngoingView(){
     </div>
 
         <div class="ongoingGrid">
-        <h2>${model.data.users[0].name}, ${model.data.Dates[18].Name} daten din venter...</h2>
+        <h2>${model.data.users[model.app.loggedinuserID].name}, ${model.data.Dates[model.app.selectedDate].Name} daten din venter...</h2>
         <div class="ongoingText">Trykk på hjertet når daten er ferdig</div>
         <br>
             <div class="ongoingCard">
-            <img src="${model.data.Dates[18].Picture}">
-            <div class="ongoingCheck">
-                <img height = 90px src="IMG/Ongoingheart.png" onclick="ongoingRating()"/>
+                <img src="${model.data.Dates[model.app.selectedDate].Picture}" class="ongoingCardImg">
+                <div class="ongoingCheck">
+                    <img height = 90px src="IMG/Ongoingheart.png" onclick="ongoingRating()"/>
+                </div>
             </div>
-        </div>
-    
     `;
 }
 function ongoingRating(){
@@ -55,39 +53,4 @@ function ongoingRating(){
             </div>
         </div>
     `;
-}
-function dateRating(value) {
-    model.input.endDate.rating = Number(value);
-    console.log("rating", model.input.endDate.rating);
-}
-function readPhotoMemory(input) {
-    const file = input.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = function(event) {
-            model.input.endDate.memoryPicture = event.target.result;
-        }
-        reader.readAsDataURL(file);
-    }
-}
-function cancelOngoingRating(){
-    ongoingRating()
-    model.input.endDate.memoryPicture = '';
-    model.input.endDate.rating = '';
-    model.input.endDate.comment = '';
-}
-function makeMemory(){
-    todaysDate = new Date().toLocaleDateString
-    model.data.users[0].finishedDates.push(
-        {
-            Name: model.data.Dates[0].Name,
-            Rating: model.input.endDate.rating,
-            day: todaysDate,
-            comment: model.input.endDate.comment,
-            memoryPicture: model.input.endDate.memoryPicture,
-        }
-    )
-    model.data.users[0].doneDates.push(model.data.Dates[0].Name)
-    model.data.users[0].ongoingDate = false;
-    updateOngoingView();
 }
