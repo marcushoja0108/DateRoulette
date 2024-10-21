@@ -12,7 +12,8 @@ function randomDate(){
 }
 
 function randomContent(){
-    if(model.app.selectedDate == null){
+    let selectedDate = model.app.selectedDate
+    if(selectedDate == null){
         let html = /*HTML*/`
         <div class="spinButton" onclick="randomDate()">SPIN</div>
         <div class='wheel'>
@@ -24,7 +25,7 @@ function randomContent(){
     else{
         let html = /*HTML*/`
         <div class="randomDateContainer">
-            <div>${model.data.}</div>
+            <div>${model.data.Dates[selectedDate].Name}</div>
             
             <img class="randomDateImage" onclick="goInfo()"
             src="${model.data.Dates[model.app.selectedDate].Picture}">
