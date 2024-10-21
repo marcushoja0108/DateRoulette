@@ -48,6 +48,7 @@ function ongoingRating(){
                 <div class="onGoingFile">
                     <input type="file" value="${model.input.endDate.memoryPicture ?? ''}" onchange="readPhotoMemory(this)">
                 </div>
+                ${model.input.endDate.showongoingMessage}
                 <div class="onGoingButtons">
                     <button onclick="makeMemory()">Send inn</button>
                     <button class="ongoingCancelRating" onclick="cancelOngoingRating()">Avbryt</button>

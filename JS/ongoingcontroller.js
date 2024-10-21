@@ -42,7 +42,7 @@ function makeMemory(){
         model.data.users[model.app.loggedinuserID].ongoingDate = false;
         goHome()
     }else{
+        model.input.endDate.showongoingMessage = "Alle felter må fylles inn"
         ongoingRating()
-        console.log('virket ikke')
     }
 }
