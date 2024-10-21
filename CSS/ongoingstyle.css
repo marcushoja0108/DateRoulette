@@ -47,6 +47,7 @@ text-align: center;
 }
 
 .star-rating label {
+    cursor: pointer;
     font-size: 70px;
     color: #ccc;
 }
@@ -71,6 +72,7 @@ text-align: center;
     justify-content: center
 }
 .onGoingFile input::file-selector-button {
+    cursor: pointer;
     width: 80px;
     height: 30px;
     padding: 0;
@@ -80,6 +82,11 @@ text-align: center;
     color: white;
     font-size: 18px;
     border-radius: 5px;
+}
+.onGoingFile input::file-selector-button:hover{
+    background-color: rgb(255, 230, 230);
+    border: 1px solid #BE013C;
+    color: #BE013C;
 }
 .ongoingCancelRating {
     width: 80px;
@@ -101,4 +108,9 @@ text-align: center;
     color: white;
     border: none;
     font-size: 18px;
+}
+.onGoingButtons button:hover {
+    background-color: rgb(255, 230, 230);
+    border: 1px solid #BE013C;
+    color: #BE013C;
 }

@@ -1,8 +1,9 @@
+//hovedview
 function updateOngoingView(){
     document.getElementById('app').innerHTML = `
     <div class="header">
         <div class="Box-left"></div>
-        <img class='header-img' src="th2.png"/>
+        <img class='header-img' src="th4.png"/>
         <div class="Box-right"><img class='profile-img' height = 90px src="profile.png" onclick="goMemory()"/></div>
     </div>
 
@@ -18,11 +19,12 @@ function updateOngoingView(){
             </div>
     `;
 }
+//ratingview
 function ongoingRating(){
     document.getElementById('app').innerHTML = `
     <div class="header">
         <div class="Box-left"></div>
-        <img class='header-img' src="th2.png"/>
+        <img class='header-img' src="th4.png"/>
         <div class="Box-right"></div>
     </div>
         <div class="ongoingGrid">
