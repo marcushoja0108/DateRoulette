@@ -42,11 +42,14 @@ function createMaxPrice(){
      let html = /*HTML*/ `  
         MaksPris
         <input type="range" min="0" max="2000" value=${maxPriceFilter}
-        oninput="maxPriceFilter = this.value; updateFilterView()">
+        onchange="maxPriceFilter = this.value; updateFilterView()">
         ${maxPriceFilter}
         `;
         return html
     }
+function setMaxPrice(){
+    maxPriceFilter = value
+}
 
 function createLocation(){
     if(homeFilter == true){
