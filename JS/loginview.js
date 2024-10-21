@@ -5,7 +5,7 @@ function updateLoginView() {
   <div class="login">
      <img class='loginheader-img' src="th4.png"/>
      <div class="buttons">
-     <button class="" onclick=" loginW()">log in</button>
+     <button class="" onclick="loginW()">log in</button>
      <button class="" onclick="signup()">Sign up</button>
      </div>
   </div>
@@ -20,10 +20,10 @@ function loginW(){
     <img class='loginheader-img' src="th4.png"/>
     <div class="buttons">
     Email
-    <input type="text">
+    <input type="text" id="LEmail" >
     password
-    <input type="text">
-    <button class="" onclick="">log in</button>
+    <input type="text" id="LPassword">
+    <button class="" onclick="logincheck()">log in</button>
     Dont have a account?
     <button class="" onclick="signup()">Sign up</button>
     </div>

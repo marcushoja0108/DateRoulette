@@ -11,7 +11,8 @@ function registerUser() {
   model.input.register.birthday = document.getElementById("birthday").value;
   model.input.register.eMail = document.getElementById("REmail").value;
   model.input.register.password = document.getElementById("Rpassword").value;
-  model.input.register.secondPassword = document.getElementById("repeat-password").value;
+  model.input.register.secondPassword =
+    document.getElementById("repeat-password").value;
   console.log(model.input.register.secondPassword);
 
   //filter if slots are empty
@@ -31,6 +32,7 @@ function registerUser() {
       mail();
     }
   }
+
   //filter if the mail is okay
   function mail() {
     const parts = model.input.register.eMail.split("@");
@@ -46,26 +48,33 @@ function registerUser() {
     } else if (parts[1].endsWith(".")) {
       return false;
     } else {
-      for (let index = 0; index < model.data.users.length; index++){
-        if (model.data.users[index].eMail === model.input.register.eMail) {
-          alert("mail in use");
-          break;
-        }}
-     } phone()
-  };
-//filter if the phone is okay
-  function phone() {
-    for (let index = 0; index < model.data.users.length; index++){
-      if (model.data.users[index].phone === model.input.register.phone) {
-        alert("PhoneNummer in use");
-        break;
-      }}pushuser()
-  };
+      const user = model.data.users.find(
+        (user) => user.eMail === model.input.register.eMail
+      );
+      if (user) {
+        alert("Mail in use");
+      } else {
+        phone();
+      }
+    }
+  }
 
+  //filter if the phone is okay
+  function phone() {
+    const user = model.data.users.find(
+      (user) => user.phone === model.input.register.phone
+    );
+    if (user) {
+      alert("Nummer in use");
+    } else {
+      pushuser();
+    }
+  }
   //push into users and check password match
   function pushuser() {
     if (model.input.register.password === model.input.register.secondPassword) {
       model.data.users.push({
+        ID: model.data.users.length,
         name: model.input.register.name,
         password: model.input.register.password,
         birthday: model.input.register.birthday,
@@ -76,13 +85,29 @@ function registerUser() {
         doneDates: [],
         finishedDates: [],
       });
+      loginW();
+      alert("user registered");
     } else {
       alert("Password dont match");
     }
   }
 }
 
-function logincheck(){
+//check if log in is a match then make loginID the user id. if a match go to home page
+function logincheck() {
   model.input.login.eMail = document.getElementById("LEmail").value;
   model.input.login.password = document.getElementById("LPassword").value;
+
+  const user = model.data.users.find(
+    (user) =>
+      user.eMail === model.input.login.eMail &&
+      user.password === model.input.login.password
+  );
+
+  if (user) {
+    model.app.loggedinuserID = user.id;
+    goHome();
+  } else {
+    alert("Invalid email or password");
+  }
 }
