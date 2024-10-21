@@ -1,4 +1,4 @@
-function goInfo(){
-    model.app.currentpage = model.app.pages[2];
-    changeView();
+function goInfo() {
+  model.app.currentpage = model.app.pages[2];
+  changeView();
 }

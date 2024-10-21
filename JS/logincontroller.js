@@ -3,6 +3,7 @@ function goLogin() {
   changeView();
 }
 
+//take the inputs into register
 function registerUser() {
   model.input.register.name = document.getElementById("name").value;
   model.input.register.phone = document.getElementById("PhoneNummer").value;
@@ -10,10 +11,10 @@ function registerUser() {
   model.input.register.birthday = document.getElementById("birthday").value;
   model.input.register.eMail = document.getElementById("Email").value;
   model.input.register.password = document.getElementById("Rpassword").value;
-  model.input.register.secondPassword =
-    document.getElementById("repeat-password").value;
+  model.input.register.secondPassword = document.getElementById("repeat-password").value;
   console.log(model.input.register.secondPassword);
 
+  //filter if slots are empty
   emptyReg();
   function emptyReg() {
     if (!model.input.register.eMail) {
@@ -30,6 +31,7 @@ function registerUser() {
       mail();
     }
   }
+  //filter if the mail is okay
   function mail() {
     const parts = model.input.register.eMail.split("@");
 
@@ -49,9 +51,9 @@ function registerUser() {
           alert("mail in use");
           break;
         }}
-      phone()};
-  }
-
+     } phone()
+  };
+//filter if the phone is okay
   function phone() {
     for (let index = 0; index < model.data.users.length; index++){
       if (model.data.users[index].phone === model.input.register.phone) {
@@ -60,6 +62,7 @@ function registerUser() {
       }}pushuser()
   };
 
+  //push into users and check password match
   function pushuser() {
     if (model.input.register.password === model.input.register.secondPassword) {
       model.data.users.push({
