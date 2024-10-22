@@ -13,18 +13,17 @@ function backToHome(){
     updateHomeView();
 }
 
-function randomDate(){
-    
-    let searchResult = filterRandomDate()
-    
-    if(searchResult.length > 0){
+function randomDate() {
+    let searchResult = filterRandomDate();
+
+    if (searchResult.length > 0) {
         let rng = Math.floor(Math.random() * searchResult.length);
         let randomSelected = searchResult[rng];
-        model.app.selectedDate = randomSelected
-        console.log(model.app.selectedDate)
-    }
-    else{
-        console.log('ingen resultat')
+        let selectedIndex = model.data.Dates.findIndex(date => date === randomSelected);
+        model.app.selectedDate = selectedIndex;
+        console.log(model.app.selectedDate);
+    } else {
+        console.log('Ingen resultat');
     }
 }
 
