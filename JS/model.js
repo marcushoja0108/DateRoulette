@@ -22,9 +22,9 @@ const model = {
             showMessage: null
         },
         filter: {
-            showDropdown: '',
             isOpen: false,
-            home: true,
+            home: false,
+            activeHome: ['Hjemme', 'Ikke hjemme', 'Deaktivert'],
             timeUsage: 4,
             maxPrice: 800,
             fromTime: 15,
