@@ -1,6 +1,11 @@
 function goHome(){
+    if(model.data.users[model.app.loggedinuserID].ongoingDate == true){
+        goOngoing();
+    }
+    else{
     model.app.currentpage = model.app.pages[0];
     changeView();
+    }   
 }
 
 function openFilter(){
@@ -10,6 +15,7 @@ function openFilter(){
 
 function backToHome(){
     model.input.filter.isOpen = false;
+    
     updateHomeView();
 }
 
@@ -36,17 +42,6 @@ function filterRandomDate(){
    )
 }
 
-
-function randomContent(){
-        let html = /*HTML*/`
-        <div class="spinButton" onclick="randomDate()">SPIN</div>
-        <div class='wheel'>
-        <img width='350px' src='wheel.png'>
-        </div>
-        `;
-        return html;
-}
-
 // default filters
 function createMaxPrice(){
      let html = /*HTML*/ `  
@@ -60,7 +55,7 @@ function createMaxPrice(){
 
 function setMaxPrice(value){
     model.input.filter.maxPrice = value;
-    createFilterView();
+    updateHomeView();
 }
 function createMaxPriceContent(){
     if(model.input.maxPrice == 0){
@@ -93,11 +88,11 @@ function createLocation(){
 function changeHomeFilter(){
     if(model.input.filter.home == true){
         model.input.filter.home = false
-        createFilterView()
+        updateHomeView();
     }
     else{
         model.input.filter.home = true
-        createFilterView()
+        updateHomeView();
     }
 }
 
