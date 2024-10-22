@@ -1,6 +1,11 @@
 function goHome(){
+    if(model.data.users[model.app.loggedinuserID].ongoingDate == true){
+        goOngoing();
+    }
+    else{
     model.app.currentpage = model.app.pages[0];
     changeView();
+    }   
 }
 
 function openFilter(){
@@ -10,6 +15,7 @@ function openFilter(){
 
 function backToHome(){
     model.input.filter.isOpen = false;
+    
     updateHomeView();
 }
 
@@ -28,23 +34,17 @@ function randomDate() {
 }
 
 function filterRandomDate(){
-
-   return  model.data.Dates.filter(date => date.home === model.input.filter.home &&
-        date.maxPrice <= model.input.filter.maxPrice &&
-        date.timeSpent <= model.input.filter.timeUsage &&
-        date.fromTime >= model.input.filter.fromTime
-   )
-}
-
-
-function randomContent(){
-        let html = /*HTML*/`
-        <div class="spinButton" onclick="randomDate()">SPIN</div>
-        <div class='wheel'>
-        <img width='350px' src='wheel.png'>
-        </div>
-        `;
-        return html;
+    
+        let possibleDates = model.data.Dates.filter(date => date.home === model.input.filter.home &&
+            date.maxPrice <= model.input.filter.maxPrice &&
+            date.timeSpent <= model.input.filter.timeUsage &&
+            date.fromTime >= model.input.filter.fromTime
+       )
+       for(let i = 0; i<model.data.users[model.app.loggedinuserID].doneDates.length; i++){
+        possibleDates.filter(date => date.Name != model.data.users[model.app.loggedinuserID].doneDates[i])
+       }
+       return possibleDates
+    
 }
 
 // default filters
@@ -60,7 +60,7 @@ function createMaxPrice(){
 
 function setMaxPrice(value){
     model.input.filter.maxPrice = value;
-    createFilterView();
+    updateHomeView();
 }
 function createMaxPriceContent(){
     if(model.input.maxPrice == 0){
@@ -81,23 +81,29 @@ function createLocation(){
             <div onclick="changeHomeFilter()">Hjemme</div>
         `;
         return html
-    }
-    else{
-        let html = /*HTML*/`
+        }
+        else if(model.input.filter.home == false){
+            let html = /*HTML*/`
             <div onclick="changeHomeFilter()">Ikke hjemme</div>
-        `;
-        return html
-    }
+            `;
+            return html
+        }
+        else if(model.input.filter.home == 'disabled'){
+            let html = /*HTML*/`
+            <div style="backround-color: gray" onclick="changeHomeFilter()">Deaktivert</div>
+            `;
+            return html
+        }
 }
 
 function changeHomeFilter(){
     if(model.input.filter.home == true){
         model.input.filter.home = false
-        createFilterView()
+        updateHomeView();
     }
     else{
         model.input.filter.home = true
-        createFilterView()
+        updateHomeView();
     }
 }
 
@@ -123,7 +129,7 @@ function createTimeContent(){
 
 function setMaxTime(value){
     model.input.filter.timeUsage = value;
-    createFilterView();
+    updateHomeView();
 }
 
 function createFromTime(){

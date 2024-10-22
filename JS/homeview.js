@@ -1,51 +1,51 @@
 
 function updateHomeView(){
-    if(model.data.users[model.app.loggedinuserID].ongoingDate == true){
-        goOngoing();
-    }
-    else if(model.input.filter.isOpen == true){
-        createFilterView();
-    }
-    else if(model.input.filter.isOpen == false){
+   
         document.getElementById('app').innerHTML = /*HTML*/ `
         <div class="header">
-        <div class="Box-left" onclick="openFilter()">
-            <img class='filter-img' height = 90px src="filter.png"/>
+        <div class="Box-left">
+            
         </div>
-            <img class='header-img' src="th4.png"/>
+            <img class='header-img' src="th4.png"
+            onclick="goHome()"/>
             <div class="Box-right">
             <img class='profile-img' height = 90px src="profile.png"/>
             </div>
         </div>
-            ${randomContent()}
-           
-        `;}
-    
-}
+        ${createFilterView()}
+            <div class="randomContainer">${randomContent()}</div>
+        `;
+    }
 
 // filterview
 function createFilterView(){
-    document.getElementById('app').innerHTML = /*HTML*/ `
-    <div class="header">
-    <div class="Box-left" onclick="backToHome()">
-        <img class='filter-img' height = 90px src="back.png"/>
-    </div>
-        <img class='header-img' src="th4.png"/>
-        <div class="Box-right">
-        <img class='profile-img' height = 90px src="profile.png"/>
-        </div>
-    </div>
-    
+    if(model.input.filter.isOpen == false) return`
+        <div class="Box-placeholder" onclick="openFilter()">
+            <img class='filter-img' height = 90px src="filter.png"/>
+        </div>`;
 
-    <div class="filterGrid">
-        <div class="filterItem">
-        ${createMaxPrice()}
+
+        return `
+    <div class="dropDownContainer">
+        <div class="filterGrid">
+            <div class="filterItem">
+            ${createMaxPrice()}
+            </div>
+            <div class="filterItem">${createLocation()}</div>
+            <div class="filterItem">${createTimeUsage()}</div>
+            <div class="filterItem">${createFromTime()}</div>
         </div>
-        <div class="filterItem">${createLocation()}</div>
-        <div class="filterItem">${createTimeUsage()}</div>
-        <div class="filterItem">${createFromTime()}</div>
+        <div class="confirmChangesButton" onclick="backToHome()">
+        Bekreft endringer</div>
     </div>
-    <div class="confirmChangesButton" onclick="backToHome()">
-    Bekreft endringer</div>
+        `;
+    
+}
+
+function randomContent(){
+    let html = /*HTML*/`
+        <div class="spinButton" onclick="randomDate()">SPIN</div>
+        <img width='350px' class='wheel' src='wheel.png'>
     `;
+    return html;
 }

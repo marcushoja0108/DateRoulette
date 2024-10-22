@@ -1,15 +1,20 @@
 .header-img{
     width: 150px;
 }
-.Box-left {
-
+.Box-placeholder{
     width: 90px;
     height: 90px;
     margin-left: 10px;
-    
+    position: fixed;
+    top: 8px;
+    z-index: 3;
+}
+.Box-left {
+    width: 90px;
+    height: 90px;
+    margin-left: 10px;
 }
 .Box-right {
-
     width: 90px;
     height: 90px;
     margin-right: 10px;
@@ -23,13 +28,13 @@
     width: 100%;
     background-color: #BE013C;
     position: fixed;
+    z-index: 3;
     top: 0px;
 }
 .text{
     position: relative;
     top: 90px;
 }
-
 
 .filter-img{
     max-width: 120px;
@@ -40,14 +45,19 @@
     max-width: 120px;
 }
 
+.randomContainer{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
 .wheel{
-    margin: auto;
     width: 350px;
     margin-top: 5vh;
 }
 .spinButton{
-    margin: auto;
-    margin-top: 20vh;
+    margin-top: 27vh;
     display: flex;
     justify-content: center;
     font-weight: bold;
@@ -58,39 +68,28 @@
     border-radius: 15px;
     background-color: #ffb443;
 }
-.randomDateContainer{
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    margin-top: 20%;
-    font-weight: bolder;
-    font-size:x-large;
-    border-radius: 10px;
-    justify-content: center;
-    align-items: center;
-    padding: 2%;
-    height: 60vh;
-    
-    
-}
-.randomDateImage{
-    width: 90%;
-    margin-top: 4%;
-    border-radius: 40px;
-    padding: 5px;
-    background-color: white;
-}
 
 
 /* filterpage */
+.dropDownContainer{
+    background-color:#ffd597f8;
+    position: absolute;
+    width: 60vw;
+    z-index: 2;
+    top: 90px;
+    border-radius: 10px;
+    border: #ffb443 solid;
+    
+}
+
 .filterGrid{
-    margin-top: 25%;
+    margin-top: 30px;
     height: 60vh;
     justify-content: center;
     display: grid;
     padding: 5px;
     align-content: space-evenly;
-    gap: 2%;
+    gap: 2vh;
     
 
 }
@@ -98,13 +97,14 @@
     display: flex;
     flex-direction: column;
     border: solid 1px black;
-    width: 85vw;
+    width: 40vw;
     height: 8vh;
     align-items: center;
     justify-content: center;
     padding: 10px;
     font-weight:900;
     background-color: bisque;
+    border-radius: 20px;
     
 }
 .inputTimeBox{
@@ -118,7 +118,8 @@
     display: flex;
     justify-content: center;
     border: solid black 2px;
-    background-color: rgb(113, 206, 113);
+    background-color:#BE013C;
+    color: white;
     width: 130px;
     padding: 4px;
     margin: 5%;
