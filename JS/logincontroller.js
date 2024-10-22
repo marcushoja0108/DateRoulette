@@ -5,31 +5,20 @@ function goLogin() {
 
 //take the inputs into register
 function registerUser() {
-  model.input.register.name = document.getElementById("Rname").value;
-  model.input.register.phone = document.getElementById("PhoneNummer").value;
-  model.input.register.address = document.getElementById("Address").value;
-  model.input.register.birthday = document.getElementById("birthday").value;
-  model.input.register.eMail = document.getElementById("REmail").value;
-  model.input.register.password = document.getElementById("Rpassword").value;
-  model.input.register.secondPassword = document.getElementById("repeat-password").value;
-
-
+  
   //filter if slots are empty
-  emptyReg();
-  function emptyReg() {
-    if (!model.input.register.eMail) {
-      alert("mail not filled in");
-    } else if (!model.input.register.name) {
-      alert("name not filled in");
-    } else if (!model.input.register.address) {
-      alert("address not filled in");
-    } else if (!model.input.register.password) {
-      alert("password not filled in");
-    } else if (!model.input.register.birthday) {
-      alert("birthday not filled in");
-    } else {
-      mail();
-    }
+  if (!model.input.register.eMail) {
+    alert("mail not filled in");
+  } else if (!model.input.register.name) {
+    alert("name not filled in");
+  } else if (!model.input.register.adress) {
+    alert("address not filled in");
+  } else if (!model.input.register.password) {
+    alert("password not filled in");
+  } else if (!model.input.register.birthday) {
+    alert("birthday not filled in");
+  } else {
+    mail();
   }
 
   //filter if the mail is okay
@@ -86,8 +75,6 @@ function registerUser() {
       });
       loginW();
       alert("user registered");
-      
-      
     } else {
       alert("Password dont match");
     }
@@ -96,9 +83,6 @@ function registerUser() {
 
 //check if log in is a match then make loginID the user id. if a match go to home page
 function logincheck() {
-  model.input.login.eMail = document.getElementById("LEmail").value;
-  model.input.login.password = document.getElementById("LPassword").value;
-
   const user = model.data.users.find(
     (user) =>
       user.eMail === model.input.login.eMail &&

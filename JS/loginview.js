@@ -20,9 +20,9 @@ function loginW(){
     <img class='loginheader-img' src="th4.png"/>
     <div class="buttons">
     Email
-    <input type="text" id="LEmail" >
+    <input type="text" oninput="model.input.login.eMail=this.value" >
     password
-    <input type="password" id="LPassword">
+    <input type="text" oninput="model.input.login.password=this.value">
     <button class="" onclick="logincheck()">log in</button>
     Dont have a account?
     <button class="" onclick="signup()">Sign up</button>
@@ -39,19 +39,19 @@ function signup(){
             <img class='loginheader-img' src="th4.png"/>
             <div class="buttons">
             Name
-            <input type="text" id="Rname">
+            <input type="text" oninput= "model.input.register.name=this.value">
             PhoneNummer
-            <input type="text"id="PhoneNummer">
+            <input type="text" oninput= "model.input.register.phone=this.value">
             Address
-            <input type="text" id="Address">
+            <input type="text" oninput= "model.input.register.adress=this.value">
             birthday
-            <input  type="date"id="birthday">
+            <input  type="date" oninput= "model.input.register.birthday=this.value">
             Email
-            <input type="text" id="REmail">
+            <input type="text" oninput= "model.input.register.eMail=this.value">
             password
-            <input type="text" id="Rpassword">
+            <input type="text" oninput= "model.input.register.password=this.value">
             repeat-password
-             <input type="password" id="repeat-password">
+             <input type="password" oninput= "model.input.register.secondPassword=this.value">
     
              <button class="" onclick="registerUser()">Sign up</button>
             Have a user?
