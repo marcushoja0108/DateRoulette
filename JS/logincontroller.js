@@ -5,7 +5,7 @@ function goLogin() {
 
 //take the inputs into register
 function registerUser() {
-  
+
   //filter if slots are empty
   if (!model.input.register.eMail) {
     alert("mail not filled in");
@@ -81,7 +81,7 @@ function registerUser() {
   }
 }
 
-//check if log in is a match then make loginID the user id. if a match go to home page
+//check if log in is a match then make loginID the user id. if its a match it goes to homepage
 function logincheck() {
   const user = model.data.users.find(
     (user) =>
