@@ -7,18 +7,18 @@ function goHome(){
     changeView();
     }   
 }
-
+// filter dropdown funksjon
 function openFilter(){
     model.input.filter.isOpen = true;
     updateHomeView();
 }
-
 function backToHome(){
     model.input.filter.isOpen = false;
     
     updateHomeView();
 }
 
+// spin knapp for å få random date
 function randomDate() {
     let searchResult = filterRandomDate();
 
@@ -28,11 +28,13 @@ function randomDate() {
         let selectedIndex = model.data.Dates.findIndex(date => date === randomSelected);
         model.app.selectedDate = selectedIndex;
         console.log(model.app.selectedDate);
+        goInfo();
     } else {
         console.log('Ingen resultat');
     }
 }
 
+// filtreringsfunksjon
 function filterRandomDate(){
     
         let possibleDates = model.data.Dates.filter(date => date.home === model.input.filter.home &&

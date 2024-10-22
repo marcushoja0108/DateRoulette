@@ -42,6 +42,7 @@ function createFilterView(){
     
 }
 
+// spin og random view
 function randomContent(){
     let html = /*HTML*/`
         <div class="spinButton" onclick="randomDate()">SPIN</div>
