@@ -1,8 +1,8 @@
 const model = {
     app: {
         loggedinuserID: 0,
-        pages: ["HomePage", "Login", "infopage", "memory", "ongoingDate"],
-        currentpage: "Login",
+        pages: ["HomePage", "Login", "infopage", "memory", "ongoingDate", "friendPage"],
+        currentpage: "friendPage",
         selectedDate: 0,
     },
 
@@ -53,7 +53,7 @@ const model = {
                     eMail: "martinskal@paadate.no",
                     phone: "69696969",
                     ongoingDate: false,
-                    doneDates: ['kino'],
+                    doneDates: ['kino','piknik i parken'],
                     finishedDates: [
                         {
                             Name: "kino",
@@ -61,6 +61,13 @@ const model = {
                             day: '14.10.2024, 11:08:13',
                             comment: 'Koselig, men dårlig film.',
                             memoryPicture: "dateImage/kino.jpg",
+                        },
+                        {
+                            Name: "piknik i parken",
+                            Rating: 4,
+                            day: '14.10.2024, 11:08:13',
+                            comment: 'Raff pølse i Thermos date.',
+                            memoryPicture: "dateImage/park.jpg",
                         }
                     ],
                 }

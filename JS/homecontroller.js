@@ -34,6 +34,7 @@ function randomDate() {
     }
 }
 function filterRandomDate() {
+    let possibleDates = model.data.users[model.app.loggedinuserID].doneDates
     let filterInput = model.input.filter;
     let disableFromTime = filterInput.disableFromTime;
     let disablePrice = filterInput.disablePrice;
@@ -43,7 +44,8 @@ function filterRandomDate() {
                 (disableFromTime || date.fromTime >= filterInput.fromTime) &&
                 (disablePrice || date.maxPrice <= filterInput.maxPrice) &&
                 (disableTimeSpent || date.timeSpent <= filterInput.timeUsage) &&
-                (disableHome || date.home === filterInput.home)
+                (disableHome || date.home === filterInput.home) &&
+                !possibleDates.includes(date.Name)
     );
 }
 // filtreringsfunksjon

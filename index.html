@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="CSS/loginstyle.css" />
     <link rel="stylesheet" href="CSS/memorystyle.css" />
     <link rel="stylesheet" href="CSS/ongoingstyle.css" />
+    <link rel="stylesheet" href="CSS/friendstyle.css" />
   </head>
   <body onload="changeView()">
     <div id="app"></div>
@@ -20,6 +21,7 @@
         else if (model.app.currentpage == "memory") updateMemoryView();
         else if (model.app.currentpage == "Login") updateLoginView();
         else if (model.app.currentpage == "ongoingDate") updateOngoingView();
+        else if (model.app.currentpage == "friendPage") updateFriendView();
       }
     </script>
     <script src="JS/model.js"></script>
@@ -28,10 +30,12 @@
     <script src="JS/logincontroller.js"></script>
     <script src="JS/memorycontroller.js"></script>
     <script src="JS/ongoingcontroller.js"></script>
+    <script src="JS/friendController.js"></script>
     <script src="JS/homeview.js"></script>
     <script src="JS/infoview.js"></script>
     <script src="JS/loginview.js"></script>
     <script src="JS/memoryview.js"></script>
     <script src="JS/ongoingview.js"></script>
+    <script src="JS/friendView.js"></script>
   </body>
 </html>
