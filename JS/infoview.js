@@ -16,9 +16,9 @@ function updateInfoView() {
     </div>
 <div class='info-box'>
         
-    <div class='date-img'>
-        <img src=${selectedDate.Picture} />
-    </div>
+
+        <img class='img' src=${selectedDate.Picture} />
+    
 
     <div class='info'>
     <h1 class='info-name'>${selectedDate.Name}</h1>
