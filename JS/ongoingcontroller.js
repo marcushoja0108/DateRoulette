@@ -26,7 +26,7 @@ function cancelOngoingRating(){
     model.input.endDate.comment = '';
 }
 //pusher daten inn i doneDates og pusher memories inn i finishDates
-let placeHolderText = '';
+
 function makeMemory(){
     todaysDate = new Date().toLocaleString()
     if(model.input.endDate.memoryPicture && model.input.endDate.rating && model.input.endDate.comment){
@@ -39,7 +39,7 @@ function makeMemory(){
                 memoryPicture: model.input.endDate.memoryPicture,
             }
         )
-        model.data.users[model.app.loggedinuserID].doneDates.push(model.data.Dates[0].Name)
+        model.data.users[model.app.loggedinuserID].doneDates.push(model.data.Dates[model.app.selectedDate].Name)
         model.data.users[model.app.loggedinuserID].ongoingDate = false;
         goHome()
     }else{
