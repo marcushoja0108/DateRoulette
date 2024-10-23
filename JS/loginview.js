@@ -5,7 +5,7 @@ function updateLoginView() {
   <div class="login">
      <img class='loginheader-img' src="th4.png"/>
      <div class="buttons">
-     <button class="" onclick=" login()">log in</button>
+     <button class="" onclick="loginW()">log in</button>
      <button class="" onclick="signup()">Sign up</button>
      </div>
   </div>
@@ -13,17 +13,17 @@ function updateLoginView() {
     `;
 }
 
-function login(){
+function loginW(){
     document.getElementById("app").innerHTML = /*html*/ `
     <div class="logcontainer"> 
     <div class="login">
     <img class='loginheader-img' src="th4.png"/>
     <div class="buttons">
     Email
-    <input type="text">
+    <input type="text" oninput="model.input.login.eMail=this.value" >
     password
-    <input type="text">
-    <button class="" onclick="">log in</button>
+    <input type="text" oninput="model.input.login.password=this.value">
+    <button class="" onclick="logincheck()">log in</button>
     Dont have a account?
     <button class="" onclick="signup()">Sign up</button>
     </div>
@@ -37,25 +37,25 @@ function signup(){
     <div class="logcontainer"> 
         <div class="login">
             <img class='loginheader-img' src="th4.png"/>
-            <div class="buttons" id="Rname">
+            <div class="buttons">
             Name
-            <input type="text" id="name">
+            <input type="text" oninput= "model.input.register.name=this.value">
             PhoneNummer
-            <input type="text"id="PhoneNummer">
+            <input type="text" oninput= "model.input.register.phone=this.value">
             Address
-            <input type="text" id="Address">
+            <input type="text" oninput= "model.input.register.adress=this.value">
             birthday
-            <input  type="date"id="birthday">
+            <input  type="date" oninput= "model.input.register.birthday=this.value">
             Email
-            <input type="text" id="Email">
+            <input type="text" oninput= "model.input.register.eMail=this.value">
             password
-            <input type="text" id="Rpassword">
+            <input type="text" oninput= "model.input.register.password=this.value">
             repeat-password
-             <input type="text" id="repeat-password">
+             <input type="password" oninput= "model.input.register.secondPassword=this.value">
     
              <button class="" onclick="registerUser()">Sign up</button>
             Have a user?
-            <button class="" onclick="login()">log in</button>
+            <button class="" onclick="loginW()">log in</button>
     
             </div>
         </div>
