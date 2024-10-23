@@ -5,6 +5,7 @@
   margin: 0 auto;
   justify-content: space-between;
   margin-top: 150px;
+  height: 70vh;
 }
 
 .header-img {
@@ -12,16 +13,17 @@
 }
 .header-img img {
   max-width: 100%;
+
+  max-height: 50%;
 }
 
-.date-img img {
-  width: 100%;
+.img {
+  width: 85%;
+  margin: 0 auto;
+  height: 50%;
+
   margin-top: 20px;
   border-radius: 10px;
-}
-.date-img {
-  max-width: 30%;
-  margin: 0 auto;
 }
 
 .btn-container {
@@ -38,4 +40,12 @@
   color: black;
   border-radius: 10px;
   background-color: #ebebeb;
+}
+
+.info-name {
+  color: #be013c;
+}
+.info-description {
+  color: #4b0018;
+  font-size: 28px;
 }
