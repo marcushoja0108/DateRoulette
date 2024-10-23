@@ -53,7 +53,11 @@ const model = {
                     eMail: "martinskal@paadate.no",
                     phone: "69696969",
                     ongoingDate: false,
+<<<<<<< HEAD
                     doneDates: ['kino'],
+=======
+                    doneDates: ['kino', 'piknik i parken'],
+>>>>>>> bb77b433a677da3b3319773feb6eb0d051125b04
                     finishedDates: [
                         {
                             Name: "kino",
@@ -62,6 +66,16 @@ const model = {
                             comment: 'Koselig, men dårlig film.',
                             memoryPicture: "dateImage/kino.jpg",
                         },
+<<<<<<< HEAD
+=======
+                        {
+                            Name: "piknik i parken",
+                            Rating: 4,
+                            day: '14.10.2024, 11:08:13',
+                            comment: 'Raff date i parken',
+                            memoryPicture: "dateImage/park.jpg",
+                        },
+>>>>>>> bb77b433a677da3b3319773feb6eb0d051125b04
                     ],
                 }
             ],
@@ -141,6 +155,7 @@ const model = {
                     Rating: null
                 }]
             },
+<<<<<<< HEAD
 
             {
                 Name: "baking",
@@ -201,6 +216,8 @@ const model = {
                     Rating: null
                 }]
             },
+=======
+>>>>>>> bb77b433a677da3b3319773feb6eb0d051125b04
 
             {
                 Name: "sightseeing",

@@ -1,0 +1,21 @@
+.memoryContainer {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.memoryCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+    width: 95vw;
+}
+.memoryCard img {
+    height: 200px;
+   
+}
