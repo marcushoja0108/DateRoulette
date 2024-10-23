@@ -4,7 +4,7 @@ function updateMemoryView(){
     document.getElementById('app').innerHTML = /*html*/ `
     <div class="header">
     <div class="Box-left"></div>
-        <img class='header-img' src="th4.png"/>
+        <img class='header-img' src="th4.png" onclick="goHome()"/>
         <div class="Box-right"></div>
     </div>
     <div class="memoryContainer">
