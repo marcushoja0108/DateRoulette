@@ -75,6 +75,11 @@ const model = {
                 fromTime: 18,
                 description: "Gå på kino",
                 Picture: "dateImage/kino.jpg",
+                Category: ["cozy","kultur","sosialt","innadvent"],
+                review: [{
+                    comment: null,
+                    Rating: null
+                }]
             },
 
             {
@@ -84,7 +89,12 @@ const model = {
                 maxPrice: 0,
                 fromTime: 11,
                 description: "Nyt en piknik med hjemmelaget mat i parken",
-                Picture: "dateImage/park.jpg"
+                Picture: "dateImage/park.jpg",
+                Category: ["cozy","utadvent","sosialt"],
+                review: [{
+                    comment: null,
+                    Rating: null
+                }]
             },
 
             {
@@ -94,7 +104,12 @@ const model = {
                 maxPrice: 200,
                 fromTime: 10,
                 description: "Besøk et lokalt museum",
-                Picture: "dateImage/museum.jpg"
+                Picture: "dateImage/museum.jpg",
+                Category: ["kultur","innadvent","sosialt"],
+                review: [{
+                    comment: null,
+                    Rating: null
+                }]
             },
 
             {
@@ -104,7 +119,12 @@ const model = {
                 maxPrice: 0,
                 fromTime: 19,
                 description: "Se en film hjemme med popcorn",
-                Picture: "dateImage/home_theater.jpg"
+                Picture: "dateImage/home_theater.jpg",
+                Category: ["cozy","innadvent","usosialt"],
+                review: [{
+                    comment: null,
+                    Rating: null
+                }]
             },
 
             {
@@ -114,7 +134,12 @@ const model = {
                 maxPrice: 0,
                 fromTime: 9,
                 description: "Gå en tur i skogen og nyt naturen",
-                Picture: "dateImage/forest.jpg"
+                Picture: "dateImage/forest.jpg",
+                Category: ["utadvent","usosialt"],
+                review: [{
+                    comment: null,
+                    Rating: null
+                }]
             },
 
             {
