@@ -32,6 +32,7 @@ const model = {
             timeUsage: 4,
             maxPrice: 800,
             fromTime: 15,
+            startWheel: false,
         },
         endDate: {
             rating: null,

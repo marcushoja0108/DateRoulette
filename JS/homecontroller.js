@@ -226,3 +226,9 @@ function createFromTime(){
 
     }
 }
+
+function startWheel(){
+    model.input.filter.startWheel = true
+    updateHomeView();
+    setTimeout(randomDate,3500)
+}

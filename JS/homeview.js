@@ -42,9 +42,10 @@ function createFilterView(){
 
 // spin og random view
 function randomContent(){
+    let startWheelAnimation = model.input.filter.startWheel ? `<img width='350px' class='wheelspin' src='wheel.png'>` : `<img width='350px' class='wheel' src='wheel.png'>`
     let html = /*HTML*/`
-        <div class="spinButton" onclick="randomDate()">SPIN</div>
-        <img width='350px' class='wheel' src='wheel.png'>
+        <div class="spinButton" onclick="startWheel()">SPIN</div>
+        ${startWheelAnimation}
     `;
     return html;
 }
