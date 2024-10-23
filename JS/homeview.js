@@ -9,7 +9,7 @@ function updateHomeView(){
             <img class='header-img' src="th4.png"
             onclick="goHome()"/>
             <div class="Box-right">
-            <img class='profile-img' height = 90px src="profile.png"/>
+            <img class='profile-img' height = 90px src="profile.png"  onclick="goMemory()"/>
             </div>
         </div>
         ${createFilterView()}
