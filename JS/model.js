@@ -2,7 +2,7 @@ const model = {
     app: {
         loggedinuserID: 0,
         pages: ["HomePage", "Login", "infopage", "memory", "ongoingDate"],
-        currentpage: "HomePage",
+        currentpage: "Login",
         selectedDate: 0,
     },
 
@@ -24,7 +24,11 @@ const model = {
         filter: {
             isOpen: false,
             home: false,
-            activeHome: ['Hjemme', 'Ikke hjemme', 'Deaktivert'],
+            buttoncounter: 0,
+            disableTimeSpent: true,
+            disablePrice: true,
+            disableFromTime: true,
+            disableHome: true,
             timeUsage: 4,
             maxPrice: 800,
             fromTime: 15,
@@ -205,7 +209,8 @@ const model = {
 
             {
                 Name: "matlagingskurs hjemme",
-                home: true, timeSpent: 3,
+                home: true, 
+                timeSpent: 3,
                 maxPrice: 200,
                 fromTime: 12,
                 description: "Lag en ny oppskrift sammen",

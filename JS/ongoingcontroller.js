@@ -1,5 +1,6 @@
 function goOngoing(){
     model.app.currentpage = model.app.pages[4];
+    model.data.users[model.app.loggedinuserID].ongoingDate = true;
     changeView();
 }
 //rating konvertert til tall

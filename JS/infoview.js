@@ -21,7 +21,7 @@ function updateInfoView() {
 
         <div class='btn-container'>
             <button>Tilbake</button>
-            <button>Aksepter</button>
+            <button onclick="goOngoing()">Aksepter</button>
         </div>
 
 </div>
