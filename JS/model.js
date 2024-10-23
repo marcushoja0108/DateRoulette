@@ -47,7 +47,7 @@ const model = {
                 {
                     ID: 0,
                     name: "Martin",
-                    password: "MartinErKul",
+                    password: "123",
                     birthday: '13.10.16',
                     adress: "getacademny",
                     eMail: "martinskal@paadate.no",
