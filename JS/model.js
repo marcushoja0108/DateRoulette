@@ -41,31 +41,38 @@ const model = {
     },
   },
 
-  data: {
-    users: [
-      {
-        ID: 0,
-        name: "Martin",
-        password: "123",
-        birthday: "13.10.16",
-        adress: "getacademny",
-        eMail: "martinskal@paadate.no",
-        phone: "69696969",
-        ongoingDate: false,
-        doneDates: ["kino"],
-        finishedDates: [
-          {
-            Name: "kino",
-            Rating: 2,
-            day: "14.10.2024, 11:08:13",
-            comment: "Koselig, men dårlig film.",
-            memoryPicture: "dateImage/kino.jpg",
-          },
-        ],
-      },
-    ],
+    data: {
+        users:
+            [
+                {
+                    ID: 0,
+                    name: "Martin",
+                    password: "123",
+                    birthday: '13.10.16',
+                    adress: "getacademny",
+                    eMail: "martinskal@paadate.no",
+                    phone: "69696969",
+                    ongoingDate: false,
+                    doneDates: ['kino', 'piknik i parken'],
+                    finishedDates: [
+                        {
+                            Name: "kino",
+                            Rating: 2,
+                            day: '14.10.2024, 11:08:13',
+                            comment: 'Koselig, men dårlig film.',
+                            memoryPicture: "dateImage/kino.jpg",
+                        },
+                        {
+                            Name: "piknik i parken",
+                            Rating: 4,
+                            day: '14.10.2024, 11:08:13',
+                            comment: 'Raff date i parken',
+                            memoryPicture: "dateImage/park.jpg",
+                        },
+                    ],
+                }
+            ],
 
-<<<<<<< HEAD
         Dates: [
             {
                 Name: "kino",
@@ -141,58 +148,6 @@ const model = {
                     Rating: null
                 }]
             },
-=======
-    Dates: [
-      {
-        Name: "kino",
-        home: false,
-        timeSpent: 5,
-        maxPrice: 300,
-        fromTime: 18,
-        description: "Gå på kino",
-        Picture: "dateImage/kino.jpg",
-      },
-
-      {
-        Name: "piknik i parken",
-        home: false,
-        timeSpent: 4,
-        maxPrice: 0,
-        fromTime: 11,
-        description: "Nyt en piknik med hjemmelaget mat i parken",
-        Picture: "dateImage/park.jpg",
-      },
-
-      {
-        Name: "museumstur",
-        home: false,
-        timeSpent: 3,
-        maxPrice: 200,
-        fromTime: 10,
-        description: "Besøk et lokalt museum",
-        Picture: "dateImage/museum.jpg",
-      },
-
-      {
-        Name: "hjemmekino",
-        home: true,
-        timeSpent: 2,
-        maxPrice: 0,
-        fromTime: 19,
-        description: "Se en film hjemme med popcorn",
-        Picture: "dateImage/home_theater.jpg",
-      },
-
-      {
-        Name: "tur i skogen",
-        home: false,
-        timeSpent: 5,
-        maxPrice: 0,
-        fromTime: 9,
-        description: "Gå en tur i skogen og nyt naturen",
-        Picture: "dateImage/forest.jpg",
-      },
->>>>>>> 0f81bb80ba49b23b93a3516b0b9f44c0e4c2294c
 
       {
         Name: "baking",
