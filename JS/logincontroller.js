@@ -3,7 +3,7 @@ function goLogin() {
   changeView();
 }
 
-//take the inputs into register
+//take the inputs into register and cheks if they are all okay
 function registerUser() {
 
   //filter if slots are empty
