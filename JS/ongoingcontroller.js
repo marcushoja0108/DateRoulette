@@ -1,6 +1,5 @@
 function goOngoing(){
     model.app.currentpage = model.app.pages[4];
-    model.data.users[model.app.loggedinuserID].ongoingDate = true;
     changeView();
 }
 //rating konvertert til tall
@@ -41,6 +40,9 @@ function makeMemory(){
         )
         model.data.users[model.app.loggedinuserID].doneDates.push(model.data.Dates[model.app.selectedDate].Name)
         model.data.users[model.app.loggedinuserID].ongoingDate = false;
+        model.input.endDate.memoryPicture = '';
+        model.input.endDate.rating = '';
+        model.input.endDate.comment = '';
         goHome()
     }else{
         model.input.endDate.showongoingMessage = "Alle felter må fylles inn"

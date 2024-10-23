@@ -20,6 +20,7 @@ function backToHome(){
 
 // spin knapp for å få random date
 function randomDate() {
+    model.input.filter.startWheel = false
     let searchResult = filterRandomDate();
     console.log(searchResult)
     if (searchResult.length > 0) {
