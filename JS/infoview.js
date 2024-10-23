@@ -1,6 +1,12 @@
 updateInfoView();
+
 function updateInfoView() {
-  document.getElementById("app").innerHTML = `
+  const selectedIndexDate = model.app.selectedDate;
+  const selectedDate = model.data.Dates[selectedIndexDate];
+  if (selectedDate) {
+    document.getElementById("app").innerHTML = `
+
+
 
   <div class='header'>
    <div class="Box-left"></div>
@@ -11,19 +17,20 @@ function updateInfoView() {
 <div class='info-box'>
         
     <div class='date-img'>
-        <img src='./dateImage/cooking_class.jpg' />
+        <img src=${selectedDate.Picture} />
     </div>
 
     <div class='info'>
-    <h1>Cooking date</h1>
-    <p>Info om date</p>
+    <h1 class='info-name'>${selectedDate.Name}</h1>
+    <p class='info-description'>${selectedDate.description}</p>
     </div>
 
         <div class='btn-container'>
-            <button>Tilbake</button>
+            <button onclick='goBack()'>Tilbake</button>
             <button onclick="goOngoing()">Aksepter</button>
         </div>
 
 </div>
     `;
+  }
 }

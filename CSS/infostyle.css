@@ -5,6 +5,7 @@
   margin: 0 auto;
   justify-content: space-between;
   margin-top: 150px;
+  height: 70vh;
 }
 
 .header-img {
@@ -20,7 +21,7 @@
   border-radius: 10px;
 }
 .date-img {
-  max-width: 30%;
+  max-width: 90%;
   margin: 0 auto;
 }
 
@@ -38,4 +39,13 @@
   color: black;
   border-radius: 10px;
   background-color: #ebebeb;
+}
+
+.info-name {
+  font-size: 55px;
+  color: #be013c;
+}
+.info-description {
+  color: #4b0018;
+  font-size: 28px;
 }
