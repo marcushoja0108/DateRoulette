@@ -33,34 +33,29 @@ function randomDate() {
         console.log('Ingen resultat');
     }
 }
+
+// filtreringsfunksjon
 function filterRandomDate() {
     let filterInput = model.input.filter;
     let disableFromTime = filterInput.disableFromTime;
     let disablePrice = filterInput.disablePrice;
     let disableTimeSpent = filterInput.disableTimeSpent;
     let disableHome = filterInput.disableHome;
+    
+    let doneDates = model.data.users[model.app.loggedinuserID].doneDates
+
     return model.data.Dates.filter(date => 
                 (disableFromTime || date.fromTime >= filterInput.fromTime) &&
                 (disablePrice || date.maxPrice <= filterInput.maxPrice) &&
                 (disableTimeSpent || date.timeSpent <= filterInput.timeUsage) &&
-                (disableHome || date.home === filterInput.home)
+                (disableHome || date.home === filterInput.home) &&
+                !doneDates.includes(date.Name) 
     );
 }
-// filtreringsfunksjon
-// function filterRandomDate(){
-    
-//         let possibleDates = model.data.Dates.filter(date => date.home === model.input.filter.home &&
-//             date.maxPrice <= model.input.filter.maxPrice &&
-//             date.timeSpent <= model.input.filter.timeUsage &&
-//             date.fromTime >= model.input.filter.fromTime
-//        )
-//        for(let i = 0; i<model.data.users[model.app.loggedinuserID].doneDates.length; i++){
-//         possibleDates.filter(date => date.Name != model.data.users[model.app.loggedinuserID].doneDates[i])
-//        }
-//        return possibleDates
-    
-// }
 
+
+
+// disable filters
 function disableFromTimeButton(){
     model.input.filter.disableFromTime = !model.input.filter.disableFromTime
     updateHomeView()
@@ -175,15 +170,7 @@ function createLocation(){
 //     }
 // }
 
-// function createTimeUsage(){
-//     let html = /*HTML*/ `
-//     Tidsbruk
-//     <input type="range" min="1" max="5" value=${model.input.filter.timeUsage}
-//     onchange="setMaxTime(this.value)">
-//     ${model.input.filter.timeUsage} ${createTimeContent()}
-//     `;
-//     return html
-// }
+
 function createTimeUsage(){
     if(model.input.filter.disableTimeSpent){
         return `  
