@@ -1,4 +1,5 @@
 function goOngoing(){
+    model.data.users[model.app.loggedinuserID].ongoingDate = true;
     model.app.currentpage = model.app.pages[4];
     changeView();
 }
