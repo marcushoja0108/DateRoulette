@@ -2,7 +2,7 @@ const model = {
     app: {
         loggedinuserID: 0,
         pages: ["HomePage", "Login", "infopage", "memory", "ongoingDate", "friendPage"],
-        currentpage: "Login",
+        currentpage: "HomePage",
         selectedDate: 0,
     },
 
@@ -29,9 +29,14 @@ const model = {
             disablePrice: true,
             disableFromTime: true,
             disableHome: true,
+            disableCategory: false,
+            categoryDropDown: false,
             timeUsage: 4,
             maxPrice: 800,
             fromTime: 15,
+            categories: ['cozy', 'ute', 'inne', 'sosialt', 'usosialt', 'kultur',
+                 'innadvent', 'mat', 'kreativitet'],
+            selectedCategory: 'kultur',
             startWheel: false,
         },
         endDate: {

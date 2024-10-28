@@ -95,6 +95,30 @@ align-items: center;
     
 }
 
+.categoryDropDown{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color:#BE013C;
+    top: 10px;
+    width: 40vw;
+    align-items: center;
+    gap: 3vh;
+    margin: 3vh;
+    padding: 10px;
+    padding-top: 2vh;
+    border: #ffb443 solid;
+    border-radius: 20px;
+
+}
+.turnOnButton{
+    color: white
+}
+.turnOffButton{
+    color: red;
+}
+
+
 .filterGrid{
     margin-top: 30px;
     height: 60vh;
@@ -109,15 +133,16 @@ align-items: center;
 .filterItem{
     display: flex;
     flex-direction: column;
-    border: solid 1px black;
+    
     width: 40vw;
     height: 8vh;
     align-items: center;
     justify-content: center;
     padding: 10px;
-    font-weight:900;
-    background-color: bisque;
+    font-weight: 800;
+    background-color:#BE013C;
     border-radius: 20px;
+    color: white;
     
 }
 .inputTimeBox{
