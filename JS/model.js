@@ -4,6 +4,7 @@ const model = {
         pages: ["HomePage", "Login", "infopage", "memory", "ongoingDate", "friendPage"],
         currentpage: "HomePage",
         selectedDate: 0,
+        selectedFriend: 0,
     },
 
     input: {

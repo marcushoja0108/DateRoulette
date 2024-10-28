@@ -5,3 +5,27 @@
     justify-content: center;
     align-items: center;
 }
+.friendDateBox{
+    background-color: #BE013C;
+    color: white;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.friendComment{
+    padding: 5px;
+}
+.friendField{
+    width: 65vw;
+    text-align:start;
+}
+.friendFieldfirst{
+    width: 100px;
+}
+.FriendCommentName {
+    display: flex;
+    justify-content: center;
+}
