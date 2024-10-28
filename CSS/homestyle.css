@@ -26,7 +26,8 @@
     align-items: center;
     height: 100px;
     width: 100%;
-    background-color: #BE013C;
+    background: radial-gradient(circle, rgb(128, 19, 19), rgb(68, 0, 0) 140%);
+    border: #000000 solid 2px;
     position: fixed;
     z-index: 3;
     top: 0px;
@@ -79,19 +80,19 @@ align-items: center;
     width: 100px;
     height: 30px;
     border-radius: 15px;
-    background-color: #ffb443;
+    background: radial-gradient(circle, rgb(255, 223, 41), rgb(255, 107, 107) 140%);
 }
 
 
 /* filterpage */
 .dropDownContainer{
-    background-color:#ffd597f8;
+    background: radial-gradient(circle, rgb(255, 0, 0), rgb(0, 0, 0) 140%);
     position: absolute;
     width: 60vw;
     z-index: 2;
     top: 90px;
     border-radius: 10px;
-    border: #ffb443 solid;
+    border: #000000 solid;
     
 }
 
@@ -99,7 +100,7 @@ align-items: center;
     display: flex;
     flex-direction: column;
     position: absolute;
-    background-color:#BE013C;
+    background: radial-gradient(circle, rgb(255, 174, 0), rgb(68, 0, 9) 140%);
     top: 10px;
     width: 40vw;
     align-items: center;
@@ -140,7 +141,7 @@ align-items: center;
     justify-content: center;
     padding: 10px;
     font-weight: 800;
-    background-color:#BE013C;
+    background: radial-gradient(circle, rgb(255, 174, 0), rgb(68, 22, 0) 140%);
     border-radius: 20px;
     color: white;
     
@@ -156,7 +157,7 @@ align-items: center;
     display: flex;
     justify-content: center;
     border: solid black 2px;
-    background-color:#BE013C;
+    background: radial-gradient(circle, rgb(255, 174, 0), rgb(68, 0, 9) 140%);
     color: white;
     width: 130px;
     padding: 4px;
