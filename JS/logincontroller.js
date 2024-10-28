@@ -3,82 +3,70 @@ function goLogin() {
   changeView();
 }
 
-//take the inputs into register and cheks if they are all okay
+
 function registerUser() {
+  const { eMail, name, address, password, birthday, secondPassword, phone } = model.input.register;
 
-  //filter if slots are empty
-  if (!model.input.register.eMail) {
-    alert("mail not filled in");
-  } else if (!model.input.register.name) {
-    alert("name not filled in");
-  } else if (!model.input.register.adress) {
-    alert("address not filled in");
-  } else if (!model.input.register.password) {
-    alert("password not filled in");
-  } else if (!model.input.register.birthday) {
-    alert("birthday not filled in");
-  } else {
-    mail();
-  }
+  // see if inputs is filled
+  if (!eMail) return alert("Email not filled in");
+  if (!name) return alert("Name not filled in");
+  if (!address) return alert("Address not filled in");
+  if (!password) return alert("Password not filled in");
+  if (!birthday) return alert("Birthday not filled in");
 
-  //filter if the mail is okay
-  function mail() {
-    const parts = model.input.register.eMail.split("@");
+  // check if mail is in okay format
+  if (!isValidEmail(eMail)) return;
 
-    if (model.input.register.eMail.includes(" ")) {
-      return false;
-    } else if (parts.length !== 2) {
-      return false;
-    } else if (!parts[1].includes(".")) {
-      return false;
-    } else if (parts[0].includes(".")) {
-      return false;
-    } else if (parts[1].endsWith(".")) {
-      return false;
-    } else {
-      const user = model.data.users.find(
-        (user) => user.eMail === model.input.register.eMail
-      );
-      if (user) {
-        alert("Mail in use");
-      } else {
-        phone();
-      }
-    }
-  }
+  // Check if they are already in use
+  if (isEmailInUse(eMail)) return alert("Email in use");
+  if (isPhoneInUse(phone)) return alert("Number in use");
 
-  //filter if the phone is okay
-  function phone() {
-    const user = model.data.users.find(
-      (user) => user.phone === model.input.register.phone
-    );
-    if (user) {
-      alert("Nummer in use");
-    } else {
-      pushuser();
-    }
+  // register the user
+  pushUser();
+}
+
+// see jf tbe mail is okay
+function isValidEmail(email) {
+  const parts = email.split("@");
+  
+  if (email.includes(" ") || parts.length !== 2 || !parts[1].includes(".") || 
+      parts[0].includes(".") || parts[1].endsWith(".")) {
+    return false;
   }
-  //push into users and check password match
-  function pushuser() {
-    if (model.input.register.password === model.input.register.secondPassword) {
-      model.data.users.push({
-        ID: model.data.users.length,
-        name: model.input.register.name,
-        password: model.input.register.password,
-        birthday: model.input.register.birthday,
-        adress: model.input.register.address,
-        eMail: model.input.register.eMail,
-        phone: model.input.register.phone,
-        ongoingDate: false,
-        doneDates: [],
-        finishedDates: [],
-      });
-      loginW();
-      alert("user registered");
-    } else {
-      alert("Password dont match");
-    }
-  }
+  return true;
+}
+
+// Function to check if the email is already in use
+function isEmailInUse(email) {
+  return model.data.users.some(user => user.eMail === email);
+}
+
+// Function to check if the phone is already in use
+function isPhoneInUse(phone) {
+  return model.data.users.some(user => user.phone === phone);
+}
+
+// push the user
+function pushUser() {
+  const { password, secondPassword, name, birthday, address, eMail, phone } = model.input.register;
+
+  if (password !== secondPassword) return alert("Passwords don't match");
+
+  model.data.users.push({
+    ID: model.data.users.length,
+    name,
+    password,
+    birthday,
+    address,
+    eMail,
+    phone,
+    ongoingDate: false,
+    doneDates: [],
+    finishedDates: [],
+  });
+
+  loginW();
+  alert("User registered");
 }
 
 //check if log in is a match then make loginID the user id. if its a match it goes to homepage
