@@ -35,17 +35,19 @@ ${createCommentField()}
 }
 function createCommentField(){
   let html='';
+  
   for(let comment of model.data.Dates[model.app.selectedDate].review){
-    let name = model.data.users[comment.userId].name
-    let rating = comment.Rating
-    let starRating = convertRatingToStars(rating)
-    html +=`
-    <div class="infoCommentBox" onclick="goFriend(${comment.userId})">
+      let name = model.data.users[comment.userId].name
+      let rating = comment.Rating
+      let starRating = convertRatingToStars(rating)
+      html +=`
+      <div class="infoCommentBox" onclick="goFriend(${comment.userId})">
       <div>${name}</div>
       <div>${comment.comment}</div>
       <div style="color: gold">${starRating}</div>
-    </div>
-    `;
-  }
+      </div>
+      `;
+    }
+  
   return html;
 }
