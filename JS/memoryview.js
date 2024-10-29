@@ -19,11 +19,12 @@ function createImages(){
     let html='';
     for (let i = 0; i < model.data.users[model.app.loggedinuserID].finishedDates.length; i++) {
         let user = model.data.users[model.app.loggedinuserID]
+        let starRating = convertRatingToStars(user.finishedDates[i].Rating)
         html += `
         <div class="memoryCard">
         ${user.finishedDates[i].Name}
         <img src="${user.finishedDates[i].memoryPicture}"/>
-        ${user.finishedDates[i].Rating}<br>
+        <div style="color: gold">${starRating}</div>
         ${user.finishedDates[i].day}<br>
         ${user.finishedDates[i].comment}
         </div>

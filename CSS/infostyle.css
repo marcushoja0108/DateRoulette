@@ -50,9 +50,15 @@
   font-size: 28px;
 }
 .infoCommentBox{
-  border: 1px solid black;
+  border: 1px solid white;
+  border-radius: 10px;
   padding: 5px;
   margin: 5px;
   text-align: center;
+  color: white;
+}
+.infoCommentMessage{
+  text-align: center;
+  margin-top: 10px;
   color: white;
 }

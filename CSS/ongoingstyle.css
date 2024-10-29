@@ -36,9 +36,13 @@ text-align: center;
     height: 400px;
     width: 90%;
     margin-top: 10px;
+    background-color: white;
 }
 .star-rating{
     font-size: xx-large;
+}
+.stars {
+    color: gray;
 }
 .onGoingComment input {
     font-size: large;

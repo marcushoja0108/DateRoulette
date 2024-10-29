@@ -14,7 +14,9 @@ function updateHomeView(){
         </div>
         ${createFilterView()}
             <div class="randomContainer">${randomContent()}</div>
+            <div class="testButton" >
             <button onclick="goToSightseeing()">Go to sightseeing</button>
+            </div>
         `;
     }
 
