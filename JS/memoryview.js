@@ -24,7 +24,7 @@ function createImages(){
         ${user.finishedDates[i].Name}
         <img src="${user.finishedDates[i].memoryPicture}"/>
         ${user.finishedDates[i].Rating}<br>
-        ${user.finishedDates[i].day}
+        ${user.finishedDates[i].day}<br>
         ${user.finishedDates[i].comment}
         </div>
         
