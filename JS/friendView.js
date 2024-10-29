@@ -27,13 +27,13 @@ function createfriendDates(){
             </div>
             <div class="FriendCommentName">
                 <div class="friendFieldfirst">Rating: </div>
-                <div class="friendField">${starRating}</div>
+                <div style="color: gold"class="friendField">${starRating}</div>
             </div>
             <div class="FriendCommentName">
                 <div class="friendFieldfirst">Kommentar: </div>
                 <div class="friendField">${date.comment}</div>
             </div>
-            <div>${date.day}</div>
+            <div style="font-size: 12px">${date.day}</div>
         </div>
         `;
         }

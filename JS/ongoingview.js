@@ -17,7 +17,6 @@ function updateOngoingView(){
                     <img height = 90px src="IMG/Ongoingheart.png" onclick="ongoingRating()"/>
                 </div>
             </div>
-            <button onclick="goFriend(0)">go to friend</button>
     `;
 }
 //ratingview

@@ -14,6 +14,7 @@ function updateHomeView(){
         </div>
         ${createFilterView()}
             <div class="randomContainer">${randomContent()}</div>
+            <button onclick="goToSightseeing()">Go to sightseeing</button>
         `;
     }
 
@@ -49,4 +50,8 @@ function randomContent(){
         ${startWheelAnimation}
     `;
     return html;
+}
+function goToSightseeing(){
+    model.app.selectedDate = 9;
+    goInfo();
 }

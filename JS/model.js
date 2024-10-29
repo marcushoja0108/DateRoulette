@@ -3,7 +3,7 @@ const model = {
         loggedinuserID: 0,
         pages: ["HomePage", "Login", "infopage", "memory", "ongoingDate", "friendPage"],
         currentpage: "HomePage",
-        selectedDate: 0,
+        selectedDate: 9,
         selectedFriend: 0,
     },
 
@@ -53,14 +53,14 @@ const model = {
             [
                 {
                     ID: 0,
-                    name: "Martin",
+                    name: "Therese",
                     password: "123",
                     birthday: '13.10.16',
                     adress: "getacademny",
-                    eMail: "martinskal@paadate.no",
+                    eMail: "therese@date.no",
                     phone: "69696969",
                     ongoingDate: false,
-                    doneDates: ['kino','piknik i parken'],
+                    doneDates: ["kino","piknik i parken","sightseeing"],
                     finishedDates: [
                         {
                             Name: "kino",
@@ -75,9 +75,43 @@ const model = {
                             day: '14.10.2024, 11:08:13',
                             comment: 'Raff pølse i Thermos date.',
                             memoryPicture: "dateImage/park.jpg",
+                        },
+                        {
+                            Name: "sightseeing",
+                            Rating: 2,
+                            day: '14.10.2024, 11:08:13',
+                            comment: 'Grei date, men satt ikke pris på alle duene.',
+                            memoryPicture: "dateImage/sightseeing.jpg",
                         }
                     ],
-                }
+                },
+                {
+                    ID: 1,
+                    name: "Martin",
+                    password: "123",
+                    birthday: '13.10.16',
+                    adress: "getacademny",
+                    eMail: "martinskal@paadate.no",
+                    phone: "69696969",
+                    ongoingDate: false,
+                    doneDates: ["hjemmekino","sightseeing"],
+                    finishedDates: [
+                        {
+                            Name: "hjemmekino",
+                            Rating: 5,
+                            day: '14.10.2024, 11:08:13',
+                            comment: 'Filmen var god, og likte daten.',
+                            memoryPicture: "dateImage/home_theater.jpg",
+                        },
+                        {
+                            Name: "sightseeing",
+                            Rating: 4,
+                            day: '14.10.2024, 11:08:13',
+                            comment: 'Kult å se nye sider av byen.',
+                            memoryPicture: "dateImage/sightseeing.jpg",
+                        }
+                    ],
+                },
             ],
 
         Dates: [
@@ -90,10 +124,13 @@ const model = {
                 description: "Gå på kino",
                 Picture: "dateImage/kino.jpg",
                 Category: ["cozy","kultur","sosialt","inne"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: [
+                    {
+                    userId: 0,
+                    comment: 'Koselig, men dårlig film.',
+                    Rating: 2,
+                    },
+                ]
             },
 
             {
@@ -105,10 +142,13 @@ const model = {
                 description: "Nyt en piknik med hjemmelaget mat i parken",
                 Picture: "dateImage/park.jpg",
                 Category: ["cozy","ute","sosialt"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: [
+                    {
+                    userId: 0,    
+                    comment: 'Raff pølse i Thermos date.',
+                    Rating: 4,
+                    }
+            ]
             },
 
             {
@@ -135,10 +175,13 @@ const model = {
                 description: "Se en film hjemme med popcorn",
                 Picture: "dateImage/home_theater.jpg",
                 Category: ["cozy","inne","usosialt"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: [
+                    {
+                    userId: 1,
+                    comment: 'Filmen var god, og likte daten.',
+                    Rating: 5,
+                    }
+            ]
             },
 
             {
@@ -225,10 +268,18 @@ const model = {
                 description: "Utforsk en ny del av byen",
                 Picture: "dateImage/sightseeing.jpg",
                 Category: ["sosialt","ute","kultur"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: [
+                    {
+                    userId: 1,
+                    comment: 'Kult å se nye sider av byen.',
+                    Rating: 4,
+                    },
+                    {
+                    userId: 0,
+                    comment: 'Grei date, men satt ikke pris på alle duene.',
+                    Rating: 2,
+                    },
+            ]
             },
 
             {
