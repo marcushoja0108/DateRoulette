@@ -22,7 +22,7 @@ function loginW(){
     Email
     <input type="text" oninput="model.input.login.eMail=this.value" >
     password
-    <input type="text" oninput="model.input.login.password=this.value">
+    <input type="password" oninput="model.input.login.password=this.value">
     <button class="" onclick="logincheck()">log in</button>
     Dont have a account?
     <button class="" onclick="signup()">Sign up</button>
@@ -43,7 +43,7 @@ function signup(){
             PhoneNummer
             <input type="text" oninput= "model.input.register.phone=this.value">
             Address
-            <input type="text" oninput= "model.input.register.adress=this.value">
+            <input type="text" oninput= "model.input.register.address=this.value">
             birthday
             <input  type="date" oninput= "model.input.register.birthday=this.value">
             Email

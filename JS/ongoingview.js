@@ -31,16 +31,11 @@ function ongoingRating(){
             <div class="ratingCard">
                 <h3>Hvordan var daten?</h3>
                 <div class="star-rating">
-                    <input type="radio" id="star5" name="rating" value="5" onclick="dateRating(this.value)">
-                    <label for="star5" title="5 stars">☆</label>
-                    <input type="radio" id="star4" name="rating" value="4" onclick="dateRating(this.value)">
-                    <label for="star4" title="4 stars">☆</label>
-                    <input type="radio" id="star3" name="rating" value="3" onclick="dateRating(this.value)">
-                    <label for="star3" title="3 stars">☆</label>
-                    <input type="radio" id="star2" name="rating" value="2" onclick="dateRating(this.value)">
-                    <label for="star2" title="2 stars">☆</label>
-                    <input type="radio" id="star1" name="rating" value="1" onclick="dateRating(this.value)">
-                    <label for="star1" title="1 star">☆</label>
+                    <span class="stars" onclick="rate(1)">★</span>
+                    <span class="stars" onclick="rate(2)">★</span>
+                    <span class="stars" onclick="rate(3)">★</span>
+                    <span class="stars" onclick="rate(4)">★</span>
+                    <span class="stars" onclick="rate(5)">★</span>
                 </div>
                 <div class="onGoingComment">
                     <input type="text" value="${model.input.endDate.comment ?? ''}" oninput="model.input.endDate.comment=this.value"/>

@@ -14,6 +14,7 @@ function updateHomeView(){
         </div>
         ${createFilterView()}
             <div class="randomContainer">${randomContent()}</div>
+            <button onclick="goToSightseeing()">Go to sightseeing</button>
         `;
     }
 
@@ -28,6 +29,7 @@ function createFilterView(){
         return `
     <div class="dropDownContainer">
         <div class="filterGrid">
+        <div class="filterItem">${createCategory()}</div>
             <div class="filterItem" onclick="disablePriceButton()">${createMaxPrice()}</div>
             <div class="filterItem" onclick="addCounter()">${createLocation()}</div>
             <div class="filterItem" onclick="disableTimeSpentButton()">${createTimeUsage()}</div>
@@ -42,10 +44,14 @@ function createFilterView(){
 
 // spin og random view
 function randomContent(){
-    let startWheelAnimation = model.input.filter.startWheel ? `<img width='350px' class='wheelspin' src='wheel.png'>` : `<img width='350px' class='wheel' src='wheel.png'>`
+    let startWheelAnimation = model.input.filter.startWheel ? `<img width='350px' class='wheelspin' src='new_wheel.png'>` : `<img width='350px' class='wheel' src='new_wheel.png'>`
     let html = /*HTML*/`
         <div class="spinButton" onclick="startWheel()">SPIN</div>
         ${startWheelAnimation}
     `;
     return html;
+}
+function goToSightseeing(){
+    model.app.selectedDate = 9;
+    goInfo();
 }

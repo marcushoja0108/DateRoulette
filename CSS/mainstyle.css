@@ -3,7 +3,7 @@ body{
     margin: 0;
     box-sizing: border-box;
     outline: none;
-    background-color: rgb(255, 230, 230);
+    background: radial-gradient(circle, rgb(255, 84, 84), rgb(0, 0, 0) 140%);
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     
 }

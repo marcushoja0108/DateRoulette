@@ -42,6 +42,7 @@ function filterRandomDate() {
     let disablePrice = filterInput.disablePrice;
     let disableTimeSpent = filterInput.disableTimeSpent;
     let disableHome = filterInput.disableHome;
+    let disableCategory = filterInput.disableCategory;
     
     let doneDates = model.data.users[model.app.loggedinuserID].doneDates
 
@@ -50,6 +51,7 @@ function filterRandomDate() {
                 (disablePrice || date.maxPrice <= filterInput.maxPrice) &&
                 (disableTimeSpent || date.timeSpent <= filterInput.timeUsage) &&
                 (disableHome || date.home === filterInput.home) &&
+                (disableCategory || date.Category.includes(filterInput.selectedCategory)) &&
                 !doneDates.includes(date.Name) 
     );
 }
@@ -69,6 +71,11 @@ function disableTimeSpentButton(){
     model.input.filter.disableTimeSpent = !model.input.filter.disableTimeSpent
     updateHomeView()
 }
+function disableCategoryButton(){
+    model.input.filter.disableCategory = true; 
+    model.input.filter.categoryDropDown = false; 
+    updateHomeView()
+}
 
 function addCounter(){
     model.input.filter.buttoncounter ++
@@ -78,19 +85,11 @@ function addCounter(){
     updateHomeView()
 }
 // default filters
-// function createMaxPrice(){
-//      let html = /*HTML*/ `  
-//         MaksPris
-//         <input type="range" min="0" max="2000" value=${model.input.filter.maxPrice}
-//         onchange="setMaxPrice(this.value)">
-//         ${createMaxPriceContent()}
-//         `;
-//         return html
-//     }
+
 function createMaxPrice(){
     if(model.input.filter.disablePrice){
         return `  
-        Slå på pris
+        <div class="turnOnButton">Slå på pris</div>
         `;
     }else{
         return /*HTML*/ `  
@@ -119,31 +118,12 @@ function createMaxPriceContent(){
     }
 }
 
-// function createLocation(){
-//     if(model.input.filter.home == true){
-//         let html = /*HTML*/`
-//             <div onclick="changeHomeFilter()">Hjemme</div>
-//         `;
-//         return html
-//         }
-//         else if(model.input.filter.home == false){
-//             let html = /*HTML*/`
-//             <div onclick="changeHomeFilter()">Ikke hjemme</div>
-//             `;
-//             return html
-//         }
-//         else if(model.input.filter.home == 'disabled'){
-//             let html = /*HTML*/`
-//             <div style="backround-color: gray" onclick="changeHomeFilter()">Deaktivert</div>
-//             `;
-//             return html
-//         }
-// }
+
 function createLocation(){
     if(model.input.filter.buttoncounter == 0){
         model.input.filter.disableHome = true
         return /*HTML*/`
-        <div>Slå på hjemme</div>
+        <div class="turnOnButton">Slå på hjemme</div>
         `;
     }else if(model.input.filter.buttoncounter == 1){
         model.input.filter.home = true
@@ -160,22 +140,12 @@ function createLocation(){
     }
 }
 
-// function changeHomeFilter(){
-//     if(model.input.filter.home == true){
-//         model.input.filter.home = false
-//         updateHomeView();
-//     }
-//     else{
-//         model.input.filter.home = true
-//         updateHomeView();
-//     }
-// }
 
 
 function createTimeUsage(){
     if(model.input.filter.disableTimeSpent){
         return `  
-        Slå på Tidsbruk
+        <div class="turnOnButton">Slå på Tidsbruk</div>
         `;
     }else{
         return /*HTML*/ `
@@ -202,20 +172,11 @@ function setMaxTime(value){
     updateHomeView();
 }
 
-// function createFromTime(){
-//     let html = /*HTML*/ `
-//     Fra kl
-//         <input type="range" min="0" max="23" value = ${model.input.filter.fromTime}
-//         onchange="model.input.filter.fromTime = this.value; updateHomeView()">
-//         ${model.input.filter.fromTime}.00
-    
-//     `;
-//     return html
-// }
+
 function createFromTime(){
     if(model.input.filter.disableFromTime){
         return `  
-        Slå på fra klokken
+        <div class="turnOnButton">Slå på fra klokken</div>
         `;
     }else{
         return /*HTML*/ `
@@ -226,6 +187,47 @@ function createFromTime(){
         `;
 
     }
+}
+
+// kategori filter påbegynt
+function createCategory(){
+    if(model.input.filter.disableCategory){
+        return`
+        <div onclick="model.input.filter.disableCategory = false; updateHomeView()" 
+        class="turnOnButton">Slå på kategori</div>
+        `;
+    }else{
+        if(model.input.filter.categoryDropDown == false){
+            return /*HTML*/ `
+            <div onclick="model.input.filter.categoryDropDown = true; updateHomeView()">Kategori</div>
+            <div>${model.input.filter.selectedCategory}</div>
+            `;
+        }
+        else{
+            return /*HTML*/ `
+            <div class="categoryDropDown" >
+            ${createCategoryDropdown()}</div>
+            `;
+        }
+    }
+}
+
+function createCategoryDropdown(){
+    let category = model.input.filter.categories
+    let html = `<div onclick="disableCategoryButton()" class="turnOffButton">Slå av kategori</div>`;
+
+    for(let i=0; i < model.input.filter.categories.length; i++){
+        html += `<div class="category" onclick="selectCategory(${i})">${category[i]}</div>
+        `;
+    }
+    return html
+}
+
+function selectCategory(i){
+    let filter = model.input.filter
+    filter.selectedCategory = filter.categories[i]
+    filter.categoryDropDown = false; 
+    updateHomeView();
 }
 
 function startWheel(){

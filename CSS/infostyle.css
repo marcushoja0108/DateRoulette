@@ -85,29 +85,3 @@
   color: #4b0018;
   font-size: 28px;
 }
-
-.info-date-btn {
-  background-color: #be013c;
-  color: #f0f0f0;
-  padding: 10px 10px;
-  display: block;
-  margin: 0 auto;
-}
-
-.info-date-btn:hover {
-  background-color: #4b0018;
-}
-
-.info-cont {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  column-gap: 20px;
-}
-
-.fa-xmark {
-  font-size: 25px;
-
-  position: absolute;
-  right: 20px;
-}

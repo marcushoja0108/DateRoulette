@@ -1,5 +1,3 @@
-updateInfoView();
-
 function updateInfoView() {
   const selectedIndexDate = model.app.selectedDate;
   const selectedDate = model.data.Dates[selectedIndexDate];
@@ -11,7 +9,7 @@ function updateInfoView() {
 
   <div class='header'>
    <div class="Box-left"></div>
-        <img class='header-img' src="th4.png"/>
+        <img class='header-img' src="th4.png" onclick="goHome()"/>
         <div class="Box-right"></div>
         </div>
     </div>
@@ -51,11 +49,12 @@ function updateInfoView() {
     </div>
 
         <div class='btn-container'>
-            <button onclick='goBack()'>Tilbake</button>
+            <button onclick='goHome()'>Tilbake</button>
             <button onclick="goOngoing()">Aksepter</button>
         </div>
 
 </div>
+${createCommentField()}
     `;
   }
 
@@ -75,4 +74,20 @@ function updateInfoView() {
       infoDate.classList.remove("show");
     }
   });
+}
+function createCommentField(){
+  let html='';
+  for(let comment of model.data.Dates[model.app.selectedDate].review){
+    let name = model.data.users[comment.userId].name
+    let rating = comment.Rating
+    let starRating = convertRatingToStars(rating)
+    html +=`
+    <div class="infoCommentBox" onclick="goFriend(${comment.userId})">
+      <div>${name}</div>
+      <div>${comment.comment}</div>
+      <div style="color: gold">${starRating}</div>
+    </div>
+    `;
+  }
+  return html;
 }

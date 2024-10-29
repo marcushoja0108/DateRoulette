@@ -1,5 +1,5 @@
 .logcontainer {
-    background: radial-gradient(circle, rgba(190, 1, 60, 1), rgb(68, 0, 9) 140%);
+    background: radial-gradient(circle, rgb(255, 0, 81), rgb(68, 58, 0) 140%);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

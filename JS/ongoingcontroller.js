@@ -1,10 +1,15 @@
 function goOngoing(){
+    model.data.users[model.app.loggedinuserID].ongoingDate = true;
     model.app.currentpage = model.app.pages[4];
     changeView();
 }
-//rating konvertert til tall
-function dateRating(value) {
-    model.input.endDate.rating = Number(value);
+//rating
+function rate(rating){
+    let stars = document.getElementsByClassName('stars')
+    model.input.endDate.rating = rating;
+    for (let i = 0; i < 5; i++) {
+        stars[i].style.color = i < rating ? 'gold' : 'gray';
+    }
 }
 //lagring for bilde, blir sendt til memoryPicture
 function readPhotoMemory(input) {
@@ -39,6 +44,13 @@ function makeMemory(){
             }
         )
         model.data.users[model.app.loggedinuserID].doneDates.push(model.data.Dates[model.app.selectedDate].Name)
+        model.data.Dates[model.app.selectedDate].review.push(
+            {
+                userId: model.app.loggedinuserID,
+                comment: model.input.endDate.comment,
+                Rating: model.input.endDate.rating
+            }
+        )
         model.data.users[model.app.loggedinuserID].ongoingDate = false;
         model.input.endDate.memoryPicture = '';
         model.input.endDate.rating = '';
