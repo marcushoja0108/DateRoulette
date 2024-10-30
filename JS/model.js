@@ -1,8 +1,8 @@
 const model = {
     app: {
         loggedinuserID: 0,
-        pages: ["HomePage", "Login", "infopage", "memory", "ongoingDate", "friendPage"],
-        currentpage: "Login",
+        pages: ["HomePage", "Login", "infopage", "memory", "ongoingDate", "friendPage","profilePage"],
+        currentpage: "profilePage",
         selectedDate: 9,
         selectedFriend: 0,
     },
@@ -45,6 +45,11 @@ const model = {
             comment: null,
             memoryPicture: null,
             showongoingMessage: '',
+        },
+        profile: {
+            inputSearch: '',
+            searchresult: '',
+            showSearch: '',
         }
     },
 
@@ -59,6 +64,12 @@ const model = {
                     adress: "getacademny",
                     eMail: "therese@date.no",
                     phone: "69696969",
+                    partner: [
+                        {
+                            userId: 1,
+                            hasAccepted: false,
+                        }
+                    ],
                     ongoingDate: false,
                     doneDates: ["kino","piknik i parken","sightseeing"],
                     finishedDates: [
@@ -93,6 +104,12 @@ const model = {
                     adress: "getacademny",
                     eMail: "martinskal@paadate.no",
                     phone: "69696969",
+                    partner: [
+                        {
+                            userId: 0,
+                            hasAccepted: true,
+                        }
+                    ],
                     ongoingDate: false,
                     doneDates: ["hjemmekino","sightseeing","kino","piknik i parken","museumstur","tur i skogen","baking","brettspillkveld","kafébesøk","konsert i parken"],
                     finishedDates: [

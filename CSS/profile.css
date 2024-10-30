@@ -1,0 +1,45 @@
+.Box-rightProfile {
+    width: 90px;
+    height: 90px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Box-leftProfile{
+    width: 90px;
+    height: 90px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.profileContainer{
+    margin-top: 105px;
+    color: white;
+}
+.profileSearchInput{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    padding: 5px;
+}
+.profileSearchInput input {
+    font-size: large;
+    border-radius: 10px 0 0 10px;
+    border: none;
+    padding: 3px;
+}
+.profileSearchInput button {
+    width: 100px;
+    height: 27px;
+    border-radius: 0 10px 10px 0;
+    padding: 5px;
+}
+.searchresultboxes {
+    border: 1px solid white;
+    padding: 5px;
+    margin: 5px;
+    color: white;
+}

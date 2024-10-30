@@ -1,4 +1,3 @@
-updateLoginView();
 function updateLoginView() {
   document.getElementById("app").innerHTML = /*html*/ `
   <div class="logcontainer"> 

@@ -2,11 +2,7 @@ function updateFriendView(){
     document.getElementById('app').innerHTML = /*HTML*/ `
     ${createFriendHeader()}
     <div class="friendContainer">
-        <h1>
-            <a href="mailto:${model.data.users[model.app.selectedFriend].eMail}">
-                ${model.data.users[model.app.selectedFriend].name}
-            </a>
-        </h1>
+        <h1><a href="mailto:${model.data.users[model.app.selectedFriend].eMail}">${model.data.users[model.app.selectedFriend].name}</a></h1>
     </div>
     <div class="friendComment">${createfriendDates()}</div>
     `;

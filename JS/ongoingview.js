@@ -2,7 +2,6 @@
 function updateOngoingView(){
     document.getElementById('app').innerHTML =/*html*/ `
         ${createOngoingHeader()}
-
         <div class="ongoingGrid">
         <h2>${model.data.users[model.app.loggedinuserID].name}, ${model.data.Dates[model.app.selectedDate].Name} daten din venter...</h2>
         <div class="ongoingText">Trykk på hjertet når daten er ferdig</div>
@@ -28,7 +27,7 @@ function createOngoingHeader(){
     <div class="header">
         <div class="Box-left"></div>
         <img class='header-img' src="th4.png"/>
-        <div class="Box-right"><img class='profile-img' height = 90px src="profile.png" onclick="goMemory()"/></div>
+        <div class="Box-right"><img class='profile-img' height = 90px src="profile.png" onclick="goProfile()"/></div>
     </div>
     `;
 }

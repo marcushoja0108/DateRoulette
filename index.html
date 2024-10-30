@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="CSS/memorystyle.css" />
     <link rel="stylesheet" href="CSS/ongoingstyle.css" />
     <link rel="stylesheet" href="CSS/friendstyle.css" />
+    <link rel="stylesheet" href="CSS/profile.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -29,6 +30,7 @@
         else if (model.app.currentpage == "Login") updateLoginView();
         else if (model.app.currentpage == "ongoingDate") updateOngoingView();
         else if (model.app.currentpage == "friendPage") updateFriendView();
+        else if (model.app.currentpage == "profilePage") updateProfileView();
       }
     </script>
     <script src="JS/model.js"></script>
@@ -38,11 +40,13 @@
     <script src="JS/memorycontroller.js"></script>
     <script src="JS/ongoingcontroller.js"></script>
     <script src="JS/friendController.js"></script>
+    <script src="JS/profileController.js"></script>
     <script src="JS/homeview.js"></script>
     <script src="JS/infoview.js"></script>
     <script src="JS/loginview.js"></script>
     <script src="JS/memoryview.js"></script>
     <script src="JS/ongoingview.js"></script>
     <script src="JS/friendView.js"></script>
+    <script src="JS/profileView.js"></script>
   </body>
 </html>

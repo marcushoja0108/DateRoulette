@@ -9,14 +9,12 @@ function updateHomeView(){
             <img class='header-img' src="th4.png"
             onclick="goHome()"/>
             <div class="Box-right">
-            <img class='profile-img' height = 90px src="profile.png"  onclick="goMemory()"/>
+            <img class='profile-img' height = 90px src="profile.png"  onclick="goProfile()"/>
             </div>
         </div>
         ${createFilterView()}
             <div class="randomContainer">${randomContent()}</div>
-            <div class="testButton" >
-            <button onclick="goToSightseeing()">Go to sightseeing</button>
-            </div>
+            
         `;
     }
 
@@ -52,8 +50,4 @@ function randomContent(){
         ${startWheelAnimation}
     `;
     return html;
-}
-function goToSightseeing(){
-    model.app.selectedDate = 9;
-    goInfo();
 }

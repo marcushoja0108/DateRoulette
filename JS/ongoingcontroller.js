@@ -31,9 +31,10 @@ function cancelOngoingRating(){
 }
 //pusher daten inn i doneDates, finishDates og review.
 function makeMemory(){
-    todaysDate = new Date().toLocaleString()
+    if (model.input.endDate.memoryPicture || model.input.endDate.rating || model.input.endDate.comment) {
     if(model.input.endDate.memoryPicture && model.input.endDate.rating && model.input.endDate.comment){
         pushFinishdates()
+        pushDoneDates()
         pushReview()
         makeMemorySettings()
         goHome()
@@ -41,9 +42,17 @@ function makeMemory(){
         model.input.endDate.showongoingMessage = "Alle felter må fylles inn"
         ongoingRating()
     }
+} else {
+    pushDoneDates();
+    makeMemorySettings()
+    goHome()
+}
+}
+function pushDoneDates(){
+    model.data.users[model.app.loggedinuserID].doneDates.push(model.data.Dates[model.app.selectedDate].Name)
 }
 function pushFinishdates(){
-        model.data.users[model.app.loggedinuserID].doneDates.push(model.data.Dates[model.app.selectedDate].Name)
+        let todaysDate = new Date().toLocaleString()
         model.data.users[model.app.loggedinuserID].finishedDates.push(
         {
             Name: model.data.Dates[model.app.selectedDate].Name,
