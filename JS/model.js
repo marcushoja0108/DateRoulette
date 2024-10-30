@@ -2,7 +2,7 @@ const model = {
     app: {
         loggedinuserID: 0,
         pages: ["HomePage", "Login", "infopage", "memory", "ongoingDate", "friendPage"],
-        currentpage: "HomePage",
+        currentpage: "Login",
         selectedDate: 9,
         selectedFriend: 0,
     },
@@ -20,7 +20,7 @@ const model = {
         login: {
             eMail: null,
             password: null,
-            showMessage: null
+            showMessage: '',
         },
         filter: {
             isOpen: false,

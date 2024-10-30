@@ -13,11 +13,12 @@ function updateLoginView() {
     `;
 }
 
-function loginW(){
-    document.getElementById("app").innerHTML = /*html*/ `
+function loginW() {
+  document.getElementById("app").innerHTML = /*html*/ `
     <div class="logcontainer"> 
     <div class="login">
     <img class='loginheader-img' src="th4.png"/>
+    <div class='wronglogin'>${model.input.login.showMessage}</div>
     <div class="buttons">
     Email
     <input type="text" oninput="model.input.login.eMail=this.value" >
@@ -32,11 +33,12 @@ function loginW(){
     `;
 }
 
-function signup(){
-    document.getElementById("app").innerHTML = /*html*/ `
+function signup() {
+  document.getElementById("app").innerHTML = /*html*/ `
     <div class="logcontainer"> 
         <div class="login">
             <img class='loginheader-img' src="th4.png"/>
+            <div class="wronglogin">${model.input.login.showMessage}</div>
             <div class="buttons">
             Name
             <input type="text" oninput= "model.input.register.name=this.value">

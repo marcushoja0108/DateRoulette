@@ -8,18 +8,19 @@ function registerUser() {
   const { eMail, name, address, password, birthday, secondPassword, phone } = model.input.register;
 
   // see if inputs is filled
-  if (!eMail) return alert("Email not filled in");
-  if (!name) return alert("Name not filled in");
-  if (!address) return alert("Address not filled in");
-  if (!password) return alert("Password not filled in");
-  if (!birthday) return alert("Birthday not filled in");
+  signup()
+  if (!eMail) return model.input.login.showMessage = 'Email not filled in';
+  if (!name) return model.input.login.showMessage = 'Name not filled in';
+  if (!address) return model.input.login.showMessage = 'Address not filled in';
+  if (!password) return model.input.login.showMessage = 'Password not filled in';
+  if (!birthday) return model.input.login.showMessage = 'Birthday not filled in';
 
   // check if mail is in okay format
   if (!isValidEmail(eMail)) return;
 
   // Check if they are already in use
-  if (isEmailInUse(eMail)) return alert("Email in use");
-  if (isPhoneInUse(phone)) return alert("Number in use");
+  if (isEmailInUse(eMail)) return model.input.login.showMessage = 'Email in use';
+  if (isPhoneInUse(phone)) return model.input.login.showMessage = 'Phone nummer in use';
 
   // register the user
   pushUser();
@@ -50,8 +51,8 @@ function isPhoneInUse(phone) {
 function pushUser() {
   const { password, secondPassword, name, birthday, address, eMail, phone } = model.input.register;
 
-  if (password !== secondPassword) return alert("Passwords don't match");
-
+  if (password !== secondPassword) return model.input.login.showMessage = "Passwords don't match";
+  model.input.login.showMessage = 'User Registered';
   model.data.users.push({
     ID: model.data.users.length,
     name,
@@ -66,7 +67,6 @@ function pushUser() {
   });
 
   loginW();
-  alert("User registered");
 }
 
 //check if log in is a match then make loginID the user id. if its a match it goes to homepage
@@ -82,6 +82,7 @@ function logincheck() {
     goHome();
     console.log(model.app.loggedinuserID);
   } else {
-    alert("Invalid email or password");
+    loginW()
+    return model.input.login.showMessage = "Invalid email or password";
   }
 }

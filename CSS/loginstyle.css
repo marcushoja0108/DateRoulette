@@ -25,6 +25,12 @@
     gap: 10px;
     width: auto;
 }
+.wronglogin{
+
+    color: rgb(255, 217, 0);
+    font-size: large;
+    
+}
 
 button {
     padding: 10px 20px;
@@ -41,3 +47,4 @@ button {
 button:hover {
     background-color: #ffd900;
 }
+
