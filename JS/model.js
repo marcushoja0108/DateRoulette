@@ -30,7 +30,7 @@ const model = {
             disablePrice: true,
             disableFromTime: true,
             disableHome: true,
-            disableCategory: false,
+            disableCategory: true,
             categoryDropDown: false,
             timeUsage: 4,
             maxPrice: 800,
@@ -64,9 +64,9 @@ const model = {
                     finishedDates: [
                         {
                             Name: "kino",
-                            Rating: 2,
+                            Rating: 5,
                             day: '14.10.2024, 11:08:13',
-                            comment: 'Koselig, men dårlig film.',
+                            comment: 'Rågod film og hyggelig selskap.',
                             memoryPicture: "dateImage/kino.jpg",
                         },
                         {
@@ -94,7 +94,7 @@ const model = {
                     eMail: "martinskal@paadate.no",
                     phone: "69696969",
                     ongoingDate: false,
-                    doneDates: ["hjemmekino","sightseeing"],
+                    doneDates: ["hjemmekino","sightseeing","kino","piknik i parken","museumstur","tur i skogen","baking","brettspillkveld","kafébesøk","konsert i parken"],
                     finishedDates: [
                         {
                             Name: "hjemmekino",
@@ -109,7 +109,63 @@ const model = {
                             day: '14.10.2024, 11:08:13',
                             comment: 'Kult å se nye sider av byen.',
                             memoryPicture: "dateImage/sightseeing.jpg",
-                        }
+                        },
+                        {
+                            Name: "kino",
+                            Rating: 2,
+                            day: '14.10.2024, 11:08:13',
+                            comment: 'Koselig, men dårlig film.',
+                            memoryPicture: "dateImage/kino.jpg",
+                        },
+                        {
+                            Name: "piknik i parken",
+                            Rating: 1,
+                            day: '14.10.2024, 11:08:13',
+                            comment: 'Likte ikke maten',
+                            memoryPicture: "dateImage/park.jpg",
+                        },
+                        {
+                            Name: "museumstur",
+                            Rating: 1,
+                            day: '14.10.2024, 11:08:13',
+                            comment: 'Alt for mye gamle folk.',
+                            memoryPicture: "dateImage/museum.jpg",
+                        },
+                        {
+                            Name: "tur i skogen",
+                            Rating: 1,
+                            day: '14.10.2024, 11:08:13',
+                            comment: 'Alt for mye joggere.',
+                            memoryPicture: "dateImage/forest.jpg",
+                        },
+                        {
+                            Name: "baking",
+                            Rating: 5,
+                            day: '14.10.2024, 11:08:13',
+                            comment: 'Likte å leke med deg.',
+                            memoryPicture: "dateImage/baking.jpg",
+                        },
+                        {
+                            Name: "brettspillkveld",
+                            Rating: 1,
+                            day: '14.10.2024, 11:08:13',
+                            comment: 'Tapte.',
+                            memoryPicture: "dateImage/boardgames.jpg",
+                        },
+                        {
+                            Name: "kafébesøk",
+                            Rating: 4,
+                            day: '14.10.2024, 11:08:13',
+                            comment: 'Mye folk, men hyggelig selskap.',
+                            memoryPicture: "dateImage/cafe.jpg",
+                        },
+                        {
+                            Name: "konsert i parken",
+                            Rating: 1,
+                            day: '14.10.2024, 11:08:13',
+                            comment: 'Mannen hadde ikke peiling på stratocasteren.',
+                            memoryPicture: "dateImage/concert.jpg",
+                        },
                     ],
                 },
             ],
@@ -127,6 +183,11 @@ const model = {
                 review: [
                     {
                     userId: 0,
+                    comment: 'Rågod film og hyggelig selskap.',
+                    Rating: 5,
+                    },
+                    {
+                    userId: 1,
                     comment: 'Koselig, men dårlig film.',
                     Rating: 2,
                     },
@@ -147,7 +208,12 @@ const model = {
                     userId: 0,    
                     comment: 'Raff pølse i Thermos date.',
                     Rating: 4,
-                    }
+                    },
+                    {
+                    userId: 1,    
+                    comment: 'Likte ikke maten',
+                    Rating: 1,
+                    },
             ]
             },
 
@@ -160,7 +226,13 @@ const model = {
                 description: "Besøk et lokalt museum",
                 Picture: "dateImage/museum.jpg",
                 Category: ["kultur","innadvent","sosialt"],
-                review: []
+                review: [
+                    {
+                        userId: 1,    
+                        comment: 'Alt for mye gamle folk.',
+                        Rating: 1,
+                    },
+                ]
             },
 
             {
@@ -190,7 +262,13 @@ const model = {
                 description: "Gå en tur i skogen og nyt naturen",
                 Picture: "dateImage/forest.jpg",
                 Category: ["ute","usosialt"],
-                review: []
+                review: [
+                    {
+                    userId: 1,
+                    comment: 'Alt for mye joggere.',
+                    Rating: 1,
+                    }
+                ]
             },
 
             {
@@ -202,7 +280,13 @@ const model = {
                 description: "Bak noe godt sammen",
                 Picture: "dateImage/baking.jpg",
                 Category: ["cozy","inne","usosialt","mat"],
-                review: []
+                review: [
+                    {
+                    userId: 1,
+                    comment: 'Likte å leke med deg.',
+                    Rating: 5,
+                    }
+                ]
             },
 
             {
@@ -214,7 +298,13 @@ const model = {
                 description: "Spill brettspill hjemme",
                 Picture: "dateImage/boardgames.jpg",
                 Category: ["cozy","inne","sosialt","kreativitet"],
-                review: []
+                review: [
+                    {
+                    userId: 1,
+                    comment: 'Tapte.',
+                    Rating: 1,
+                    }
+                ]
             },
 
             {
@@ -226,7 +316,13 @@ const model = {
                 description: "Nyt kaffe og kake på en koselig kafé",
                 Picture: "dateImage/cafe.jpg",
                 Category: ["inne","sosialt","mat"],
-                review: []
+                review: [
+                    {
+                    userId: 1,
+                    comment: 'Mye folk, men hyggelig selskap.',
+                    Rating: 4,
+                    }
+                ]
             },
 
             {
@@ -238,7 +334,13 @@ const model = {
                 description: "Hør på en gratis konsert i parken",
                 Picture: "dateImage/concert.jpg",
                 Category: ["sosialt","ute","kultur"],
-                review: []
+                review: [
+                    {
+                    userId: 1,
+                    comment: 'Mannen hadde ikke peiling på stratocasteren.',
+                    Rating: 1,
+                    }
+                ]
             },
 
             {
