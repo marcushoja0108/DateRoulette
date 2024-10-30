@@ -45,20 +45,50 @@
 .info-name {
   color: #be013c;
 }
+
+.info-date.show {
+  background-color: #e9d1d1;
+  display: flex;
+  right: 20px;
+  border: 2px solid #be013c;
+  height: 30%;
+  padding: 0;
+  margin: 0;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  border-radius: 15px;
+  padding: 15px;
+}
+.info-date {
+  display: none;
+  background-color: #e9d1d1;
+  right: 20px;
+  border: 2px solid #be013c;
+  height: 30%;
+  padding: 0;
+  margin: 0;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  border-radius: 15px;
+  padding: 15px;
+}
+.info-date h2 {
+  color: #4b0018;
+}
+.info-date p {
+  font-size: 20px;
+  font-weight: 600;
+}
 .info-description {
   color: #4b0018;
   font-size: 28px;
 }
-.infoCommentBox{
-  border: 1px solid white;
-  border-radius: 10px;
+.infoCommentBox {
+  border: 1px solid black;
   padding: 5px;
   margin: 5px;
   text-align: center;
-  color: white;
-}
-.infoCommentMessage{
-  text-align: center;
-  margin-top: 10px;
   color: white;
 }
