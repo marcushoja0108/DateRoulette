@@ -29,35 +29,43 @@ function cancelOngoingRating(){
     model.input.endDate.rating = '';
     model.input.endDate.comment = '';
 }
-//pusher daten inn i doneDates og pusher memories inn i finishDates
-
+//pusher daten inn i doneDates, finishDates og review.
 function makeMemory(){
     todaysDate = new Date().toLocaleString()
     if(model.input.endDate.memoryPicture && model.input.endDate.rating && model.input.endDate.comment){
-        model.data.users[model.app.loggedinuserID].finishedDates.push(
-            {
-                Name: model.data.Dates[model.app.selectedDate].Name,
-                Rating: model.input.endDate.rating,
-                day: todaysDate,
-                comment: model.input.endDate.comment,
-                memoryPicture: model.input.endDate.memoryPicture,
-            }
-        )
-        model.data.users[model.app.loggedinuserID].doneDates.push(model.data.Dates[model.app.selectedDate].Name)
-        model.data.Dates[model.app.selectedDate].review.push(
-            {
-                userId: model.app.loggedinuserID,
-                comment: model.input.endDate.comment,
-                Rating: model.input.endDate.rating
-            }
-        )
-        model.data.users[model.app.loggedinuserID].ongoingDate = false;
-        model.input.endDate.memoryPicture = '';
-        model.input.endDate.rating = '';
-        model.input.endDate.comment = '';
+        pushFinishdates()
+        pushReview()
+        makeMemorySettings()
         goHome()
     }else{
         model.input.endDate.showongoingMessage = "Alle felter må fylles inn"
         ongoingRating()
     }
+}
+function pushFinishdates(){
+        model.data.users[model.app.loggedinuserID].doneDates.push(model.data.Dates[model.app.selectedDate].Name)
+        model.data.users[model.app.loggedinuserID].finishedDates.push(
+        {
+            Name: model.data.Dates[model.app.selectedDate].Name,
+            Rating: model.input.endDate.rating,
+            day: todaysDate,
+            comment: model.input.endDate.comment,
+            memoryPicture: model.input.endDate.memoryPicture,
+        }
+    )
+}
+function pushReview(){
+        model.data.Dates[model.app.selectedDate].review.push(
+        {
+            userId: model.app.loggedinuserID,
+            comment: model.input.endDate.comment,
+            Rating: model.input.endDate.rating
+        }
+    )
+}
+function makeMemorySettings(){
+    model.data.users[model.app.loggedinuserID].ongoingDate = false;
+    model.input.endDate.memoryPicture = '';
+    model.input.endDate.rating = '';
+    model.input.endDate.comment = '';
 }

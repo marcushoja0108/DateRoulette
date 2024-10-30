@@ -12,7 +12,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: aqua;
+    background: radial-gradient(circle, rgb(255, 157, 157), rgb(255, 86, 86) 130%);
     width: 95vw;
 }
 .memoryCard img {

@@ -85,3 +85,10 @@
   color: #4b0018;
   font-size: 28px;
 }
+.infoCommentBox {
+  border: 1px solid black;
+  padding: 5px;
+  margin: 5px;
+  text-align: center;
+  color: white;
+}

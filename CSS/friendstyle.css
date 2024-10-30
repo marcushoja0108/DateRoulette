@@ -5,11 +5,16 @@
     justify-content: center;
     align-items: center;
 }
+.friendContainer a {
+    color: white;
+    text-decoration: none;
+}
+
 .friendDateBox{
-    background-color: #BE013C;
     color: white;
     padding: 5px;
     margin: 5px;
+    border: 1px solid white;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -33,6 +38,24 @@
     text-align:start;
 }
 .FriendCommentName {
+    display: flex;
+    justify-content: center;
+}
+.Box-leftFriend {
+    width: 90px;
+    height: 90px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+}
+.showStarRating{
+    color: gold;
+    width: 240px;
+    text-align:start;
+    margin-left: 5px;
+}
+.testButton{
+    margin-top: 30px;
     display: flex;
     justify-content: center;
 }

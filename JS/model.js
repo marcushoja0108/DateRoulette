@@ -160,10 +160,7 @@ const model = {
                 description: "Besøk et lokalt museum",
                 Picture: "dateImage/museum.jpg",
                 Category: ["kultur","innadvent","sosialt"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -193,10 +190,7 @@ const model = {
                 description: "Gå en tur i skogen og nyt naturen",
                 Picture: "dateImage/forest.jpg",
                 Category: ["ute","usosialt"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -208,10 +202,7 @@ const model = {
                 description: "Bak noe godt sammen",
                 Picture: "dateImage/baking.jpg",
                 Category: ["cozy","inne","usosialt","mat"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -223,10 +214,7 @@ const model = {
                 description: "Spill brettspill hjemme",
                 Picture: "dateImage/boardgames.jpg",
                 Category: ["cozy","inne","sosialt","kreativitet"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -238,10 +226,7 @@ const model = {
                 description: "Nyt kaffe og kake på en koselig kafé",
                 Picture: "dateImage/cafe.jpg",
                 Category: ["inne","sosialt","mat"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -253,10 +238,7 @@ const model = {
                 description: "Hør på en gratis konsert i parken",
                 Picture: "dateImage/concert.jpg",
                 Category: ["sosialt","ute","kultur"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -291,10 +273,7 @@ const model = {
                 description: "Les bøker sammen",
                 Picture: "dateImage/reading.jpg",
                 Category: ["cozy","inne","sosialt"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -306,10 +285,7 @@ const model = {
                 description: "Ta bilder av naturen",
                 Picture: "dateImage/photosafari.jpg",
                 Category: ["sosialt","ute","kultur"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -321,10 +297,7 @@ const model = {
                 description: "Lag noe kreativt sammen",
                 Picture: "dateImage/crafting.jpg",
                 Category: ["inne","usosialt","kreativitet"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -336,10 +309,7 @@ const model = {
                 description: "Observer fugler i naturen",
                 Picture: "dateImage/birdwatching.jpg",
                 Category: ["sosialt","ute"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -351,10 +321,7 @@ const model = {
                 description: "Lag en ny oppskrift sammen",
                 Picture: "dateImage/cooking_class.jpg",
                 Category: ["cozy","inne","usosialt","mat"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -366,10 +333,7 @@ const model = {
                 description: "Ta en sykkeltur i nærområdet",
                 Picture: "dateImage/biking.jpg",
                 Category: ["sosialt","ute"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -381,10 +345,7 @@ const model = {
                 description: "Gjøre frivillig arbeid sammen",
                 Picture: "dateImage/volunteering.jpg",
                 Category: ["sosialt","ute"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -396,10 +357,7 @@ const model = {
                 description: "Jobbe i hagen sammen",
                 Picture: "dateImage/gardening.jpg",
                 Category: ["usosialt","ute","kreativitet"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -411,10 +369,7 @@ const model = {
                 description: "Ha dype samtaler",
                 Picture: "dateImage/talking.jpg",
                 Category: ["cozy","inne","usosialt"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -426,10 +381,7 @@ const model = {
                 description: "Nyt vin og ost hjemme",
                 Picture: "dateImage/wine_cheese.jpg",
                 Category: ["cozy","inne","usosialt","mat"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -441,10 +393,7 @@ const model = {
                 description: "Besøk en lokal gård",
                 Picture: "dateImage/farm_visit.jpg",
                 Category: ["sosialt","ute","kultur"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -456,10 +405,7 @@ const model = {
                 description: "Dra på loppemarked",
                 Picture: "dateImage/flea_market.jpg",
                 Category: ["sosialt","ute","kultur"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -471,10 +417,7 @@ const model = {
                 description: "Se et standup-show",
                 Picture: "dateImage/standup.jpg",
                 Category: ["inne","sosialt","kreativitet","kultur"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -486,10 +429,7 @@ const model = {
                 description: "Legg puslespill sammen",
                 Picture: "dateImage/puzzle.jpg",
                 Category: ["cozy","inne","usosialt","kreativitet"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -501,10 +441,7 @@ const model = {
                 description: "Tren sammen på senteret",
                 Picture: "dateImage/gym.jpg",
                 Category: ["inne","sosialt"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -516,10 +453,7 @@ const model = {
                 description: "Prøv klatring",
                 Picture: "dateImage/climbing.jpg",
                 Category: ["inne","sosialt","ute"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -531,10 +465,7 @@ const model = {
                 description: "Spill badminton i parken",
                 Picture: "dateImage/badminton.jpg",
                 Category: ["sosialt","ute"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -546,10 +477,7 @@ const model = {
                 description: "Spill frisbeegolf",
                 Picture: "dateImage/frisbeegolf.jpg",
                 Category: ["sosialt","ute"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -561,10 +489,7 @@ const model = {
                 description: "Gjør yoga utendørs",
                 Picture: "dateImage/yoga.jpg",
                 Category: ["sosialt","ute"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -576,10 +501,7 @@ const model = {
                 description: "Ha en spakveld hjemme",
                 Picture: "dateImage/spa.jpg",
                 Category: ["cozy","inne","sosialt"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -591,10 +513,7 @@ const model = {
                 description: "Prøv kajakkpadling",
                 Picture: "dateImage/kayaking.jpg",
                 Category: ["sosialt","ute"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -606,10 +525,7 @@ const model = {
                 description: "Gå på opera",
                 Picture: "dateImage/opera.jpg",
                 Category: ["inne","sosialt","kreativitet","kultur"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -621,10 +537,7 @@ const model = {
                 description: "Se et teaterstykke",
                 Picture: "dateImage/theater.jpg",
                 Category: ["inne","sosialt","kreativitet","kultur"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -636,10 +549,7 @@ const model = {
                 description: "Prøv slakkline i parken",
                 Picture: "dateImage/slackline.jpg",
                 Category: ["sosialt","ute"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -651,10 +561,7 @@ const model = {
                 description: "Spis middag på restaurant",
                 Picture: "dateImage/dinner_out.jpg",
                 Category: ["sosialt","ute","mat"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -666,10 +573,7 @@ const model = {
                 description: "Gå en historisk vandring",
                 Picture: "dateImage/historic_walk.jpg",
                 Category: ["sosialt","ute","kreativitet","kultur"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -681,10 +585,7 @@ const model = {
                 description: "Spill bingo",
                 Picture: "dateImage/bingo.jpg",
                 Category: ["inne","sosialt"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -696,10 +597,7 @@ const model = {
                 description: "Skøyte utendørs",
                 Picture: "dateImage/ice_skating.jpg",
                 Category: ["sosialt","ute"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -711,10 +609,7 @@ const model = {
                 description: "Bygg møbler sammen",
                 Picture: "dateImage/building_furniture.jpg",
                 Category: ["cozy","inne","usosialt","kreativitet"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -726,10 +621,7 @@ const model = {
                 description: "Mal utendørs",
                 Picture: "dateImage/outdoor_painting.jpg",
                 Category: ["sosialt","ute","kreativitet"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
             {
                 Name: "romantisk middag hjemme",
@@ -740,10 +632,7 @@ const model = {
                 description: "Lag en romantisk middag hjemme",
                 Picture: "dateImage/dinner_home.jpg",
                 Category: ["cozy","inne","usosialt","mat"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -755,10 +644,7 @@ const model = {
                 description: "Ta en tur i luftballong",
                 Picture: "dateImage/hot_air_balloon.jpg",
                 Category: ["sosialt","ute"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -770,10 +656,7 @@ const model = {
                 description: "Ta en weekendtur sammen",
                 Picture: "dateImage/weekend_trip.jpg",
                 Category: ["sosialt","ute"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -785,10 +668,7 @@ const model = {
                 description: "Delta på dansekurs sammen",
                 Picture: "dateImage/dance_class.jpg",
                 Category: ["inne","sosialt","kreativitet"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -800,10 +680,7 @@ const model = {
                 description: "Kjør gokart",
                 Picture: "dateImage/gokart.jpg",
                 Category: ["inne","sosialt","ute"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -815,10 +692,7 @@ const model = {
                 description: "Prøv kampsport",
                 Picture: "dateImage/martial_arts.jpg",
                 Category: ["inne","sosialt"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -830,10 +704,7 @@ const model = {
                 description: "Besøk dyrehagen",
                 Picture: "dateImage/zoo.jpg",
                 Category: ["sosialt","ute"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -845,10 +716,7 @@ const model = {
                 description: "Delta på et matlagingskurs",
                 Picture: "dateImage/cooking_class.jpg",
                 Category: ["inne","sosialt","mat"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -860,10 +728,7 @@ const model = {
                 description: "Ta en tur i småfly",
                 Picture: "dateImage/small_plane.jpg",
                 Category: ["sosialt","ute"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -875,10 +740,7 @@ const model = {
                 description: "Besøk en klatrepark",
                 Picture: "dateImage/climbing_park.jpg",
                 Category: ["sosialt","ute"],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
 
             {
@@ -890,10 +752,7 @@ const model = {
                 description: "Tilbring en dag på spa",
                 Picture: "dateImage/spa_day.jpg",
                 Category: ["cozy","inne","sosialt",],
-                review: [{
-                    comment: null,
-                    Rating: null
-                }]
+                review: []
             },
         ]
     }
