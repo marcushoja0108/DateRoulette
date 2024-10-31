@@ -2,8 +2,8 @@ const model = {
     app: {
         loggedinuserID: 0,
         pages: ["HomePage", "Login", "infopage", "memory", "ongoingDate", "friendPage","profilePage"],
-        currentpage: "profilePage",
-        selectedDate: 9,
+        currentpage: "Login",
+        selectedDate: 0,
         selectedFriend: 0,
     },
 
