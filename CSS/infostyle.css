@@ -51,21 +51,25 @@
   display: flex;
   right: 20px;
   border: 2px solid #be013c;
-  height: 30%;
   padding: 0;
   margin: 0;
+  height: 35%;
   flex-direction: column;
   align-items: center;
   position: absolute;
   border-radius: 15px;
-  padding: 15px;
+  padding: 10px;
+}
+#openBtn {
+  display: block;
+  margin: 0 auto;
 }
 .info-date {
   display: none;
   background-color: #e9d1d1;
   right: 20px;
   border: 2px solid #be013c;
-  height: 30%;
+  height: 50%;
   padding: 0;
   margin: 0;
   flex-direction: column;
@@ -77,9 +81,27 @@
 .info-date h2 {
   color: #4b0018;
 }
+.fa-solid {
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+}
+.info-cont {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 20px;
+  height: 100%;
+}
 .info-date p {
   font-size: 20px;
   font-weight: 600;
+}
+.info-date-btn {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 .info-description {
   color: #4b0018;
