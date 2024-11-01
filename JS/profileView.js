@@ -44,7 +44,7 @@ function createProfileHeader(){
         <div class="Box-leftProfile">
         <img height = 40px src="IMG/logout.png" onclick="goLogin()"/>
         </div>
-        <img class='header-img' src="th4.png"/>
+        <img class='header-img' src="th4.png" onclick="goHome()"/>
         <div class="Box-rightProfile">
         <img height = 50px src="IMG/memory.png" onclick="goMemory()"/>
         </div>
