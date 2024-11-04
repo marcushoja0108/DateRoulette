@@ -83,6 +83,29 @@ align-items: center;
     background: radial-gradient(circle, rgb(255, 223, 41), rgb(255, 107, 107) 140%);
 }
 
+.noResultbutton{
+    background: radial-gradient(circle, rgb(255, 223, 41), rgb(255, 107, 107) 140%);
+    margin-top: 28vh;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size:x-large;
+    border: solid  2px black;
+    width: 140px;
+    height: 30px;
+    border-radius: 12px;
+}
+.resultMessage{
+    margin-top: 6vh;
+    font-size: larger;
+    width: 70vw;
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    padding: 8px;
+    color: white;
+}
+
 
 /* filterpage */
 .dropDownContainer{

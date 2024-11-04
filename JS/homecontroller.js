@@ -31,7 +31,9 @@ function randomDate() {
         console.log(model.app.selectedDate);
         goInfo();
     } else {
-        console.log('Ingen resultat');
+        model.input.filter.showResultmessage = true;
+        model.input.filter.resultMessage = 'Ingen resultater matchet dine filtere';
+        updateHomeView()
     }
 }
 
@@ -94,11 +96,22 @@ function createMaxPrice(){
     }else{
         return /*HTML*/ `  
         MaksPris
-        <input type="range" min="0" max="2000" value=${model.input.filter.maxPrice}
+        <input type="range" min="0" max="${findMaxPrice()}" value=${model.input.filter.maxPrice}
         onchange="setMaxPrice(this.value)">
         ${createMaxPriceContent()}
         `;
     }
+}
+
+function findMaxPrice(){
+    let possibleDates = model.data.Dates.filter(
+        date => !model.data.users[model.app.loggedinuserID].doneDates.includes(date.Name)
+    );
+    let maxPrice = 0;
+    for(let i = 0; i < possibleDates.length; i++){
+        if(maxPrice < possibleDates[i].maxPrice) maxPrice = possibleDates[i].maxPrice
+    }
+    return maxPrice
 }
 
 function setMaxPrice(value){
@@ -156,6 +169,7 @@ function createTimeUsage(){
         `;
     }
 }
+
 function createTimeContent(){
     if(model.input.filter.timeUsage == 1){
         let html = 'time'
@@ -189,8 +203,8 @@ function createFromTime(){
     }
 }
 
-// kategori filter påbegynt
 function createCategory(){
+    checkAvailableCategories()
     if(model.input.filter.disableCategory){
         return`
         <div onclick="model.input.filter.disableCategory = false; updateHomeView()" 
@@ -212,20 +226,50 @@ function createCategory(){
     }
 }
 
-function createCategoryDropdown(){
-    let category = model.input.filter.categories
-    let html = `<div onclick="disableCategoryButton()" class="turnOffButton">Slå av kategori</div>`;
+function checkAvailableCategories(){
+    let possibleCategories = findPossibleCategories();
+    let rng = Math.floor(Math.random() * possibleCategories.length);
 
-    for(let i=0; i < model.input.filter.categories.length; i++){
-        html += `<div class="category" onclick="selectCategory(${i})">${category[i]}</div>
+    if(!possibleCategories.includes(model.input.filter.selectedCategory)){
+        model.input.filter.selectedCategory = possibleCategories[rng]
+        model.input.filter.disableCategory = true
+    }
+}
+
+function createCategoryDropdown(){
+    let html = `<div onclick="disableCategoryButton()" class="turnOffButton">Slå av kategori</div>`;
+    let possibleCategories = findPossibleCategories()
+
+    for(let i=0; i < possibleCategories.length; i++){
+        html += `<div class="category" onclick="selectCategory(${i})">${possibleCategories[i]}</div>
         `;
     }
     return html
 }
 
+function findPossibleCategories(){
+    let possibleDates = findPossibleDates()
+    let categoryResult = []
+    for(i = 0; i < possibleDates.length; i++){
+        for(let index = 0; index < possibleDates[i].Category.length; index ++){
+            if(!categoryResult.includes(possibleDates[i].Category[index])){
+                categoryResult.push(possibleDates[i].Category[index])
+            }
+        }
+    }
+    return categoryResult
+}
+
+function findPossibleDates(){
+    return model.data.Dates.filter(date => 
+        !model.data.users[model.app.loggedinuserID].doneDates.includes(date.Name))
+}
+
 function selectCategory(i){
     let filter = model.input.filter
-    filter.selectedCategory = filter.categories[i]
+    let possibleCategories = findPossibleCategories();
+
+    filter.selectedCategory = possibleCategories[i]
     filter.categoryDropDown = false; 
     updateHomeView();
 }

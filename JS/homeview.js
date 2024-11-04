@@ -44,10 +44,29 @@ function createFilterView(){
 
 // spin og random view
 function randomContent(){
+    if(model.input.filter.showResultmessage == false){
     let startWheelAnimation = model.input.filter.startWheel ? `<img width='350px' class='wheelspin' src='new_wheel.png'>` : `<img width='350px' class='wheel' src='new_wheel.png'>`
     let html = /*HTML*/`
         <div class="spinButton" onclick="startWheel()">SPIN</div>
         ${startWheelAnimation}
     `;
     return html;
+    }
+    else{
+        let html = /*HTML*/ `
+        <div class="noResultbutton" onclick="tryAgainButton()">Try again?</div>
+            <div class="resultMessage">${model.input.filter.resultMessage}</div>
+        `;
+        return html;
+    }
+}
+
+function tryAgainButton(){
+    model.input.filter.showResultmessage = false;
+    updateHomeView()
+}
+
+function goToSightseeing(){
+    model.app.selectedDate = 9;
+    goInfo();
 }

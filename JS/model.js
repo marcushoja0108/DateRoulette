@@ -2,7 +2,7 @@ const model = {
     app: {
         loggedinuserID: 0,
         pages: ["HomePage", "Login", "infopage", "memory", "ongoingDate", "friendPage","profilePage"],
-        currentpage: "profilePage",
+        currentpage: "HomePage",
         selectedDate: 9,
         selectedFriend: 0,
     },
@@ -39,6 +39,8 @@ const model = {
                  'innadvent', 'mat', 'kreativitet'],
             selectedCategory: 'kultur',
             startWheel: false,
+            showResultmessage: false,
+            resultMessage: '',
         },
         endDate: {
             rating: null,
