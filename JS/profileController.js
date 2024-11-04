@@ -9,7 +9,10 @@ function rejectPartner(){
     changeView();
 }
 function acceptPartner(){
-    model.data.users[model.app.loggedinuserID].partner[0].hasAccepted = true;
+    let user = model.data.users[model.app.loggedinuserID]
+    user.partner[0].hasAccepted = true;
+    model.data.users[user.partner[0].userId].doneDates = [];
+    user.doneDates = [];
     changeView();
 }
 function profileSearchUser(){
