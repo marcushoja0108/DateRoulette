@@ -1,9 +1,10 @@
 //hovedview
 function updateOngoingView(){
+    let user = model.data.users[model.app.loggedinuserID]
     document.getElementById('app').innerHTML =/*html*/ `
         ${createOngoingHeader()}
         <div class="ongoingGrid">
-        <h2>${model.data.users[model.app.loggedinuserID].name}, ${model.data.Dates[model.app.selectedDate].Name} daten din venter...</h2>
+        <h2>${model.data.users[model.app.loggedinuserID].name}, ${model.data.Dates[user.selectedDate].Name} daten din venter...</h2>
         <div class="ongoingText">Trykk på hjertet når daten er ferdig</div>
         <br>
         ${createOngoingCard()}
@@ -57,9 +58,10 @@ function createOngoingInputs(){
     `;
 }
 function createOngoingCard(){
+    let user = model.data.users[model.app.loggedinuserID]
 return `
     <div class="ongoingCard">
-        <img src="${model.data.Dates[model.app.selectedDate].Picture}" class="ongoingCardImg">
+        <img src="${model.data.Dates[user.selectedDate].Picture}" class="ongoingCardImg">
         <div class="ongoingCheck">
             <img height = 90px src="IMG/Ongoingheart.png" onclick="ongoingRating()"/>
         </div>

@@ -37,8 +37,7 @@ button {
     height: 100px;
     width: 100%;
     background: #e1bee7;
-    
-    box-shadow: 2px 2px 10px gray;
+    box-shadow: 2px 2px 10px rgba(128, 128, 128, 0.685);
     position: fixed;
     z-index: 3;
     top: 0px;
@@ -170,7 +169,7 @@ align-items: center;
 .filterItem{
     display: flex;
     flex-direction: column;
-    
+    box-shadow: 5px 5px 5px black;
     width: 40vw;
     height: 8vh;
     align-items: center;

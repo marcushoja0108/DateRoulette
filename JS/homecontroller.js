@@ -20,6 +20,7 @@ function backToHome(){
 
 // spin knapp for å få random date
 function randomDate() {
+    let user = model.data.users[model.app.loggedinuserID]
     model.input.filter.startWheel = false
     let searchResult = filterRandomDate();
     console.log(searchResult)
@@ -27,8 +28,8 @@ function randomDate() {
         let rng = Math.floor(Math.random() * searchResult.length);
         let randomSelected = searchResult[rng];
         let selectedIndex = model.data.Dates.findIndex(date => date === randomSelected);
-        model.app.selectedDate = selectedIndex;
-        console.log(model.app.selectedDate);
+        user.selectedDate = selectedIndex;
+        console.log(user.selectedDate);
         goInfo();
     } else {
         model.input.filter.showResultmessage = true;

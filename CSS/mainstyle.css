@@ -4,7 +4,7 @@ body{
     box-sizing: border-box;
     outline: none;
     height: 100vh;
-    background: linear-gradient(to bottom, #e1bee7, #8e24aa);
+    background: linear-gradient(to bottom, #e1bee7, #87349e);
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     background-size: cover;
     background-attachment: fixed;
