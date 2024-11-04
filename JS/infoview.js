@@ -94,7 +94,7 @@ function createCommentField() {
         `;
     }
   } else {
-    html = '<div class="infoCommentMessage">Ingen tidligere kommentarer</div>';
+    html = '<div class="infoCommentBox">Ingen tidligere kommentarer</div>';
   }
   return html;
 }
