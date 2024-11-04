@@ -62,7 +62,9 @@ function pushDoneDates(){
     let user = model.data.users[model.app.loggedinuserID];
     if(user.partner.length > 0){
         let partner = model.data.users[model.app.selectedPartner];
+        if(user.partner[0].hasAccepted && partner.partner[0].hasAccepted){
         partner.doneDates.push(model.data.Dates[user.selectedDate].Name);
+        }
     }
     user.doneDates.push(model.data.Dates[user.selectedDate].Name);
 }
@@ -94,7 +96,15 @@ function makeMemorySettings(){
     let user = model.data.users[model.app.loggedinuserID];
     if(user.partner.length > 0){
         let partner = model.data.users[model.app.selectedPartner];
-        partner.ongoingDate = false;
+        if(user.partner[0].hasAccepted && partner.partner[0].hasAccepted){
+            partner.ongoingDate = false;
+        }
+    }
+    if(user.doneDates.length === model.data.Dates.length){
+        user.doneDates = [];
+        if(user.partner.length > 0 && user.partner[0].hasAccepted && partner.partner[0].hasAccepted){
+            partner.doneDates = [];
+        }
     }
     user.ongoingDate = false;
     model.input.endDate.memoryPicture = '';
