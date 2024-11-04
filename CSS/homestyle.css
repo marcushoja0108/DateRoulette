@@ -66,6 +66,7 @@ align-items: center;
 .wheel{
     width: 350px;
     margin-top: 5vh;
+    
 }
 .wheelspin{
     width: 350px;
@@ -84,17 +85,20 @@ align-items: center;
     margin-top: 27vh;
     display: flex;
     justify-content: center;
+    align-items: center;
     font-weight: bold;
     font-size:x-large;
     border: solid  2px black;
     width: 100px;
-    height: 30px;
+    height: 35px;
     border-radius: 15px;
-    background: radial-gradient(circle, rgb(255, 223, 41), rgb(255, 107, 107) 140%);
+    background: radial-gradient(circle, white,#e1bee7fb 150%);
+    box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.795);
 }
 
 .noResultbutton{
-    background: radial-gradient(circle, rgb(255, 223, 41), rgb(255, 107, 107) 140%);
+    background: radial-gradient(circle, white,#e1bee7fb 150%);
+    box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.795);
     margin-top: 28vh;
     display: flex;
     justify-content: center;
@@ -119,13 +123,12 @@ align-items: center;
 
 /* filterpage */
 .dropDownContainer{
-    background: radial-gradient(circle, rgb(255, 0, 0), rgb(0, 0, 0) 140%);
+    background-color: #e1bee7fb;
     position: absolute;
     width: 60vw;
     z-index: 2;
     top: 90px;
     border-radius: 10px;
-    border: #000000 solid;
    
     
 }
@@ -134,7 +137,7 @@ align-items: center;
     display: flex;
     flex-direction: column;
     position: absolute;
-    background: linear-gradient(rgb(255, 174, 0), rgb(68, 0, 9) 140%);
+    background: linear-gradient(#e1bee7, #8e24aa 220%);
     top: 10px;
     width: 40vw;
     align-items: center;
@@ -142,13 +145,13 @@ align-items: center;
     margin: 3vh;
     padding: 10px;
     padding-top: 2vh;
-    border: black solid;
+    border: #8e24aa solid 2px;
     border-radius: 20px;
     color: white;
 
 }
 .turnOnButton{
-    color: black
+    color: black;
 }
 .turnOffButton{
     color: red;
@@ -176,9 +179,10 @@ align-items: center;
     justify-content: center;
     padding: 10px;
     font-weight: 800;
-    background: linear-gradient(rgb(255, 174, 0), rgb(68, 22, 0) 140%);
+    background: linear-gradient(360deg, #e1bee7, #8e24aa 200%);
     border-radius: 20px;
     color: white;
+    box-shadow: 5px 5px 20px rgba(128, 128, 128, 0.644);
     
 }
 .inputTimeBox{
@@ -191,11 +195,12 @@ align-items: center;
 .confirmChangesButton{
     display: flex;
     justify-content: center;
-    border: solid black 2px;
-    background: linear-gradient(360deg,rgb(255, 174, 0), rgb(68, 0, 9) 190%);
-    color: white;
+    border: solid white 2px;
+    background-color: #de95eb;
+    color: black;
     width: 150px;
     padding: 5px;
     margin: 5%;
     border-radius: 12px;
+    font-weight: bolder;
 }
