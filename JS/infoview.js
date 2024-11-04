@@ -3,7 +3,10 @@ function updateInfoView() {
   const selectedDate = model.data.Dates[selectedIndexDate];
 
   if (selectedDate) {
-    let backButton = selectedDate.maxPrice > 1000 ? `<button onclick='goHome()'>Tilbake</button>` : '';
+    let backButton =
+      selectedDate.maxPrice > 1000
+        ? `<button onclick='goHome()'>Tilbake</button>`
+        : "";
     document.getElementById("app").innerHTML = `
 
 
@@ -24,7 +27,7 @@ function updateInfoView() {
     
        <i id='closeBtn' class="fa-solid fa-xmark"></i>
   
-      <div class='info-cont'>
+      <div class='info-date-btn'>
           <h2>Hjemme:</h2>
           <p>${selectedDate.home}</p>
       </div>
@@ -43,7 +46,7 @@ function updateInfoView() {
     </div>
 
 
-      <button id='openBtn' class='info-date-btn'>Date info</button>
+      <button id='openBtn' class='info-btn'>Date info</button>
     <div class='info'>
     <h1 class='info-name'>${selectedDate.Name}</h1>
     <p class='info-description'>${selectedDate.description}</p>
@@ -76,13 +79,13 @@ ${createCommentField()}
     }
   });
 }
-function createCommentField(){
-  let html='';
+function createCommentField() {
+  let html = "";
   if (model.data.Dates[model.app.selectedDate].review.length > 0) {
-    for(let comment of model.data.Dates[model.app.selectedDate].review){
-        let name = model.data.users[comment.userId].name
-        let starRating = convertRatingToStars(comment.Rating)
-        html +=`
+    for (let comment of model.data.Dates[model.app.selectedDate].review) {
+      let name = model.data.users[comment.userId].name;
+      let starRating = convertRatingToStars(comment.Rating);
+      html += `
         <div class="infoCommentBox" onclick="goFriend(${comment.userId})">
         <div>${name}</div>
         <div>${comment.comment}</div>
@@ -90,8 +93,8 @@ function createCommentField(){
         </div>
         `;
     }
-  }else{
-    html = '<div class="infoCommentMessage">Ingen tidligere kommentarer</div>';
-}
+  } else {
+    html = '<div class="infoCommentBox">Ingen tidligere kommentarer</div>';
+  }
   return html;
 }
