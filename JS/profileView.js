@@ -10,7 +10,7 @@ function updateProfileView(){
     <div class="profileContainer">
         ${searchOtherProfile}
         ${createPartner()}
-        <h3>Navn: ${user.name}</h3>
+        
     </div>
     <div></div>
     `;
@@ -22,6 +22,7 @@ function createPartner(){
         if(model.data.users[partner.userId].partner[0].hasAccepted && user.partner[0].hasAccepted){
             html = `
             <h3>Partner: ${model.data.users[partner.userId].name}</h3>
+            <button onclick="rejectPartner()">Fjern Partner</button>
             `;
         }else if(user.partner[0].hasAccepted){
             html = `
@@ -30,8 +31,10 @@ function createPartner(){
         }else{
             html = `
             <h3>Partner: ikke godtatt enda</h3>
-            <button onclick="acceptPartner()">Godta</button>
-            <button onclick="rejectPartner()">Avslå</button>
+            <div class="profileChoicesPartner">
+                <button onclick="acceptPartner()">Godta</button>
+                <button onclick="rejectPartner()">Avslå</button>
+            </div>
             `;
         }
     }
@@ -59,7 +62,9 @@ function createProfileSearchUser(){
         <div class="searchresultboxes">
             <div>Navn: ${result.name}</div> 
             <div>Brukernavn: ${result.eMail}</div>
-            <button onclick="selectPartner(${result.ID})">Send</button>
+            <div class="searchresultbutton">
+            <button onclick="selectPartner(${result.ID})">Velg</button>
+            </div>
         </div>
         `;
     }

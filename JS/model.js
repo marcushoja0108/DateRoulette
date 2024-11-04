@@ -2,8 +2,8 @@ const model = {
     app: {
         loggedinuserID: 0,
         pages: ["HomePage", "Login", "infopage", "memory", "ongoingDate", "friendPage","profilePage"],
-        currentpage: "HomePage",
-        selectedDate: 0,
+        currentpage: "profilePage",
+        selectedPartner: 0,
         selectedFriend: 0,
     },
 
@@ -61,9 +61,10 @@ const model = {
                     name: "Therese",
                     password: "123",
                     birthday: '13.10.16',
-                    adress: "getacademny",
+                    adress: "Larvik",
                     eMail: "therese@date.no",
                     phone: "69696969",
+                    selectedDate: 0,
                     partner: [
                         {
                             userId: 1,
@@ -101,9 +102,10 @@ const model = {
                     name: "Martin",
                     password: "123",
                     birthday: '13.10.16',
-                    adress: "getacademny",
+                    adress: "Larvik",
                     eMail: "martinskal@paadate.no",
                     phone: "69696969",
+                    selectedDate: 0,
                     partner: [
                         {
                             userId: 0,

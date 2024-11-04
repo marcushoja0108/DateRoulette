@@ -1,5 +1,5 @@
 function updateInfoView() {
-  const selectedIndexDate = model.app.selectedDate;
+  const selectedIndexDate = model.data.users[model.app.loggedinuserID].selectedDate;
   const selectedDate = model.data.Dates[selectedIndexDate];
 
   if (selectedDate) {
@@ -80,9 +80,10 @@ ${createCommentField()}
   });
 }
 function createCommentField() {
+  let user = model.data.users[model.app.loggedinuserID]
   let html = "";
-  if (model.data.Dates[model.app.selectedDate].review.length > 0) {
-    for (let comment of model.data.Dates[model.app.selectedDate].review) {
+  if (model.data.Dates[user.selectedDate].review.length > 0) {
+    for (let comment of model.data.Dates[user.selectedDate].review) {
       let name = model.data.users[comment.userId].name;
       let starRating = convertRatingToStars(comment.Rating);
       html += `

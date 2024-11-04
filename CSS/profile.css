@@ -17,6 +17,14 @@
 .profileContainer{
     margin-top: 105px;
     color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.profileChoicesPartner{
+    display: flex;
+    gap: 5px;
 }
 .profileSearchInput{
     display: flex;
@@ -39,7 +47,16 @@
 }
 .searchresultboxes {
     border: 1px solid white;
+    border-radius: 10px;
     padding: 5px;
     margin: 5px;
     color: white;
+    display: flex;
+    flex-direction: column;
+    
+}
+.searchresultbutton{
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }

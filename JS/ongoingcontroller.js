@@ -1,5 +1,14 @@
 function goOngoing(){
-    model.data.users[model.app.loggedinuserID].ongoingDate = true;
+    let user = model.data.users[model.app.loggedinuserID]
+    user.ongoingDate = true;
+    if(user.partner.length > 0){
+        let userPartner = user.partner[0]
+        let partnerId = model.data.users[userPartner.userId]
+        if(userPartner.hasAccepted && partnerId.partner[0].hasAccepted){
+            partnerId.selectedDate = user.selectedDate
+            partnerId.ongoingDate = true;
+        }
+    }
     model.app.currentpage = model.app.pages[4];
     changeView();
 }
@@ -49,13 +58,20 @@ function makeMemory(){
 }
 }
 function pushDoneDates(){
-    model.data.users[model.app.loggedinuserID].doneDates.push(model.data.Dates[model.app.selectedDate].Name)
+    let user = model.data.users[model.app.loggedinuserID]
+    if(user.partner.length > 0){
+    let userPartner = model.data.users[model.app.loggedinuserID].partner[0]
+    let partnerId = model.data.users[userPartner.userId]
+    partnerId.doneDates.push(model.data.Dates[user.selectedDate].Name)
+    }
+    user.doneDates.push(model.data.Dates[user.selectedDate].Name)
 }
 function pushFinishdates(){
+        let user = model.data.users[model.app.loggedinuserID]
         let todaysDate = new Date().toLocaleString()
         model.data.users[model.app.loggedinuserID].finishedDates.push(
         {
-            Name: model.data.Dates[model.app.selectedDate].Name,
+            Name: model.data.Dates[user.selectedDate].Name,
             Rating: model.input.endDate.rating,
             day: todaysDate,
             comment: model.input.endDate.comment,
@@ -64,7 +80,8 @@ function pushFinishdates(){
     )
 }
 function pushReview(){
-        model.data.Dates[model.app.selectedDate].review.push(
+    let user = model.data.users[model.app.loggedinuserID]
+    model.data.Dates[user.selectedDate].review.push(
         {
             userId: model.app.loggedinuserID,
             comment: model.input.endDate.comment,
@@ -73,7 +90,12 @@ function pushReview(){
     )
 }
 function makeMemorySettings(){
-    model.data.users[model.app.loggedinuserID].ongoingDate = false;
+    let user = model.data.users[model.app.loggedinuserID]
+    if(user.partner.length > 0){
+        let userPartner = model.data.users[model.app.loggedinuserID].partner[0]
+        model.data.users[userPartner.userId].ongoingDate = false;
+    }
+    user.ongoingDate = false;
     model.input.endDate.memoryPicture = '';
     model.input.endDate.rating = '';
     model.input.endDate.comment = '';
