@@ -42,21 +42,26 @@ function cancelOngoingRating(){
 //pusher daten inn i doneDates, finishDates og review.
 function makeMemory(){
     if (model.input.endDate.memoryPicture || model.input.endDate.rating || model.input.endDate.comment) {
-        if(model.input.endDate.memoryPicture && model.input.endDate.rating && model.input.endDate.comment){
-            pushFinishdates()
-            pushDoneDates()
-            pushReview()
-            makeMemorySettings()
-            goHome()
-        }else{
-            model.input.endDate.showongoingMessage = "Alle felter må fylles inn"
-            ongoingRating()
+        if (model.input.endDate.memoryPicture && model.input.endDate.rating && model.input.endDate.comment) {
+            pushFinishdates();
+            pushDoneDates();
+            pushReview();
+            makeMemorySettings();
+            goHome();
+        } else {
+            model.input.endDate.showongoingMessage = "Alle felter må fylles inn";
+            ongoingRating();
         }
     } else {
         pushDoneDates();
-        makeMemorySettings()
-        goHome()
+        makeMemorySettings();
+        goHome();
     }
+}
+
+
+function pushDoneDates(){
+    model.data.users[model.app.loggedinuserID].doneDates.push(model.data.Dates[model.app.selectedDate].Name)
 }
 function pushDoneDates(){
     let user = model.data.users[model.app.loggedinuserID];
