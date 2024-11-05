@@ -116,3 +116,4 @@ function makeMemorySettings(){
     model.input.endDate.rating = '';
     model.input.endDate.comment = '';
 }
+

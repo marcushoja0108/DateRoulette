@@ -1,15 +1,26 @@
 //hovedview
 function updateOngoingView(){
     let user = model.data.users[model.app.loggedinuserID]
-    document.getElementById('app').innerHTML =/*html*/ `
-        ${createOngoingHeader()}
-        <div class="ongoingGrid">
-        <h2>${model.data.users[model.app.loggedinuserID].name}, ${model.data.Dates[user.selectedDate].Name} daten din venter...</h2>
-        <div class="ongoingText">Trykk på hjertet når daten er ferdig</div>
-        <br>
-        ${createOngoingCard()}
-    `;
+    let partner = model.data.users[model.app.selectedPartner]
+    let blindUser1 = 'john';
+    let blindUser2 = 'emma';
+    let ongoingDoubleDate = true
+
+    let ongoingChoice = ongoingDoubleDate
+    ? `<h2>${user.name} og ${partner.name}. Dere har en ${model.data.Dates[user.selectedDate].Name}date med ${blindUser1} og ${blindUser2}</h2>`
+    : `<h2>${model.data.users[model.app.loggedinuserID].name}, ${model.data.Dates[user.selectedDate].Name} daten din venter...</h2>`
+        document.getElementById('app').innerHTML =/*html*/ `
+            ${createOngoingHeader()}
+            <div class="ongoingGrid">
+            ${ongoingChoice}
+            <div class="ongoingText">Trykk på hjertet når daten er ferdig</div>
+            <br>
+            ${createOngoingCard()}
+            </div>
+        `;
 }
+
+
 //ratingview
 function ongoingRating(){
     document.getElementById('app').innerHTML = `
@@ -23,6 +34,7 @@ function ongoingRating(){
         </div>
     `;
 }
+
 function createOngoingHeader(){
     return `
     <div class="header">
