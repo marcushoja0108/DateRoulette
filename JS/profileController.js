@@ -1,15 +1,36 @@
 function goProfile(){
+    let user = model.data.users[model.app.loggedinuserID];
     model.app.currentpage = model.app.pages[6];
+    if(user.partner.length > 0){
+        model.app.selectedPartner = user.partner[0].userId;
+    }
     changeView();
 }
+
 function rejectPartner(){
-    let user = model.data.users[model.app.loggedinuserID]
-    model.data.users[user.partner[0].userId].partner.splice(0)
-    user.partner.splice(0)
+    let user = model.data.users[model.app.loggedinuserID];
+    let selectedPartner = model.data.users[model.app.selectedPartner];
+    let coupleIndex = model.data.couples.findIndex(couple => couple.firstId === user.ID || couple.firstId === selectedPartner.ID);
+    if (coupleIndex > -1) {
+        model.data.couples.splice(coupleIndex, 1);
+    }
+    selectedPartner.partner = [];
+    user.partner = [];
     changeView();
 }
+
 function acceptPartner(){
-    model.data.users[model.app.loggedinuserID].partner[0].hasAccepted = true;
+    let user = model.data.users[model.app.loggedinuserID];
+    user.partner[0].hasAccepted = true;
+    let partner = model.data.users[user.partner[0].userId];
+    partner.doneDates = [];
+    user.doneDates = [];
+    model.data.couples.push({
+        coupleId: model.data.couples.length,
+        firstId: user.ID,
+        secondId: user.partner[0].userId,
+        ongoingDateId: null,
+    });
     changeView();
 }
 function profileSearchUser(){

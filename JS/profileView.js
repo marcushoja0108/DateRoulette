@@ -40,7 +40,6 @@ function createPartner(){
     }
     return html;
 }
-
 function createProfileHeader(){
     return `
     <div class="header">

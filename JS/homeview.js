@@ -1,6 +1,6 @@
-
 function updateHomeView(){
-   
+        let user = model.data.users[model.app.loggedinuserID];
+        let partnerDate = user.partner.length > 0 ? `<button onclick="goCouple()">Pardating</button>` : '';
         document.getElementById('app').innerHTML = /*HTML*/ `
         <div class="header">
         <div class="Box-left">
@@ -13,8 +13,10 @@ function updateHomeView(){
             </div>
         </div>
         ${createFilterView()}
-            <div class="randomContainer">${randomContent()}</div>
-            
+            <div class="randomContainer">
+            ${randomContent()}
+            ${partnerDate}
+            </div>
         `;
     }
 

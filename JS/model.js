@@ -1,8 +1,8 @@
 const model = {
     app: {
         loggedinuserID: 0,
-        pages: ["HomePage", "Login", "infopage", "memory", "ongoingDate", "friendPage","profilePage"],
-        currentpage: "HomePage",
+        pages: ["HomePage", "Login", "infopage", "memory", "ongoingDate", "friendPage","profilePage","couplePage"],
+        currentpage: "ongoingDate",
         selectedPartner: 0,
         selectedFriend: 0,
     },
@@ -52,6 +52,10 @@ const model = {
             inputSearch: '',
             searchresult: '',
             showSearch: '',
+        },
+        coupledate: {
+            addIsOpen: false,
+            
         }
     },
 
@@ -98,6 +102,7 @@ const model = {
                             memoryPicture: "dateImage/sightseeing.jpg",
                         }
                     ],
+                    ongoingCoupledate: false,
                 },
                 {
                     ID: 1,
@@ -188,9 +193,74 @@ const model = {
                             memoryPicture: "dateImage/concert.jpg",
                         },
                     ],
+                    ongoingCoupledate: false,
+                },
+                {
+                    ID: 2,
+                    name: "Marie",
+                    password: "123",
+                    birthday: '13.10.16',
+                    adress: "Larvik",
+                    eMail: "marie@date.no",
+                    phone: "69696969",
+                    selectedDate: 0,
+                    partner: [
+                        {
+                            userId: 3,
+                            hasAccepted: true,
+                        }
+                    ],
+                    ongoingDate: false,
+                    doneDates: [],
+                    finishedDates: [],
+                    ongoingCoupledate: true,
+                },
+                {
+                    ID: 3,
+                    name: "Bjarne",
+                    password: "123",
+                    birthday: '13.10.16',
+                    adress: "Larvik",
+                    eMail: "bjarne@date.no",
+                    phone: "69696969",
+                    selectedDate: 0,
+                    partner: [
+                        {
+                            userId: 2,
+                            hasAccepted: true,
+                        }
+                    ],
+                    ongoingDate: false,
+                    doneDates: [],
+                    finishedDates: [],
+                    ongoingCoupledate: true,
                 },
             ],
-
+        couples: [
+            {
+                coupleId: 0,
+                firstId: 2,
+                secondId: 3,
+                ongoingDateId: 0
+            },
+            {
+                coupleId: 1,
+                firstId: 0,
+                secondId: 1,
+                ongoingDateId: null,
+            }
+        ],
+        ongoingCoupledate: [
+            {
+                ongoingDateId: 0,
+                coupleId: 0,
+                secondCouple: null,
+                selectedCoupleDate: 0,
+                firstcompleted: false,
+                secondcompleted: false,
+            }
+        ],
+        coupleDates: [0,1,4,7,9,20,22,25,27,30,32,34,36],
         Dates: [
             {
                 Name: "kino",
