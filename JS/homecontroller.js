@@ -1,5 +1,5 @@
 function goHome(){
-    if(model.data.users[model.app.loggedinuserID].ongoingDate == true){
+    if(model.data.users[model.app.loggedinuserID].ongoingDate || model.data.users[model.app.loggedinuserID].ongoingCoupledate){
         goOngoing();
     }
     else{

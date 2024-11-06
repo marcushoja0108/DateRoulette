@@ -45,6 +45,7 @@ function createNewCoupleDate(){
                     ${generateCoupleDateOptions()}
                 </select>
             </div>
+            
             <div>
                 <button onclick="addCoupleDate()">Legg til date</button>
             </div>

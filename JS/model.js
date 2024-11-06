@@ -2,8 +2,7 @@ const model = {
     app: {
         loggedinuserID: 0,
         pages: ["HomePage", "Login", "infopage", "memory", "ongoingDate", "friendPage","profilePage","couplePage"],
-        currentpage: "ongoingDate",
-        selectedPartner: 0,
+        currentpage: "couplePage",
         selectedFriend: 0,
     },
 
@@ -71,6 +70,7 @@ const model = {
                     eMail: "therese@date.no",
                     phone: "69696969",
                     selectedDate: 0,
+                    selectedPartner: null,
                     partner: [
                         {
                             userId: 1,
@@ -113,6 +113,7 @@ const model = {
                     eMail: "martinskal@paadate.no",
                     phone: "69696969",
                     selectedDate: 0,
+                    selectedPartner: null,
                     partner: [
                         {
                             userId: 0,
@@ -204,12 +205,8 @@ const model = {
                     eMail: "marie@date.no",
                     phone: "69696969",
                     selectedDate: 0,
-                    partner: [
-                        {
-                            userId: 3,
-                            hasAccepted: true,
-                        }
-                    ],
+                    selectedPartner: 3,
+                    partner: [],
                     ongoingDate: false,
                     doneDates: [],
                     finishedDates: [],
@@ -224,12 +221,8 @@ const model = {
                     eMail: "bjarne@date.no",
                     phone: "69696969",
                     selectedDate: 0,
-                    partner: [
-                        {
-                            userId: 2,
-                            hasAccepted: true,
-                        }
-                    ],
+                    selectedPartner: 2,
+                    partner: [],
                     ongoingDate: false,
                     doneDates: [],
                     finishedDates: [],
@@ -241,14 +234,8 @@ const model = {
                 coupleId: 0,
                 firstId: 2,
                 secondId: 3,
-                ongoingDateId: 0
+                ongoingDateId: 0,
             },
-            {
-                coupleId: 1,
-                firstId: 0,
-                secondId: 1,
-                ongoingDateId: null,
-            }
         ],
         ongoingCoupledate: [
             {

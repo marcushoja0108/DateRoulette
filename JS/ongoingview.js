@@ -1,23 +1,35 @@
 //hovedview
-function updateOngoingView(){
-    let user = model.data.users[model.app.loggedinuserID]
-    let partner = model.data.users[model.app.selectedPartner]
-    let blindUser1 = 'john';
-    let blindUser2 = 'emma';
-    let ongoingDoubleDate = true
-
-    let ongoingChoice = ongoingDoubleDate
-    ? `<h2>${user.name} og ${partner.name}. Dere har en ${model.data.Dates[user.selectedDate].Name}date med ${blindUser1} og ${blindUser2}</h2>`
-    : `<h2>${model.data.users[model.app.loggedinuserID].name}, ${model.data.Dates[user.selectedDate].Name} daten din venter...</h2>`
-        document.getElementById('app').innerHTML =/*html*/ `
-            ${createOngoingHeader()}
-            <div class="ongoingGrid">
+function updateOngoingView() {
+    let user = model.data.users[model.app.loggedinuserID];
+    let partner = model.data.users[user.selectedPartner];
+    let coupleIndex = getCoupleIndex(user);
+    let blindUser1 = '';
+    let blindUser2 = '';
+    let ongoingChoice = '';
+    let ongoingDate = model.data.ongoingCoupledate.find(date => date.coupleId === coupleIndex || date.secondCouple === coupleIndex);
+    if (ongoingDate) {
+        if (ongoingDate.secondCouple !== null) {
+            let otherCouple = ongoingDate.coupleId === coupleIndex 
+            ? model.data.couples[ongoingDate.secondCouple] 
+            : model.data.couples[ongoingDate.coupleId];
+            blindUser1 = model.data.users[otherCouple.firstId].name;
+            blindUser2 = model.data.users[otherCouple.secondId].name;
+            ongoingChoice = `<h2>${user.name} og ${partner.name}. Dere har en ${model.data.Dates[user.selectedDate].Name}date med ${blindUser1} og ${blindUser2}</h2>`;
+        } else {
+            ongoingChoice = `<h2>${user.name}, venter på en annen gruppe for ${model.data.Dates[user.selectedDate].Name}date...</h2>`;
+        }
+    } else {
+        ongoingChoice = `<h2>${user.name}, ${model.data.Dates[user.selectedDate].Name} daten din venter...</h2>`;
+    }
+    document.getElementById('app').innerHTML = /*html*/ `
+        ${createOngoingHeader()}
+        <div class="ongoingGrid">
             ${ongoingChoice}
             <div class="ongoingText">Trykk på hjertet når daten er ferdig</div>
             <br>
             ${createOngoingCard()}
-            </div>
-        `;
+        </div>
+    `;
 }
 
 

@@ -1,7 +1,5 @@
 function goCouple(){
-    let user = model.data.users[model.app.loggedinuserID];
     model.app.currentpage = model.app.pages[7];
-    model.app.selectedPartner = user.partner[0].userId;
     changeView();
 }
 function openAddDate(){
@@ -14,12 +12,14 @@ function closeAddDate(){
 }
 function acceptCoupleDate(dateId){
     let user = model.data.users[model.app.loggedinuserID];
-    let selectedPartner = model.app.selectedPartner
-    let coupleIndex = model.data.couples.findIndex(couple => couple.firstId === user.ID || couple.firstId === selectedPartner.ID);
+    let selectedPartner = user.selectedPartner;
+    let coupleIndex = model.data.couples.findIndex(couple => couple.firstId === user.ID || couple.firstId === selectedPartner);
     model.data.ongoingCoupledate[dateId].secondCouple = coupleIndex;
-    model.data.couples[coupleIndex].ongoingDateId = dateId
+    model.data.users[selectedPartner].selectedDate = dateId;
+    model.data.couples[coupleIndex].ongoingDateId = dateId;
+    user.selectedDate = dateId;
     user.ongoingCoupledate = true;
-    selectedPartner.ongoingCoupledate = true;
+    model.data.users[selectedPartner].ongoingCoupledate = true;
     goOngoing();
     changeView();
 }
@@ -30,8 +30,9 @@ function selectCoupleDate(selectedDateId) {
 
 function addCoupleDate(){
     let user = model.data.users[model.app.loggedinuserID];
-    let selectedPartner = model.app.selectedPartner
-    let coupleIndex = model.data.couples.findIndex(couple => couple.firstId === user.ID || couple.firstId === selectedPartner.ID);
+    let selectedPartnerIndex = user.selectedPartner
+    let selectedPartner = model.data.users[user.selectedPartner]
+    let coupleIndex = model.data.couples.findIndex(couple => couple.firstId === user.ID || couple.firstId === selectedPartnerIndex);
     model.data.ongoingCoupledate.push({
         ongoingDateId: model.data.ongoingCoupledate.length,
         coupleId: coupleIndex,
@@ -40,8 +41,11 @@ function addCoupleDate(){
         firstcompleted: false,
         secondcompleted: false,
     });
-    user.ongoingCoupledate = true;
-    selectedPartner.ongoingCoupledate = true;
+    user.selectedDate = user.selectedDate; 
+    model.data.couples[coupleIndex].ongoingDateId = user.selectedDate; 
+    selectedPartner.selectedDate = user.selectedDate; 
+    user.ongoingCoupledate = true; 
+    selectedPartner.ongoingCoupledate = true
     closeAddDate();
     goOngoing();
 }

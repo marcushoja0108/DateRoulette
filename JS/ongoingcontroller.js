@@ -1,10 +1,9 @@
 function goOngoing(){
     let user = model.data.users[model.app.loggedinuserID];
-    user.ongoingDate = true;
-    if(user.partner.length > 0){
-        model.app.selectedPartner = user.partner[0].userId;
-        let partner = model.data.users[model.app.selectedPartner];
-        if(user.partner[0].hasAccepted && partner.partner[0].hasAccepted){
+    if(!user.ongoingCoupledate){
+        user.ongoingDate = true;
+        if(user.selectedPartner != null){
+            let partner = model.data.users[user.selectedPartner];
             partner.selectedDate = user.selectedDate;
             partner.ongoingDate = true;
         }
@@ -116,4 +115,8 @@ function makeMemorySettings(){
     model.input.endDate.rating = '';
     model.input.endDate.comment = '';
 }
-
+function getCoupleIndex(user){
+    return model.data.couples.findIndex(couple => 
+        couple.firstId === user.ID || couple.secondId === user.ID
+    );
+}
