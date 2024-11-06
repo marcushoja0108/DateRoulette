@@ -60,3 +60,12 @@
     display: flex;
     justify-content: center;
 }
+.profileImageBox{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+    overflow: hidden;
+}

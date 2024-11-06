@@ -73,3 +73,13 @@ function selectPartner(selectedId){
     model.input.profile.showSearch = '';
     changeView();
 }
+function readPhotoProfile(input) {
+    const file = input.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(event) {
+            model.input.profile.profilePicture = event.target.result;
+        }
+        reader.readAsDataURL(file);
+    }
+}

@@ -2,7 +2,7 @@ const model = {
     app: {
         loggedinuserID: 0,
         pages: ["HomePage", "Login", "infopage", "memory", "ongoingDate", "friendPage","profilePage","couplePage"],
-        currentpage: "couplePage",
+        currentpage: "profilePage",
         selectedFriend: 0,
     },
 
@@ -51,6 +51,7 @@ const model = {
             inputSearch: '',
             searchresult: '',
             showSearch: '',
+            profilePicture: '',
         },
         coupledate: {
             addIsOpen: false,
@@ -69,6 +70,7 @@ const model = {
                     adress: "Larvik",
                     eMail: "therese@date.no",
                     phone: "69696969",
+                    userImage: "IMG/users/therese.png",
                     selectedDate: 0,
                     selectedPartner: null,
                     partner: [
@@ -112,6 +114,7 @@ const model = {
                     adress: "Larvik",
                     eMail: "martinskal@paadate.no",
                     phone: "69696969",
+                    userImage: "IMG/users/martin.png",
                     selectedDate: 0,
                     selectedPartner: null,
                     partner: [
@@ -204,6 +207,7 @@ const model = {
                     adress: "Larvik",
                     eMail: "marie@date.no",
                     phone: "69696969",
+                    userImage: "IMG/users/marie.png",
                     selectedDate: 0,
                     selectedPartner: 3,
                     partner: [],
@@ -220,6 +224,7 @@ const model = {
                     adress: "Larvik",
                     eMail: "bjarne@date.no",
                     phone: "69696969",
+                    userImage: "IMG/users/bjarne.png",
                     selectedDate: 0,
                     selectedPartner: 2,
                     partner: [],

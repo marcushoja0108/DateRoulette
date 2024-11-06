@@ -61,9 +61,14 @@ function pushUser() {
     address,
     eMail,
     phone,
+    userImage: '',
+    selectedDate: 0,
+    selectedPartner: null,
+    partner: [],
     ongoingDate: false,
     doneDates: [],
     finishedDates: [],
+    ongoingCoupledate: false,
   });
 
   loginW();

@@ -7,7 +7,7 @@ function updateOngoingView() {
     let blindUser1 = '';
     let blindUser2 = '';
     let ongoingChoice = '';
-    if (ongoingDate) {
+    if (ongoingDate && user.ongoingCoupledate) {
         if (ongoingDate.secondCouple !== null) {
             let otherCouple = ongoingDate.coupleId === coupleIndex 
             ? model.data.couples[ongoingDate.secondCouple] 
@@ -46,6 +46,30 @@ function ongoingRating(){
         </div>
     `;
 }
+
+//ratingview
+function ongoingRating() {
+    let user = model.data.users[model.app.loggedinuserID];
+    let coupleIndex = getCoupleIndex(user);
+    let ongoingDate = findOngoingDate(coupleIndex);
+    let header = createOngoingHeader();
+    let gridStart = `<div class="ongoingGrid"><div class="ratingCard">`;
+    let content = '';
+
+    if (ongoingDate.firstcompleted || coupleIndex == ongoingDate.coupleId) {
+        content = `
+            <h3>Hvordan var dobbeldaten?</h3>
+            ${createOngoingRating()}
+            ${createOngoingInputs()}`;
+    } else {
+        content = `
+            <p>Vennligst vent til første par fullfører før du kan trykke på knappen.</p>
+            <button class="ongoingCancelRating" onclick="cancelOngoingRating()">Avbryt</button>`;
+    }
+
+    document.getElementById('app').innerHTML = `${header}${gridStart}${content}`;
+}
+
 
 function createOngoingHeader(){
     return `

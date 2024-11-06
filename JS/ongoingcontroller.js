@@ -58,7 +58,6 @@ function makeMemory(){
     }
 }
 
-
 function pushDoneDates(){
     model.data.users[model.app.loggedinuserID].doneDates.push(model.data.Dates[model.app.selectedDate].Name)
 }

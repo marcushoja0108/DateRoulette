@@ -10,10 +10,20 @@ function updateProfileView(){
     <div class="profileContainer">
         ${searchOtherProfile}
         ${createPartner()}
+        ${createProfileInfo(user)}
         
     </div>
     <div></div>
     `;
+}
+function createProfileInfo(user){
+    let html = `
+    <div>
+        <div class="profileImageBox"><img src="${user.userImage}" height= 300px/></div>
+    </div>
+    
+    `;
+    return html;
 }
 function createPartner(){
     let html='';
