@@ -1,7 +1,6 @@
 function updateInfoView() {
-  let user = model.data.users[model.app.loggedinuserID]
-  let selectedDate = model.data.Dates[user.selectedDate];
-  let homeChoice = selectedDate.home ? 'Hjemme' : 'Borte';
+  const selectedIndexDate = model.data.users[model.app.loggedinuserID].selectedDate;
+  const selectedDate = model.data.Dates[selectedIndexDate];
 
   if (selectedDate) {
     let backButton =
@@ -9,6 +8,9 @@ function updateInfoView() {
         ? `<button onclick='goHome()'>Tilbake</button>`
         : "";
     document.getElementById("app").innerHTML = `
+
+
+
   <div class='header'>
    <div class="Box-left"></div>
         <img class='header-img' src="th4.png"/>
@@ -17,31 +19,32 @@ function updateInfoView() {
     </div>
 <div id='infoBox' class='info-box'>
         
-      <div class='img'>
-        <img src="${selectedDate.Picture}" height= 300px/>
-      </div>
+
+        <img class='img' src=${selectedDate.Picture} />
+
 
     <div id='info' class='info-date'>
     
        <i id='closeBtn' class="fa-solid fa-xmark"></i>
   
       <div class='info-date-btn'>
-          <h2>${homeChoice}</h2>
-          
+          <h2>Hjemme:</h2>
+          <p>${selectedDate.home}</p>
       </div>
       <div class='info-cont'>
           <h2>Fra tid:</h2>
           <p>${selectedDate.fromTime} : 00</p>
       </div>
       <div class='info-cont'>
-          <h2>Tidsforbruk:</h2>
+          <h2>Time spent:</h2>
           <p>${selectedDate.timeSpent} timer</p>
       </div>
-      <div class='info-contCat'>
+      <div class='info-cont'>
           <h2>Kategori:</h2>
-          <div class="infocategory">${listCategories()}</div>
+          <p>${selectedDate.Category}</p>
       </div>
     </div>
+
 
       <button id='openBtn' class='info-btn'>Date info</button>
     <div class='info'>
@@ -53,6 +56,7 @@ function updateInfoView() {
             ${backButton}
             <button onclick="goOngoing()">Aksepter</button>
         </div>
+
 </div>
 ${createCommentField()}
     `;
@@ -74,17 +78,6 @@ ${createCommentField()}
       infoDate.classList.remove("show");
     }
   });
-}
-function listCategories(){
-  let html = '';
-  let user = model.data.users[model.app.loggedinuserID]
-  let selectedDate = model.data.Dates[user.selectedDate];
-  for(let category of selectedDate.Category){
-    html += `
-    <div>${category}</div>
-    `;
-  }
-  return html;
 }
 function createCommentField() {
   let user = model.data.users[model.app.loggedinuserID]
