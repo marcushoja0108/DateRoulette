@@ -97,10 +97,11 @@ function pushReview(){
 }
 function makeMemorySettings() {
     let user = model.data.users[model.app.loggedinuserID];
-    let partner = model.data.users[user.selectedPartner]
     let coupleIndex = getCoupleIndex(user);
     let ongoingDate = findOngoingDate(coupleIndex);
+    let partner = '';
     if (user.selectedPartner != null) {
+        partner = model.data.users[user.selectedPartner];
         partner.ongoingDate = false;
         partner.ongoingCoupledate = false;
         if (user.doneDates.length === model.data.Dates.length) {
@@ -110,16 +111,19 @@ function makeMemorySettings() {
     if (user.doneDates.length === model.data.Dates.length) {
         user.doneDates = [];
     }
-    if (ongoingDate && ongoingDate.coupleId === coupleIndex) { 
-        ongoingDate.firstcompleted = true; 
-    }else{
-        ongoingDate.secondcompleted = true; 
-    }
-    if (ongoingDate.firstcompleted && ongoingDate.secondcompleted) { 
-        let index = model.data.ongoingCoupledate.findIndex(date => date === ongoingDate); 
-        if (index !== -1) { 
-            model.data.ongoingCoupledate.splice(index, 1); 
-        } 
+    if (ongoingDate) {
+        if (ongoingDate.coupleId === coupleIndex) {
+            ongoingDate.firstcompleted = true;
+        } else {
+            ongoingDate.secondcompleted = true;
+        }
+
+        if (ongoingDate.firstcompleted && ongoingDate.secondcompleted) {
+            let index = model.data.ongoingCoupledate.findIndex(date => date === ongoingDate);
+            if (index !== -1) {
+                model.data.ongoingCoupledate.splice(index, 1);
+            }
+        }
     }
     user.ongoingDate = false;
     user.ongoingCoupledate = false;
@@ -127,6 +131,7 @@ function makeMemorySettings() {
     model.input.endDate.rating = '';
     model.input.endDate.comment = '';
 }
+
 
 function getCoupleIndex(user){
     return model.data.couples.findIndex(couple => 
@@ -137,4 +142,17 @@ function findOngoingDate(coupleIndex) {
     return model.data.ongoingCoupledate.find(date => 
         date.coupleId === coupleIndex || date.secondCouple === coupleIndex
     );
+}
+function cancelOngoingDoubleDate(){
+    let user = model.data.users[model.app.loggedinuserID];
+    let partner = model.data.users[user.selectedPartner];
+    let coupleIndex = getCoupleIndex(user);
+    let ongoingDate = findOngoingDate(coupleIndex);
+    let index = model.data.ongoingCoupledate.findIndex(date => date === ongoingDate); 
+        if (index !== -1) { 
+            model.data.ongoingCoupledate.splice(index, 1); 
+        } 
+    user.ongoingCoupledate = false;
+    partner.ongoingCoupledate = false;
+    goHome();
 }
