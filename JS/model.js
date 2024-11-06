@@ -225,7 +225,15 @@ const model = {
                     partner: [],
                     ongoingDate: false,
                     doneDates: [],
-                    finishedDates: [],
+                    finishedDates: [
+                        {
+                        Name: "lesekveld",
+                        Rating: 2,
+                        day: '10.10.2024, 19:10:14',
+                        comment: 'Veldig rolig stemning, dårlig valg med Fifty shades.',
+                        memoryPicture: "dateImage/reading.jpg",
+                    },
+                ],
                     ongoingCoupledate: true,
                 },
             ],
@@ -453,7 +461,13 @@ const model = {
                 description: "Les bøker sammen",
                 Picture: "dateImage/reading.jpg",
                 Category: ["cozy","inne","sosialt"],
-                review: []
+                review: [
+                    {
+                        userId: 3,
+                        comment: 'Veldig rolig stemning, dårlig valg med Fifty shades.',
+                        Rating: 2,
+                    },
+                ]
             },
 
             {
@@ -465,7 +479,13 @@ const model = {
                 description: "Ta bilder av naturen",
                 Picture: "dateImage/photosafari.jpg",
                 Category: ["sosialt","ute","kultur"],
-                review: []
+                review: [
+                    {
+                    userId: 1,
+                    comment: 'For mye natur.👎',
+                    Rating: 1,
+                    }
+                ]
             },
 
             {
@@ -477,7 +497,13 @@ const model = {
                 description: "Lag noe kreativt sammen",
                 Picture: "dateImage/crafting.jpg",
                 Category: ["inne","usosialt","kreativitet"],
-                review: []
+                review: [
+                    {
+                        userId: 1,
+                        comment: 'Gøy å lage noe sammen, sørg for å ha nok verktøy!.👍',
+                        Rating: 4,
+                        }
+                ]
             },
 
             {
@@ -489,7 +515,13 @@ const model = {
                 description: "Observer fugler i naturen",
                 Picture: "dateImage/birdwatching.jpg",
                 Category: ["sosialt","ute"],
-                review: []
+                review: [
+                    {
+                        userId: 1,
+                        comment: 'Så ingen fugler. Og for mye natur',
+                        Rating: 1,
+                        }
+                ]
             },
 
             {
@@ -501,7 +533,13 @@ const model = {
                 description: "Lag en ny oppskrift sammen",
                 Picture: "dateImage/cooking_class.jpg",
                 Category: ["cozy","inne","usosialt","mat"],
-                review: []
+                review: [
+                    {
+                        userId: 1,
+                        comment: 'Ble veldig god tomatsuppe. Fjordland er tingen!👍👍',
+                        Rating: 5,
+                        }
+                ]
             },
 
             {
@@ -513,7 +551,13 @@ const model = {
                 description: "Ta en sykkeltur i nærområdet",
                 Picture: "dateImage/biking.jpg",
                 Category: ["sosialt","ute"],
-                review: []
+                review: [
+                    {
+                        userId: 1,
+                        comment: 'Funker bedre med sykkel. Ble slitsomt å løpe ved siden av.👎',
+                        Rating: 2,
+                        }
+                ]
             },
 
             {
@@ -525,7 +569,13 @@ const model = {
                 description: "Gjøre frivillig arbeid sammen",
                 Picture: "dateImage/volunteering.jpg",
                 Category: ["sosialt","ute"],
-                review: []
+                review: [
+                    {
+                        userId: 1,
+                        comment: 'Vi valgte å skippe denne.',
+                        Rating: 3,
+                        }
+                ]
             },
 
             {
@@ -537,7 +587,13 @@ const model = {
                 description: "Jobbe i hagen sammen",
                 Picture: "dateImage/gardening.jpg",
                 Category: ["usosialt","ute","kreativitet"],
-                review: []
+                review: [
+                    {
+                        userId: 1,
+                        comment: 'Er du allergisk mot pollen er ikke dette lurt. Dårlig stemning å bli hentet av ambulanse.👎',
+                        Rating: 1,
+                        }
+                ]
             },
 
             {
@@ -549,7 +605,13 @@ const model = {
                 description: "Ha dype samtaler",
                 Picture: "dateImage/talking.jpg",
                 Category: ["cozy","inne","usosialt"],
-                review: []
+                review: [
+                    {
+                        userId: 1,
+                        comment: 'Snakket om kjærlighet for logg hele kvelden.👍👍',
+                        Rating: 5,
+                        }
+                ]
             },
 
             {
@@ -561,7 +623,13 @@ const model = {
                 description: "Nyt vin og ost hjemme",
                 Picture: "dateImage/wine_cheese.jpg",
                 Category: ["cozy","inne","usosialt","mat"],
-                review: []
+                review: [
+                    {
+                        userId: 1,
+                        comment: 'Hadde ikke Norvegia.',
+                        Rating: 2,
+                        }
+                ]
             },
 
             {
@@ -573,7 +641,13 @@ const model = {
                 description: "Besøk en lokal gård",
                 Picture: "dateImage/farm_visit.jpg",
                 Category: ["sosialt","ute","kultur"],
-                review: []
+                review: [
+                    {
+                        userId: 1,
+                        comment: 'Luktet vondt. For mye natur.',
+                        Rating: 1,
+                        }
+                ]
             },
 
             {
@@ -585,7 +659,13 @@ const model = {
                 description: "Dra på loppemarked",
                 Picture: "dateImage/flea_market.jpg",
                 Category: ["sosialt","ute","kultur"],
-                review: []
+                review: [
+                    {
+                        userId: 1,
+                        comment: 'Kikket overalt, men fant ingen lopper.',
+                        Rating: 1,
+                        }
+                ]
             },
 
             {
@@ -597,7 +677,13 @@ const model = {
                 description: "Se et standup-show",
                 Picture: "dateImage/standup.jpg",
                 Category: ["inne","sosialt","kreativitet","kultur"],
-                review: []
+                review: [
+                    {
+                        userId: 1,
+                        comment: 'Skjønte ikke vitsene. De som satt bak spyttet meg i nakken når de lo.👎',
+                        Rating: 1,
+                        }
+                ]
             },
 
             {
@@ -609,7 +695,13 @@ const model = {
                 description: "Legg puslespill sammen",
                 Picture: "dateImage/puzzle.jpg",
                 Category: ["cozy","inne","usosialt","kreativitet"],
-                review: []
+                review: [
+                    {
+                        userId: 1,
+                        comment: 'Skulle kjøpt lettere puslespill.',
+                        Rating: 1,
+                        }
+                ]
             },
 
             {
@@ -621,7 +713,13 @@ const model = {
                 description: "Tren sammen på senteret",
                 Picture: "dateImage/gym.jpg",
                 Category: ["inne","sosialt"],
-                review: []
+                review: [
+                    {
+                        userId: 1,
+                        comment: 'Ble hentet av ambulanse, visste ikke at man måtte justere på vektene. Luktet også mye svette.👎',
+                        Rating: 1,
+                        }
+                ]
             },
 
             {
@@ -633,7 +731,13 @@ const model = {
                 description: "Prøv klatring",
                 Picture: "dateImage/climbing.jpg",
                 Category: ["inne","sosialt","ute"],
-                review: []
+                review: [
+                    {
+                        userId: 1,
+                        comment: 'Jeg falt ned. Ambulansen kom.👎',
+                        Rating: 1,
+                        }
+                ]
             },
 
             {
@@ -645,7 +749,13 @@ const model = {
                 description: "Spill badminton i parken",
                 Picture: "dateImage/badminton.jpg",
                 Category: ["sosialt","ute"],
-                review: []
+                review: [
+                    {
+                        userId: 1,
+                        comment: 'Tapte. Ta med en partner som er dårligere enn deg selv.',
+                        Rating: 1,
+                        }
+                ]
             },
 
             {
@@ -657,7 +767,13 @@ const model = {
                 description: "Spill frisbeegolf",
                 Picture: "dateImage/frisbeegolf.jpg",
                 Category: ["sosialt","ute"],
-                review: []
+                review: [
+                    {
+                        userId: 1,
+                        comment: 'Veldig vanskelig. Tapte.👎',
+                        Rating: 1,
+                        }
+                ]
             },
 
             {
@@ -669,7 +785,13 @@ const model = {
                 description: "Gjør yoga utendørs",
                 Picture: "dateImage/yoga.jpg",
                 Category: ["sosialt","ute"],
-                review: []
+                review: [
+                    {
+                        userId: 1,
+                        comment: 'Hvorfor gjør folk dette frivillig?',
+                        Rating: 1,
+                        }
+                ]
             },
 
             {
@@ -681,7 +803,13 @@ const model = {
                 description: "Ha en spakveld hjemme",
                 Picture: "dateImage/spa.jpg",
                 Category: ["cozy","inne","sosialt"],
-                review: []
+                review: [
+                    {
+                        userId: 1,
+                        comment: 'Hadde ansiktsmaske, men fikk en allergisk reaksjon. Ambulansen kom.👎',
+                        Rating: 1,
+                        }
+                ]
             },
 
             {
@@ -693,7 +821,13 @@ const model = {
                 description: "Prøv kajakkpadling",
                 Picture: "dateImage/kayaking.jpg",
                 Category: ["sosialt","ute"],
-                review: []
+                review: [
+                    {
+                        userId: 1,
+                        comment: 'Kajakken flippet rundt. Var også dumt å gjøre dette på vinteren',
+                        Rating: 2,
+                        }
+                ]
             },
 
             {
@@ -705,7 +839,13 @@ const model = {
                 description: "Gå på opera",
                 Picture: "dateImage/opera.jpg",
                 Category: ["inne","sosialt","kreativitet","kultur"],
-                review: []
+                review: [
+                    {
+                    userId: 1,
+                    comment: 'Bare skrik og skrål.',
+                    Rating: 1,
+                    }
+                ]
             },
 
             {
@@ -717,7 +857,13 @@ const model = {
                 description: "Se et teaterstykke",
                 Picture: "dateImage/theater.jpg",
                 Category: ["inne","sosialt","kreativitet","kultur"],
-                review: []
+                review: [
+                    {
+                        userId: 1,
+                        comment: 'Skjønte ikke helt handlingen da de snakket fransk.👎',
+                        Rating: 3,
+                        }
+                ]
             },
 
             {
@@ -729,7 +875,13 @@ const model = {
                 description: "Prøv slakkline i parken",
                 Picture: "dateImage/slackline.jpg",
                 Category: ["sosialt","ute"],
-                review: []
+                review: [
+                    {
+                        userId: 1,
+                        comment: 'Falt ned og vrikket ankelen. Ambulansen dukket opp og tok meg til sykehuset.👎',
+                        Rating: 1,
+                        }
+                ]
             },
 
             {
@@ -741,7 +893,13 @@ const model = {
                 description: "Spis middag på restaurant",
                 Picture: "dateImage/dinner_out.jpg",
                 Category: ["sosialt","ute","mat"],
-                review: []
+                review: [
+                    {
+                        userId: 1,
+                        comment: 'Ikke spis på en sjømatrestaurant med skalldyrallergi. Ambulansen ventet på utsiden.👎',
+                        Rating: 1,
+                        }
+                ]
             },
 
             {
@@ -753,7 +911,13 @@ const model = {
                 description: "Gå en historisk vandring",
                 Picture: "dateImage/historic_walk.jpg",
                 Category: ["sosialt","ute","kreativitet","kultur"],
-                review: []
+                review: [
+                    {
+                        userId: 1,
+                        comment: 'Ble bare vandring, vi hørte ingen historie.',
+                        Rating: 2,
+                        }
+                ]
             },
 
             {
@@ -765,7 +929,13 @@ const model = {
                 description: "Spill bingo",
                 Picture: "dateImage/bingo.jpg",
                 Category: ["inne","sosialt"],
-                review: []
+                review: [
+                    {
+                        userId: 1,
+                        comment: 'Tapte. Ren gambling.',
+                        Rating: 1,
+                        }
+                ]
             },
 
             {
@@ -777,7 +947,13 @@ const model = {
                 description: "Skøyte utendørs",
                 Picture: "dateImage/ice_skating.jpg",
                 Category: ["sosialt","ute"],
-                review: []
+                review: [
+                    {
+                        userId: 1,
+                        comment: 'Trynte på isen. Ble hentet av ambulansen og fikk 4 sting i hodet.👎',
+                        Rating: 1,
+                        }
+                ]
             },
 
             {
@@ -789,7 +965,13 @@ const model = {
                 description: "Bygg møbler sammen",
                 Picture: "dateImage/building_furniture.jpg",
                 Category: ["cozy","inne","usosialt","kreativitet"],
-                review: []
+                review: [
+                    {
+                        userId: 1,
+                        comment: 'Kastet bruksanvisningen. Ble en mye lengere date enn forventet.',
+                        Rating: 2,
+                        }
+                ]
             },
 
             {
@@ -801,7 +983,13 @@ const model = {
                 description: "Mal utendørs",
                 Picture: "dateImage/outdoor_painting.jpg",
                 Category: ["sosialt","ute","kreativitet"],
-                review: []
+                review: [
+                    {
+                        userId: 1,
+                        comment: 'Det regnet ute så maleriet ble ødelagt. Fikk også forkjølelse.🤒',
+                        Rating: 1,
+                        }
+                ]
             },
             {
                 Name: "romantisk middag hjemme",
@@ -812,7 +1000,13 @@ const model = {
                 description: "Lag en romantisk middag hjemme",
                 Picture: "dateImage/dinner_home.jpg",
                 Category: ["cozy","inne","usosialt","mat"],
-                review: []
+                review: [
+                    {
+                        userId: 1,
+                        comment: 'Lagde Grandiosa sammen. Ble veldig romantisk.❤️',
+                        Rating: 1,
+                        }
+                ]
             },
 
             {
@@ -824,7 +1018,13 @@ const model = {
                 description: "Ta en tur i luftballong",
                 Picture: "dateImage/hot_air_balloon.jpg",
                 Category: ["sosialt","ute"],
-                review: []
+                review: [
+                    {
+                        userId: 1,
+                        comment: 'Dette virket som en dårlig ide. Hørte med ambulansen, de var enige.',
+                        Rating: 1,
+                        }
+                ]
             },
 
             {
@@ -836,7 +1036,13 @@ const model = {
                 description: "Ta en weekendtur sammen",
                 Picture: "dateImage/weekend_trip.jpg",
                 Category: ["sosialt","ute"],
-                review: []
+                review: [
+                    {
+                        userId: 1,
+                        comment: 'På dette budsjettet ble det telttur. For mye natur.👎',
+                        Rating: 1,
+                        }
+                ]
             },
 
             {
@@ -848,7 +1054,13 @@ const model = {
                 description: "Delta på dansekurs sammen",
                 Picture: "dateImage/dance_class.jpg",
                 Category: ["inne","sosialt","kreativitet"],
-                review: []
+                review: [
+                    {
+                        userId: 1,
+                        comment: 'Vrikket beggge anklene samtidig. Balett er ikke for meg. Ambulansedate igjen.👎',
+                        Rating: 1,
+                        }
+                ]
             },
 
             {
@@ -860,7 +1072,13 @@ const model = {
                 description: "Kjør gokart",
                 Picture: "dateImage/gokart.jpg",
                 Category: ["inne","sosialt","ute"],
-                review: []
+                review: [
+                    {
+                        userId: 1,
+                        comment: 'Tapte med en runde. Dette er ikke som mariokart.👎',
+                        Rating: 2,
+                        }
+                ]
             },
 
             {
@@ -872,7 +1090,13 @@ const model = {
                 description: "Prøv kampsport",
                 Picture: "dateImage/martial_arts.jpg",
                 Category: ["inne","sosialt"],
-                review: []
+                review: [
+                    {
+                        userId: 1,
+                        comment: 'Ble slått i ansiktet. Ble hentet av ambulansen med brukket nese.👎',
+                        Rating: 1,
+                        }
+                ]
             },
 
             {
@@ -884,7 +1108,13 @@ const model = {
                 description: "Besøk dyrehagen",
                 Picture: "dateImage/zoo.jpg",
                 Category: ["sosialt","ute"],
-                review: []
+                review: [
+                    {
+                        userId: 1,
+                        comment: 'Luktet veldig vondt her. Søte apekatter.👍',
+                        Rating: 3,
+                        }
+                ]
             },
 
             {
@@ -896,7 +1126,13 @@ const model = {
                 description: "Delta på et matlagingskurs",
                 Picture: "dateImage/cooking_class.jpg",
                 Category: ["inne","sosialt","mat"],
-                review: []
+                review: [
+                    {
+                        userId: 1,
+                        comment: 'Lærte å lage panna cotta! Dumt for laktoseintolerante.👎',
+                        Rating: 2,
+                        }
+                ]
             },
 
             {
@@ -908,7 +1144,13 @@ const model = {
                 description: "Ta en tur i småfly",
                 Picture: "dateImage/small_plane.jpg",
                 Category: ["sosialt","ute"],
-                review: []
+                review: [
+                    {
+                        userId: 1,
+                        comment: 'Ble veldig høyt. Kastet også opp i flyet.👎',
+                        Rating: 1,
+                        }
+                ]
             },
 
             {
@@ -920,7 +1162,13 @@ const model = {
                 description: "Besøk en klatrepark",
                 Picture: "dateImage/climbing_park.jpg",
                 Category: ["sosialt","ute"],
-                review: []
+                review: [
+                    {
+                        userId: 1,
+                        comment: 'Falt ned. Takk og pris for sikringen.👍',
+                        Rating: 2,
+                        }
+                ]
             },
 
             {
@@ -932,7 +1180,13 @@ const model = {
                 description: "Tilbring en dag på spa",
                 Picture: "dateImage/spa_day.jpg",
                 Category: ["cozy","inne","sosialt",],
-                review: []
+                review: [
+                    {
+                        userId: 1,
+                        comment: 'Mye boblebad her. Fikk mye skrukkehud.',
+                        Rating: 3,
+                        }
+                ]
             },
         ]
     }
