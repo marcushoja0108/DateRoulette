@@ -120,3 +120,8 @@ function getCoupleIndex(user){
         couple.firstId === user.ID || couple.secondId === user.ID
     );
 }
+function findOngoingDate(coupleIndex) {
+    return model.data.ongoingCoupledate.find(date => 
+        date.coupleId === coupleIndex || date.secondCouple === coupleIndex
+    );
+}

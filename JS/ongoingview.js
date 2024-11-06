@@ -3,10 +3,10 @@ function updateOngoingView() {
     let user = model.data.users[model.app.loggedinuserID];
     let partner = model.data.users[user.selectedPartner];
     let coupleIndex = getCoupleIndex(user);
+    let ongoingDate = findOngoingDate(coupleIndex);
     let blindUser1 = '';
     let blindUser2 = '';
     let ongoingChoice = '';
-    let ongoingDate = model.data.ongoingCoupledate.find(date => date.coupleId === coupleIndex || date.secondCouple === coupleIndex);
     if (ongoingDate) {
         if (ongoingDate.secondCouple !== null) {
             let otherCouple = ongoingDate.coupleId === coupleIndex 
