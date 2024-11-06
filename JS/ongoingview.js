@@ -32,19 +32,44 @@ function updateOngoingView() {
     `;
 }
 
-
 //ratingview
 function ongoingRating(){
-    document.getElementById('app').innerHTML = `
-    ${createOngoingHeader()}
+    let user = model.data.users[model.app.loggedinuserID];
+    let coupleIndex = getCoupleIndex(user);
+    let ongoingDate = findOngoingDate(coupleIndex);
+    if(ongoingDate.firstcompleted || coupleIndex == ongoingDate.coupleId){
+        document.getElementById('app').innerHTML = `
+        ${createOngoingHeader()}
         <div class="ongoingGrid">
-            <div class="ratingCard">
-                <h3>Hvordan var daten?</h3>
-                ${createOngoingRating()}
-                ${createOngoingInputs()}
-            </div>
+        <div class="ratingCard">
+        <h3>Hvordan var dobbeldaten?</h3>
+        ${createOngoingRating()}
+        ${createOngoingInputs()}
         </div>
-    `;
+        </div>
+        `;
+        }else if(ongoingDate.firstcompleted == false){
+            document.getElementById('app').innerHTML = `
+            ${createOngoingHeader()}
+            <div class="ongoingGrid">
+            <div class="ratingCard">
+            <p>Vennligst vent til første par fullfører før du kan trykke på knappen.</p>
+            <button class="ongoingCancelRating" onclick="cancelOngoingRating()">Avbryt</button>
+            </div>
+            </div>
+            `;    
+        }else{
+            document.getElementById('app').innerHTML = `
+            ${createOngoingHeader()}
+            <div class="ongoingGrid">
+            <div class="ratingCard">
+            <h3>Hvordan var daten?</h3>
+            ${createOngoingRating()}
+            ${createOngoingInputs()}
+            </div>
+            </div>
+            `; 
+        }
 }
 
 function createOngoingHeader(){
@@ -83,12 +108,12 @@ function createOngoingInputs(){
 }
 function createOngoingCard(){
     let user = model.data.users[model.app.loggedinuserID]
-return `
-    <div class="ongoingCard">
+        return `
+        <div class="ongoingCard">
         <img src="${model.data.Dates[user.selectedDate].Picture}" class="ongoingCardImg">
         <div class="ongoingCheck">
-            <img height = 90px src="IMG/Ongoingheart.png" onclick="ongoingRating()"/>
+        <img height = 90px src="IMG/Ongoingheart.png" onclick="ongoingRating()"/>
         </div>
-    </div>
-`;
+        </div>
+        `;
 }

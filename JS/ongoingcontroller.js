@@ -96,25 +96,36 @@ function pushReview(){
         }
     )
 }
-function makeMemorySettings(){
+function makeMemorySettings() {
     let user = model.data.users[model.app.loggedinuserID];
-    if(user.partner.length > 0){
-        let partner = model.data.users[model.app.selectedPartner];
-        if(user.partner[0].hasAccepted && partner.partner[0].hasAccepted){
-            partner.ongoingDate = false;
-        }
-    }
-    if(user.doneDates.length === model.data.Dates.length){
-        user.doneDates = [];
-        if(user.partner.length > 0 && user.partner[0].hasAccepted && partner.partner[0].hasAccepted){
+    let partner = model.data.users[user.selectedPartner]
+    let coupleIndex = getCoupleIndex(user);
+    let ongoingDate = findOngoingDate(coupleIndex);
+    if (user.selectedPartner != null) {
+        partner.ongoingDate = false;
+        partner.ongoingCoupledate = false;
+        if (user.doneDates.length === model.data.Dates.length) {
             partner.doneDates = [];
         }
     }
+    if (user.doneDates.length === model.data.Dates.length) {
+        user.doneDates = [];
+    }
+    if (ongoingDate && ongoingDate.coupleId === coupleIndex) { 
+        ongoingDate.firstcompleted = true; 
+    }else{
+        ongoingDate.secondcompleted = true; 
+    }
+    if(ongoingDate.firstcompleted && ongoingDate.secondcompleted){
+        model.data.ongoingCoupledate.splice(ongoingDate, 1)
+    }
     user.ongoingDate = false;
+    user.ongoingCoupledate = false;
     model.input.endDate.memoryPicture = '';
     model.input.endDate.rating = '';
     model.input.endDate.comment = '';
 }
+
 function getCoupleIndex(user){
     return model.data.couples.findIndex(couple => 
         couple.firstId === user.ID || couple.secondId === user.ID
