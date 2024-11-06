@@ -1,10 +1,12 @@
 function updateCoupleView(){
+    let user = model.data.users[model.app.loggedinuserID]
+    let selectedProfileImg = user.userImage ? user.userImage : "profile.png";
     document.getElementById('app').innerHTML = /*HTML*/ `
     <div class="header">
     <div class="Box-left"></div>
         <img class='header-img' src="th4.png" onclick="goHome()"/>
         <div class="Box-right">
-        <img class='profile-img' height = 90px src="profile.png"  onclick="goProfile()"/>
+        <img src="${selectedProfileImg}" height= 50px onclick="goProfile()" class="profileImageBtn"/>
         </div>
     </div>
     <div class="coupleContainer">
