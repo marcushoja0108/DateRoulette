@@ -33,44 +33,30 @@ function updateOngoingView() {
 }
 
 //ratingview
-function ongoingRating(){
+function ongoingRating() {
     let user = model.data.users[model.app.loggedinuserID];
     let coupleIndex = getCoupleIndex(user);
     let ongoingDate = findOngoingDate(coupleIndex);
-    if(ongoingDate.firstcompleted || coupleIndex == ongoingDate.coupleId){
-        document.getElementById('app').innerHTML = `
-        ${createOngoingHeader()}
-        <div class="ongoingGrid">
-        <div class="ratingCard">
-        <h3>Hvordan var dobbeldaten?</h3>
-        ${createOngoingRating()}
-        ${createOngoingInputs()}
-        </div>
-        </div>
-        `;
-        }else if(ongoingDate.firstcompleted == false){
-            document.getElementById('app').innerHTML = `
-            ${createOngoingHeader()}
-            <div class="ongoingGrid">
-            <div class="ratingCard">
-            <p>Vennligst vent til første par fullfører før du kan trykke på knappen.</p>
-            <button class="ongoingCancelRating" onclick="cancelOngoingRating()">Avbryt</button>
-            </div>
-            </div>
-            `;    
-        }else{
-            document.getElementById('app').innerHTML = `
-            ${createOngoingHeader()}
-            <div class="ongoingGrid">
-            <div class="ratingCard">
-            <h3>Hvordan var daten?</h3>
+
+    let header = createOngoingHeader();
+    let gridStart = `<div class="ongoingGrid"><div class="ratingCard">`;
+    let gridEnd = `</div></div>`;
+    let content = '';
+
+    if (ongoingDate.firstcompleted || coupleIndex == ongoingDate.coupleId) {
+        content = `
+            <h3>Hvordan var dobbeldaten?</h3>
             ${createOngoingRating()}
-            ${createOngoingInputs()}
-            </div>
-            </div>
-            `; 
-        }
+            ${createOngoingInputs()}`;
+    } else {
+        content = `
+            <p>Vennligst vent til første par fullfører før du kan trykke på knappen.</p>
+            <button class="ongoingCancelRating" onclick="cancelOngoingRating()">Avbryt</button>`;
+    }
+
+    document.getElementById('app').innerHTML = `${header}${gridStart}${content}${gridEnd}`;
 }
+
 
 function createOngoingHeader(){
     return `

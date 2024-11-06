@@ -116,8 +116,11 @@ function makeMemorySettings() {
     }else{
         ongoingDate.secondcompleted = true; 
     }
-    if(ongoingDate.firstcompleted && ongoingDate.secondcompleted){
-        model.data.ongoingCoupledate.splice(ongoingDate, 1)
+    if (ongoingDate.firstcompleted && ongoingDate.secondcompleted) { 
+        let index = model.data.ongoingCoupledate.findIndex(date => date === ongoingDate); 
+        if (index !== -1) { 
+            model.data.ongoingCoupledate.splice(index, 1); 
+        } 
     }
     user.ongoingDate = false;
     user.ongoingCoupledate = false;
