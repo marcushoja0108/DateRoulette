@@ -55,7 +55,8 @@ const model = {
         },
         coupledate: {
             addIsOpen: false,
-            
+            time: '',
+            description: '',
         }
     },
 
@@ -258,6 +259,8 @@ const model = {
                 selectedCoupleDate: 0,
                 firstcompleted: false,
                 secondcompleted: false,
+                time: '17:30',
+                description: 'Vi skal se spiderman.',
             }
         ],
         coupleDates: [0,1,4,7,9,20,22,25,27,30,32,34,36],

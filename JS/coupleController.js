@@ -40,6 +40,8 @@ function addCoupleDate(){
         selectedCoupleDate: user.selectedDate,
         firstcompleted: false,
         secondcompleted: false,
+        time: model.input.coupledate.time,
+        description: model.input.coupledate.description,
     });
     user.selectedDate = user.selectedDate; 
     model.data.couples[coupleIndex].ongoingDateId = user.selectedDate; 
