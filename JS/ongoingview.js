@@ -22,41 +22,30 @@ function updateOngoingView() {
         ongoingChoice = `<h2>${user.name}, ${model.data.Dates[user.selectedDate].Name} daten din venter...</h2>`;
     }
     document.getElementById('app').innerHTML = /*html*/ `
-        ${createOngoingHeader()}
-        <div class="ongoingGrid">
+            ${createOngoingHeader()}
+            <div class="ongoingGrid">
             ${ongoingChoice}
             <div class="ongoingText">Trykk på hjertet når daten er ferdig</div>
             <br>
             ${createOngoingCard()}
+            </div>
+        `;
+}
+
+
+//ratingview
+function ongoingRating(){
+    document.getElementById('app').innerHTML = `
+    ${createOngoingHeader()}
+        <div class="ongoingGrid">
+            <div class="ratingCard">
+                <h3>Hvordan var daten?</h3>
+                ${createOngoingRating()}
+                ${createOngoingInputs()}
+            </div>
         </div>
     `;
 }
-
-//ratingview
-function ongoingRating() {
-    let user = model.data.users[model.app.loggedinuserID];
-    let coupleIndex = getCoupleIndex(user);
-    let ongoingDate = findOngoingDate(coupleIndex);
-
-    let header = createOngoingHeader();
-    let gridStart = `<div class="ongoingGrid"><div class="ratingCard">`;
-    let gridEnd = `</div></div>`;
-    let content = '';
-
-    if (ongoingDate.firstcompleted || coupleIndex == ongoingDate.coupleId) {
-        content = `
-            <h3>Hvordan var dobbeldaten?</h3>
-            ${createOngoingRating()}
-            ${createOngoingInputs()}`;
-    } else {
-        content = `
-            <p>Vennligst vent til første par fullfører før du kan trykke på knappen.</p>
-            <button class="ongoingCancelRating" onclick="cancelOngoingRating()">Avbryt</button>`;
-    }
-
-    document.getElementById('app').innerHTML = `${header}${gridStart}${content}${gridEnd}`;
-}
-
 
 function createOngoingHeader(){
     return `
@@ -94,12 +83,12 @@ function createOngoingInputs(){
 }
 function createOngoingCard(){
     let user = model.data.users[model.app.loggedinuserID]
-        return `
-        <div class="ongoingCard">
+return `
+    <div class="ongoingCard">
         <img src="${model.data.Dates[user.selectedDate].Picture}" class="ongoingCardImg">
         <div class="ongoingCheck">
-        <img height = 90px src="IMG/Ongoingheart.png" onclick="ongoingRating()"/>
+            <img height = 90px src="IMG/Ongoingheart.png" onclick="ongoingRating()"/>
         </div>
-        </div>
-        `;
+    </div>
+`;
 }
