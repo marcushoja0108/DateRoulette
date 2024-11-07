@@ -8,8 +8,7 @@ function updateMemoryView(){
         <div class="Box-right"></div>
     </div>
     <div class="memoryContainer">
-  
-    Hei ${user.name} velkommen tilbake:
+    <strong class="memoryTopName">${user.name}'s minner:</strong>
     ${createImages()}
     </div>
     `;
@@ -22,11 +21,11 @@ function createImages(){
         let starRating = convertRatingToStars(user.finishedDates[i].Rating)
         html += `
         <div class="memoryCard">
-        ${user.finishedDates[i].Name}
-        <img src="${user.finishedDates[i].memoryPicture}"/>
+        <strong class="memoryNameText">${user.finishedDates[i].Name}</strong>
+        <div class= "memoryImgFrame"> <img src="${user.finishedDates[i].memoryPicture}" height = 200px/> </div>
         <div style="color: gold">${starRating}</div>
-        ${user.finishedDates[i].day}<br>
-        ${user.finishedDates[i].comment}
+        ${user.finishedDates[i].comment}<br>
+        <div style="font-size: 10px">${user.finishedDates[i].day}</div>
         </div>
         
         `;

@@ -4,7 +4,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 5px;
+    text-align: center;
+    gap: 15px;
+    
 }
 
 .memoryCard {
@@ -12,11 +14,31 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: radial-gradient(circle, rgb(255, 157, 157), rgb(255, 86, 86) 130%);
+    background: #d987e7;
     width: 320px;
-    padding: 10px
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px black;
+    /*border: 2px solid #87349e;*/
 }
 .memoryCard img {
+}
+.memoryImgFrame {
+    box-shadow: 5px 5px 15px black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 200px;
-   
+    
+    
+    overflow: hidden;
+}
+.memoryNameText{
+    margin-bottom: 5px;
+}
+/*background: linear-gradient(to bottom, #e1bee7, #87349e);*/
+.memoryTopName{
+    margin: 10px;
+    font-size: large;
 }
