@@ -77,6 +77,7 @@ hr {
 }
 .info-date h2 {
   color: #4b0018;
+  font-size: 28px;
 }
 .fa-solid {
   right: 20px;
@@ -89,10 +90,11 @@ hr {
 .info-contCat {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   column-gap: 10px;
   height: 100%;
-  width: 300px;
+  width: 380px;
+  flex-wrap: wrap;
 }
 .info-date p {
   font-size: 24px;
@@ -118,7 +120,7 @@ hr {
 }
 .infocategory {
   display: flex;
-  justify-content: end;
+  justify-content: center;
   font-size: large;
   gap: 5px;
   font-size: 22px;
