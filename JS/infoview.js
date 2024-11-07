@@ -1,7 +1,7 @@
 function updateInfoView() {
-  let user = model.data.users[model.app.loggedinuserID]
+  let user = model.data.users[model.app.loggedinuserID];
   let selectedDate = model.data.Dates[user.selectedDate];
-  let homeChoice = selectedDate.home ? 'Hjemme' : 'Borte';
+  let homeChoice = selectedDate.home ? "Hjemme" : "Borte";
 
   if (selectedDate) {
     let backButton =
@@ -26,16 +26,18 @@ function updateInfoView() {
        <i id='closeBtn' class="fa-solid fa-xmark"></i>
   
       <div class='info-date-btn'>
-          <h2>${homeChoice}</h2>
+          <h2 class='choise'>Date er ${homeChoice}</h2>
           
       </div>
       <div class='info-cont'>
           <h2>Fra tid:</h2>
           <p>${selectedDate.fromTime} : 00</p>
       </div>
+ 
       <div class='info-cont'>
           <h2>Tidsforbruk:</h2>
           <p>${selectedDate.timeSpent} timer</p>
+          
       </div>
       <div class='info-contCat'>
           <h2>Kategori:</h2>
@@ -50,8 +52,8 @@ function updateInfoView() {
     </div>
 
         <div class='btn-container'>
-            ${backButton}
-            <button onclick="goOngoing()">Aksepter</button>
+           ${backButton}
+            <button class='accept-btn' onclick="goOngoing()">Aksepter</button>
         </div>
 </div>
 ${createCommentField()}
@@ -75,11 +77,11 @@ ${createCommentField()}
     }
   });
 }
-function listCategories(){
-  let html = '';
-  let user = model.data.users[model.app.loggedinuserID]
+function listCategories() {
+  let html = "";
+  let user = model.data.users[model.app.loggedinuserID];
   let selectedDate = model.data.Dates[user.selectedDate];
-  for(let category of selectedDate.Category){
+  for (let category of selectedDate.Category) {
     html += `
     <div>${category}</div>
     `;
@@ -87,7 +89,7 @@ function listCategories(){
   return html;
 }
 function createCommentField() {
-  let user = model.data.users[model.app.loggedinuserID]
+  let user = model.data.users[model.app.loggedinuserID];
   let html = "";
   if (model.data.Dates[user.selectedDate].review.length > 0) {
     for (let comment of model.data.Dates[user.selectedDate].review) {

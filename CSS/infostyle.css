@@ -11,15 +11,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 300px; 
+  height: 300px;
   overflow: hidden;
   margin-top: 20px;
   border-radius: 10px;
 }
-.img img{
+.img img {
   border-radius: 10px;
 }
-
+hr {
+  border-bottom: 2px solid black;
+}
 .btn-container {
   display: flex;
   justify-content: space-around;
@@ -37,15 +39,16 @@
 }
 
 .info-name {
-  color: black;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1.7px;
 }
 
 .info-date.show {
-  background-color: #e9d1d1;
+  background-color: #fbfbfb;
   display: flex;
   right: 20px;
   border: 2px solid #be013c;
-  padding: 0;
   margin: 0;
   flex-direction: column;
   align-items: center;
@@ -57,6 +60,7 @@
   display: block;
   margin: 0 auto;
 }
+
 .info-date {
   display: none;
   background-color: #e9d1d1;
@@ -80,7 +84,9 @@
   cursor: pointer;
   position: absolute;
 }
-.info-cont {
+
+.info-cont,
+.info-contCat {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -89,17 +95,17 @@
   width: 300px;
 }
 .info-date p {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 600;
 }
 .info-date-btn {
-  display: flex;
+  font-size: 22px;
+  text-align: center;
   width: 300px;
   align-items: center;
   gap: 20px;
 }
 .info-description {
-  color: #4b0018;
   font-size: 28px;
 }
 .infoCommentBox {
@@ -110,18 +116,19 @@
   text-align: center;
   color: white;
 }
-.infocategory{
+.infocategory {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+  justify-content: end;
   font-size: large;
   gap: 5px;
+  font-size: 22px;
   font-weight: 600;
   width: 300px;
 }
-.info-contCat{
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  column-gap: 10px;
+
+.accept-btn {
+  margin-left: 20px;
+}
+.btn-container {
+  margin-bottom: 20px;
 }
