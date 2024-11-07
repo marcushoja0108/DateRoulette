@@ -9,39 +9,54 @@ function updateProfileView(){
     ${createProfileHeader()}
     <div class="profileContainer">
         ${searchOtherProfile}
-        ${createPartner()}
+        <div></div>
         ${createProfileInfo(user)}
-        
+        ${createPartner()}
     </div>
     <div></div>
     `;
 }
 function createProfileInfo(user){
+    let selectedProfileImg = user.userImage ? user.userImage : "profile.png";
+    let partner = '';
+    let selectedPartnerImg = '';
+    if(user.selectedPartner != null){
+        partner = model.data.users[user.selectedPartner]
+        selectedPartnerImg = partner.userImage ? partner.userImage : "profile.png";
+    }
+    let coupleImage = user.selectedPartner != null 
+    ? `<div class="profileImageBox"><img src="${selectedProfileImg}" height= 300px/></div>
+    <div class="profileImageBoxPartner"><img src="${selectedPartnerImg}" height= 150px/></div>` 
+    : `<div class="profileImageBox"><img src="${selectedProfileImg}" height= 300px/></div>`
+    selectedProfileImg
     let html = `
-    <div>
-        <div class="profileImageBox"><img src="${user.userImage}" height= 300px/></div>
-    </div>
-    
+    <div>${coupleImage}</div>
+    <br>
+    <div>Bursdag: ${user.birthday}</div>
+    <div>By: ${user.city}</div>
+    <div>Navn: ${user.name}</div>
     `;
     return html;
 }
+
+
 function createPartner(){
     let html='';
     let user = model.data.users[model.app.loggedinuserID]
         if(user.selectedPartner != null){
             html = `
-            <h3>Partner: ${model.data.users[user.selectedPartner].name}</h3>
+            <div>Partner: ${model.data.users[user.selectedPartner].name}</div>
             <button onclick="deletePartner()">Fjern Partner</button>
             `;
         }
         if(user.partner.length > 0){
             if(user.partner[0].hasAccepted){
                 html = `
-                <h3>Partner: ikke godtatt enda</h3>
+                <div>Partner: ikke godtatt enda</div>
                 `;
             }else{
                 html = `
-                <h3>Partner: ikke godtatt enda</h3>
+                <div>Partner: ikke godtatt enda</div>
                 <div class="profileChoicesPartner">
                 <button onclick="acceptPartner()">Godta</button>
                 <button onclick="rejectPartner()">Avslå</button>

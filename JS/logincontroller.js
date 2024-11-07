@@ -5,13 +5,13 @@ function goLogin() {
 
 
 function registerUser() {
-  const { eMail, name, address, password, birthday, secondPassword, phone } = model.input.register;
+  const { eMail, name, city, password, birthday, secondPassword, phone } = model.input.register;
 
   // see if inputs is filled
   signup()
   if (!eMail) return model.input.login.showMessage = 'Email not filled in';
   if (!name) return model.input.login.showMessage = 'Name not filled in';
-  if (!address) return model.input.login.showMessage = 'Address not filled in';
+  if (!city) return model.input.login.showMessage = 'City not filled in';
   if (!password) return model.input.login.showMessage = 'Password not filled in';
   if (!birthday) return model.input.login.showMessage = 'Birthday not filled in';
 
@@ -49,7 +49,7 @@ function isPhoneInUse(phone) {
 
 // push the user
 function pushUser() {
-  const { password, secondPassword, name, birthday, address, eMail, phone } = model.input.register;
+  const { password, secondPassword, name, birthday, city, eMail, phone } = model.input.register;
 
   if (password !== secondPassword) return model.input.login.showMessage = "Passwords don't match";
   model.input.login.showMessage = 'User Registered';
@@ -58,7 +58,7 @@ function pushUser() {
     name,
     password,
     birthday,
-    address,
+    city,
     eMail,
     phone,
     userImage: '',
@@ -85,7 +85,6 @@ function logincheck() {
   if (user) {
     model.app.loggedinuserID = user.ID;
     goHome();
-    console.log(model.app.loggedinuserID);
   } else {
     loginW()
     return model.input.login.showMessage = "Invalid email or password";

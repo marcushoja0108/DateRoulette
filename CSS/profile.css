@@ -53,7 +53,7 @@
     color: white;
     display: flex;
     flex-direction: column;
-    
+    width: 300px;
 }
 .searchresultbutton{
     align-items: center;
@@ -67,5 +67,30 @@
     border-radius: 50%;
     height: 250px;
     width: 250px;
+    overflow: hidden;
+}
+.profileSearchGrid{
+    display: flex;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    box-shadow: 5px 5px 10px black;
+    background-color: #e1bee7;
+    position: absolute;
+    top: 150px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+.profileImageBoxPartner{
+    position: absolute;
+    top: 260px;
+    right: 40px;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
     overflow: hidden;
 }

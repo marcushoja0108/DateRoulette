@@ -44,7 +44,7 @@ function signup() {
             PhoneNummer
             <input type="text" oninput= "model.input.register.phone=this.value">
             Address
-            <input type="text" oninput= "model.input.register.address=this.value">
+            <input type="text" oninput= "model.input.register.city=this.value">
             birthday
             <input  type="date" oninput= "model.input.register.birthday=this.value">
             Email

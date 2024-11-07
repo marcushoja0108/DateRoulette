@@ -12,12 +12,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 50px;
-    width: 200px;
+    height: 80px;
     text-align: center;
+    padding: 10px;
 }
 .OuterNewCoupleDate{
-    background-color: aqua;
+    background-color: #87349e;
     width: 100%;
     height: 85vh;
     position: absolute;
@@ -26,4 +26,30 @@
     flex-direction: column;
     align-items: center;
     gap: 5px;
+}
+.createCoupleDateDescription{
+    height: 10vh;
+    width: 50vw;
+    align-content: start;
+    border-radius: 15px;
+    margin: 10px;
+    font-size: larger;
+    box-shadow: 5px 5px 15px;
+    padding: 10px;
+
+}
+.newCoupleDateTime{
+    margin: 10px;
+}
+.infoText{
+    margin-top: 10px;
+    color: white;
+    font-size: larger;
+}
+.coupleDateSelect{
+    font-size: larger;
+    height: 40px;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 5px 5px 15px black;
 }

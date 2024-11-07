@@ -21,6 +21,9 @@
     width: 90px;
     height: 90px;
     margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 button {
     padding: 10px 20px;
@@ -51,29 +54,33 @@ button {
 }
 
 .filter-img{
-    max-width: 120px;
+    position: fixed;
+    top: 15px;
+    left: 20px;
 }
-
 
 .profile-img{ 
     max-width: 120px;
 }
 
 .randomContainer{
+margin-top: 100px;
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+height: 600px;
 }
 
 .wheel{
     width: 350px;
-    margin-top: 5vh;
-    
+    position: absolute;
+    top: 200px;
 }
 .wheelspin{
+    position: absolute;
+    top: 200px;
     width: 350px;
-    margin-top: 5vh;
     animation: spin 3s;
 }
 @keyframes spin {
@@ -85,7 +92,9 @@ align-items: center;
     }
 }
 .spinButton{
-    margin-top: 27vh;
+    position: absolute;
+    top: 120px;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -206,4 +215,24 @@ align-items: center;
     margin: 5%;
     border-radius: 12px;
     font-weight: bolder;
+}
+.homeDoubledateBtn{
+    position: absolute;
+    top: 575px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size:x-large;
+    border: solid  2px black;
+    width: 150px;
+    height: 35px;
+    border-radius: 15px;
+    background: radial-gradient(circle, white,#e1bee7fb 150%);
+    box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.795);
+}
+.profileImageBtn{
+    border-radius: 50%;
+    width: 50px;
+    border: 2px solid black;
 }

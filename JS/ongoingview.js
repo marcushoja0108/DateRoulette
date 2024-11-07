@@ -14,12 +14,21 @@ function updateOngoingView() {
             : model.data.couples[ongoingDate.coupleId];
             blindUser1 = model.data.users[otherCouple.firstId].name;
             blindUser2 = model.data.users[otherCouple.secondId].name;
-            ongoingChoice = `<h2>${user.name} og ${partner.name}. Dere har en ${model.data.Dates[user.selectedDate].Name}date med ${blindUser1} og ${blindUser2}</h2>`;
+            ongoingChoice = `
+            <h2>${user.name} og ${partner.name}.<br> Dere har en ${model.data.Dates[user.selectedDate].Name}date med ${blindUser1} og ${blindUser2}</h2>
+            <img class="ongoingHeart" height = 70px src="IMG/Ongoingheart.png" onclick="ongoingRating()"/>
+            `;
         } else {
-            ongoingChoice = `<h2>${user.name}, venter på en annen gruppe for ${model.data.Dates[user.selectedDate].Name}date...</h2>`;
+            ongoingChoice = `
+            <h2>${user.name}, venter på en annen gruppe for ${model.data.Dates[user.selectedDate].Name}date...</h2>
+            <button onclick="cancelOngoingDoubleDate()">Avbryt</button>
+            `;
         }
     } else {
-        ongoingChoice = `<h2>${user.name}, ${model.data.Dates[user.selectedDate].Name} daten din venter...</h2>`;
+        ongoingChoice = `
+        <h2>${user.name}, ${model.data.Dates[user.selectedDate].Name} daten din venter...</h2>
+        <img class="ongoingHeart" height = 70px src="IMG/Ongoingheart.png" onclick="ongoingRating()"/>
+        `;
     }
     document.getElementById('app').innerHTML = /*html*/ `
             ${createOngoingHeader()}
@@ -32,21 +41,6 @@ function updateOngoingView() {
         `;
 }
 
-
-//ratingview
-function ongoingRating(){
-    document.getElementById('app').innerHTML = `
-    ${createOngoingHeader()}
-        <div class="ongoingGrid">
-            <div class="ratingCard">
-                <h3>Hvordan var daten?</h3>
-                ${createOngoingRating()}
-                ${createOngoingInputs()}
-            </div>
-        </div>
-    `;
-}
-
 //ratingview
 function ongoingRating() {
     let user = model.data.users[model.app.loggedinuserID];
@@ -54,29 +48,40 @@ function ongoingRating() {
     let ongoingDate = findOngoingDate(coupleIndex);
     let header = createOngoingHeader();
     let gridStart = `<div class="ongoingGrid"><div class="ratingCard">`;
+    let gridEnd = `</div></div>`;
     let content = '';
 
-    if (ongoingDate.firstcompleted || coupleIndex == ongoingDate.coupleId) {
-        content = `
-            <h3>Hvordan var dobbeldaten?</h3>
-            ${createOngoingRating()}
-            ${createOngoingInputs()}`;
+    if (ongoingDate) {
+        if (ongoingDate.firstcompleted || coupleIndex === ongoingDate.coupleId) {
+            content = `
+                <h3>Hvordan var dobbeldaten?</h3>
+                ${createOngoingRating()}
+                ${createOngoingInputs()}`;
+        } else {
+            content = `
+                <p style="padding: 5px">Vennligst vent til første par fullfører før du kan trykke på knappen.</p>
+                <button class="ongoingCancelRating" onclick="cancelOngoingRating()">Avbryt</button>`;
+        }
     } else {
         content = `
-            <p>Vennligst vent til første par fullfører før du kan trykke på knappen.</p>
-            <button class="ongoingCancelRating" onclick="cancelOngoingRating()">Avbryt</button>`;
+                <h3>Hvordan var daten?</h3>
+                ${createOngoingRating()}
+                ${createOngoingInputs()}`;
     }
-
-    document.getElementById('app').innerHTML = `${header}${gridStart}${content}`;
+    document.getElementById('app').innerHTML = `${header}${gridStart}${content}${gridEnd}`;
 }
 
 
 function createOngoingHeader(){
+    let user = model.data.users[model.app.loggedinuserID]
+    let selectedProfileImg = user.userImage ? user.userImage : "profile.png";
     return `
     <div class="header">
         <div class="Box-left"></div>
         <img class='header-img' src="th4.png"/>
-        <div class="Box-right"><img class='profile-img' height = 90px src="profile.png" onclick="goProfile()"/></div>
+        <div class="Box-right">
+            <img src="${selectedProfileImg}" height= 50px onclick="goProfile()" class="profileImageBtn"/>
+        </div>
     </div>
     `;
 }
@@ -109,10 +114,7 @@ function createOngoingCard(){
     let user = model.data.users[model.app.loggedinuserID]
 return `
     <div class="ongoingCard">
-        <img src="${model.data.Dates[user.selectedDate].Picture}" class="ongoingCardImg">
-        <div class="ongoingCheck">
-            <img height = 90px src="IMG/Ongoingheart.png" onclick="ongoingRating()"/>
-        </div>
+        <img style="border-radius: 10px" src="${model.data.Dates[user.selectedDate].Picture}" height=250px>
     </div>
 `;
 }

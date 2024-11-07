@@ -50,11 +50,22 @@ function profileSearchUser(){
     model.input.profile.searchresult = model.data.users.filter(user => (user.eMail.toLowerCase().includes(inputSearch.toLowerCase()) ||
     user.name.toLowerCase().includes(inputSearch.toLowerCase())) && user.ID !== model.app.loggedinuserID)
     if(model.input.profile.searchresult.length > 0){
-        model.input.profile.showSearch = createProfileSearchUser()
+        model.input.profile.showSearch = `
+        <div class="profileSearchGrid">
+        ${createProfileSearchUser()}
+        <button onclick="cancelPartnerSearch()">Avbryt</button>
+        </div>
+        `;
     }else{
         model.input.profile.showSearch = 'Her var det ingenting'
     }
-   changeView()
+    changeView()
+}
+function cancelPartnerSearch(){
+    model.input.profile.showSearch = '';
+    model.input.profile.searchresult = '';
+    model.input.profile.inputSearch = '';
+    changeView();
 }
 function selectPartner(selectedId){
     model.data.users[model.app.loggedinuserID].partner.push(
