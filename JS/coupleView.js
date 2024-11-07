@@ -11,21 +11,21 @@ function updateCoupleView(){
     </div>
     <div class="coupleContainer">
         <h3>Pardater</h3>
-    ${listAvableCoupleDates() ?? ''}
+    ${listAvableCoupleDates(user) ?? ''}
     ${createNewCoupleDate() ?? ''}
     <button style="width: 200px" onclick="openAddDate()">Lag en ny Pardate</button>
     </div>
     `;
 }
 
-function listAvableCoupleDates(){
+function listAvableCoupleDates(user){
     let html = '';
     for (let i = 0; i < model.data.ongoingCoupledate.length; i++) {
         let date = model.data.ongoingCoupledate[i];
-        if(date.secondCouple == null){
-            let couple = model.data.couples[date.coupleId];
-            let firstUser = model.data.users[couple.firstId];
-            let secondUser = model.data.users[couple.secondId];
+        let couple = model.data.couples[date.coupleId];
+        let firstUser = model.data.users[couple.firstId];
+        let secondUser = model.data.users[couple.secondId];
+        if(date.secondCouple == null && firstUser.city.toLowerCase() == user.city.toLowerCase()){
             html += `
             <div class="coupleOngoingBox" onclick="acceptCoupleDate(${date.ongoingDateId})">
             <div><strong>${firstUser.name} & ${secondUser.name}</div>
