@@ -86,16 +86,16 @@ hr {
   position: absolute;
 }
 
-.info-cont,
-.info-contCat {
+.info-cont {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   column-gap: 10px;
   height: 100%;
-  width: 380px;
+  width: 300px;
   flex-wrap: wrap;
 }
+
 .info-date p {
   font-size: 24px;
   font-weight: 600;
@@ -120,8 +120,8 @@ hr {
 }
 .infocategory {
   display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: large;
   gap: 5px;
   font-size: 22px;
   font-weight: 600;
