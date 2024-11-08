@@ -53,7 +53,7 @@ function updateInfoView() {
 
         <div class='btn-container'>
            ${backButton}
-            <button class='accept-btn' onclick="goOngoing()">Aksepter</button>
+            <button onclick="goOngoing()">Aksepter</button>
         </div>
 </div>
 ${createCommentField()}
