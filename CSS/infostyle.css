@@ -117,6 +117,7 @@ hr {
   margin: 5px;
   text-align: center;
   color: white;
+  width: 335px;
 }
 .infocategory {
   display: flex;

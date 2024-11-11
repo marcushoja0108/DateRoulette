@@ -55,8 +55,8 @@ function updateInfoView() {
            ${backButton}
             <button onclick="goOngoing()">Aksepter</button>
         </div>
+        ${createCommentField()}
 </div>
-${createCommentField()}
     `;
   }
 

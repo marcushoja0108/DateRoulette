@@ -21,16 +21,15 @@
     box-shadow: 5px 5px 10px black;
     /*border: 2px solid #87349e;*/
 }
-.memoryCard img {
-}
+
 .memoryImgFrame {
     box-shadow: 5px 5px 15px black;
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 200px;
-    
+    max-height: 300px;
+    max-width: 310px;
     
     overflow: hidden;
 }
