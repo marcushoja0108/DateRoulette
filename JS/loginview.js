@@ -2,7 +2,7 @@ function updateLoginView() {
   document.getElementById("app").innerHTML = /*html*/ `
   <div class="logcontainer"> 
   <div class="login">
-     <img class='loginheader-img' src="th4.png"/>
+     <img class='loginheader-img' src="IMG/th4.png"/>
      <div class="buttons">
      <button class="" onclick="loginW()">Logg inn</button>
      <button class="" onclick="signup()">Registrer</button>
@@ -16,7 +16,7 @@ function loginW() {
   document.getElementById("app").innerHTML = /*html*/ `
     <div class="logcontainer"> 
     <div class="login">
-    <img class='loginheader-img' src="th4.png"/>
+    <img class='loginheader-img' src="IMG/th4.png"/>
     <div class='wronglogin'>${model.input.login.showMessage}</div>
     <div class="buttons">
     Epost
@@ -36,7 +36,7 @@ function signup() {
   document.getElementById("app").innerHTML = /*html*/ `
     <div class="logcontainer"> 
         <div class="login">
-            <img class='loginheader-img' src="th4.png"/>
+            <img class='loginheader-img' src="IMG/th4.png"/>
             <div class="wronglogin">${model.input.login.showMessage}</div>
             <div class="buttons">
             Navn

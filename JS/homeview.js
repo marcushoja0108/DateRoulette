@@ -1,11 +1,11 @@
 function updateHomeView(){
         let user = model.data.users[model.app.loggedinuserID];
         let partnerDate = user.selectedPartner != null ? `<div class="homeDoubledateBtn" onclick="goCouple()">Dobbeldate</div>` : '';
-        let selectedProfileImg = user.userImage ? user.userImage : "profile.png";
+        let selectedProfileImg = user.userImage ? user.userImage : "IMG/profile.png";
         document.getElementById('app').innerHTML = /*HTML*/ `
         <div class="header">
         <div class="Box-left"></div>
-            <img class='header-img' src="th4.png"
+            <img class='header-img' src="IMG/th4.png"
             onclick="goHome()"/>
             <div class="Box-right">
             <img src="${selectedProfileImg}" height= 50px onclick="goProfile()" class="profileImageBtn"/>
@@ -23,7 +23,7 @@ function updateHomeView(){
 function createFilterView(){
     if(model.input.filter.isOpen == false) return`
         <div class="Box-placeholder" onclick="openFilter()">
-            <img class='filter-img' height = 70px src="filter.png"/>
+            <img class='filter-img' height = 70px src="IMG/filter.png"/>
         </div>`;
 
 
@@ -46,7 +46,7 @@ function createFilterView(){
 // spin og random view
 function randomContent(){
     if(model.input.filter.showResultmessage == false){
-    let startWheelAnimation = model.input.filter.startWheel ? `<img width='350px' class='wheelspin' src='wheel.png'>` : `<img width='350px' class='wheel' src='wheel.png'>`
+    let startWheelAnimation = model.input.filter.startWheel ? `<img width='350px' class='wheelspin' src='IMG/wheel.png'>` : `<img width='350px' class='wheel' src='IMG/wheel.png'>`
     let html = /*HTML*/`
         <div class="spinButton" onclick="startWheel()">SPIN</div>
         ${startWheelAnimation}
