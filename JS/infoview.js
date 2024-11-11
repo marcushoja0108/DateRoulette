@@ -43,7 +43,7 @@ function updateInfoView() {
           <p>${selectedDate.maxPrice} kr</p>
       </div>
       <div class='info-contCat'>
-          <h2>Kategori:</h2>
+          <h2 class='category'>Kategori:</h2>
           <div class="infocategory">${listCategories()}</div>
       </div>
     </div>
