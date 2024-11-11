@@ -141,6 +141,7 @@ height: 600px;
     z-index: 2;
     top: 90px;
     border-radius: 10px;
+    
    
     
 }
@@ -172,12 +173,12 @@ height: 600px;
 
 .filterGrid{
     margin-top: 30px;
-    height: 60vh;
     justify-content: center;
     display: grid;
     padding: 5px;
     align-content: space-evenly;
     gap: 2vh;
+
     
 
 }
@@ -209,10 +210,10 @@ height: 600px;
     justify-content: center;
     border: solid white 2px;
     background-color: #de95eb;
-    color: black;
-    width: 150px;
+    color: white;
+    width: 70px;
     padding: 5px;
-    margin: 5%;
+    margin-bottom: 10px;
     border-radius: 12px;
     font-weight: bolder;
 }

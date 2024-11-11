@@ -30,14 +30,14 @@ function createFilterView(){
         return `
     <div class="dropDownContainer">
         <div class="filterGrid">
-        <div class="filterItem">${createCategory()}</div>
+            <div class="filterItem">${createCategory()}</div>
             <div class="filterItem" onclick="disablePriceButton()">${createMaxPrice()}</div>
             <div class="filterItem" onclick="addCounter()">${createLocation()}</div>
             <div class="filterItem" onclick="disableTimeSpentButton()">${createTimeUsage()}</div>
             <div class="filterItem" onclick="disableFromTimeButton()">${createFromTime()}</div>
+            <div class="confirmChangesButton" onclick="backToHome()">
+            Bekreft</div>
         </div>
-        <div class="confirmChangesButton" onclick="backToHome()">
-        Bekreft endringer</div>
     </div>
         `;
     
