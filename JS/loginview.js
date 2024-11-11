@@ -4,8 +4,8 @@ function updateLoginView() {
   <div class="login">
      <img class='loginheader-img' src="th4.png"/>
      <div class="buttons">
-     <button class="" onclick="loginW()">log in</button>
-     <button class="" onclick="signup()">Sign up</button>
+     <button class="" onclick="loginW()">Logg inn</button>
+     <button class="" onclick="signup()">Registrer</button>
      </div>
   </div>
   </div>
@@ -19,13 +19,13 @@ function loginW() {
     <img class='loginheader-img' src="th4.png"/>
     <div class='wronglogin'>${model.input.login.showMessage}</div>
     <div class="buttons">
-    Email
+    Epost
     <input type="text" oninput="model.input.login.eMail=this.value" >
-    password
+    Passord
     <input type="password" oninput="model.input.login.password=this.value">
-    <button class="" onclick="logincheck()">log in</button>
-    Dont have a account?
-    <button class="" onclick="signup()">Sign up</button>
+    <button class="" onclick="logincheck()">Logg inn</button>
+    Har du ikke konto?
+    <button class="" onclick="signup()">Registrer deg</button>
     </div>
     </div>
     </div>
@@ -39,24 +39,24 @@ function signup() {
             <img class='loginheader-img' src="th4.png"/>
             <div class="wronglogin">${model.input.login.showMessage}</div>
             <div class="buttons">
-            Name
+            Navn
             <input type="text" oninput= "model.input.register.name=this.value">
-            PhoneNummer
+            Telefonnummer
             <input type="text" oninput= "model.input.register.phone=this.value">
-            Address
+            By
             <input type="text" oninput= "model.input.register.city=this.value">
-            birthday
+            Fødselsdag
             <input  type="date" oninput= "model.input.register.birthday=this.value">
-            Email
+            Epost
             <input type="text" oninput= "model.input.register.eMail=this.value">
-            password
+            Passord
             <input type="text" oninput= "model.input.register.password=this.value">
-            repeat-password
+            Repeter passordet
              <input type="password" oninput= "model.input.register.secondPassword=this.value">
     
-             <button class="" onclick="registerUser()">Sign up</button>
-            Have a user?
-            <button class="" onclick="loginW()">log in</button>
+             <button class="" onclick="registerUser()">Registrer</button>
+            Allerede bruker?
+            <button class="" onclick="loginW()">Logg inn</button>
     
             </div>
         </div>

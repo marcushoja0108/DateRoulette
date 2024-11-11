@@ -5,7 +5,8 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-   
+    color: white;
+    font-weight: bold;
 }
 .login {
     display: flex;
@@ -31,10 +32,3 @@
     font-size: large;
     
 }
-
-
-
-button:hover {
-    background-color: #ffd900;
-}
-
