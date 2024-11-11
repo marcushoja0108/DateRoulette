@@ -74,11 +74,11 @@ function ongoingRating() {
 
 function createOngoingHeader(){
     let user = model.data.users[model.app.loggedinuserID]
-    let selectedProfileImg = user.userImage ? user.userImage : "profile.png";
+    let selectedProfileImg = user.userImage ? user.userImage : "IMG/profile.png";
     return `
     <div class="header">
         <div class="Box-left"></div>
-        <img class='header-img' src="th4.png"/>
+        <img class='header-img' src="IMG/th4.png"/>
         <div class="Box-right">
             <img src="${selectedProfileImg}" height= 50px onclick="goProfile()" class="profileImageBtn"/>
         </div>

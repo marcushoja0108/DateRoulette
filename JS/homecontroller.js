@@ -23,13 +23,11 @@ function randomDate() {
     let user = model.data.users[model.app.loggedinuserID]
     model.input.filter.startWheel = false
     let searchResult = filterRandomDate();
-    console.log(searchResult)
     if (searchResult.length > 0) {
         let rng = Math.floor(Math.random() * searchResult.length);
         let randomSelected = searchResult[rng];
         let selectedIndex = model.data.Dates.findIndex(date => date === randomSelected);
         user.selectedDate = selectedIndex;
-        console.log(user.selectedDate);
         goInfo();
     } else {
         model.input.filter.showResultmessage = true;

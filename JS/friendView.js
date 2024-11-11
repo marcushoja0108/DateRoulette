@@ -11,9 +11,9 @@ function createFriendHeader(){
     return `
     <div class="header">
         <div class="Box-leftFriend">
-        <img height = 50px src="back.png" onclick="goInfo()"/>
+        <img height = 50px src="IMG/back.png" onclick="goInfo()"/>
         </div>
-        <img class='header-img' src="th4.png"/>
+        <img class='header-img' src="IMG/th4.png"/>
         <div class="Box-right"></div>
     </div>
     `;
