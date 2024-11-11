@@ -83,23 +83,23 @@ hr {
   position: absolute;
 }
 
-.info-cont,
-.info-contCat {
+.info-cont {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   column-gap: 10px;
   height: 100%;
-  width: 380px;
+  width: 300px;
   flex-wrap: wrap;
 }
+
 .info-date p {
   font-size: 24px;
   font-weight: 600;
 }
 .info-date-btn {
   font-size: 22px;
-  text-align: center;
+  
   width: 300px;
   align-items: center;
   gap: 20px;
@@ -114,20 +114,19 @@ hr {
   margin: 5px;
   text-align: center;
   color: white;
+  width: 335px;
 }
 .infocategory {
   display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: large;
   gap: 5px;
   font-size: 22px;
   font-weight: 600;
   width: 300px;
 }
 
-.accept-btn {
-  margin-left: 20px;
-}
 .btn-container {
   margin-bottom: 20px;
+  gap: 20px;
 }

@@ -1,8 +1,8 @@
 const model = {
     app: {
-        loggedinuserID: 0,
+        loggedinuserID: 1,
         pages: ["HomePage", "Login", "infopage", "memory", "ongoingDate", "friendPage","profilePage","couplePage"],
-        currentpage: "HomePage",
+        currentpage: "Login",
         selectedFriend: 0,
     },
 
@@ -75,10 +75,7 @@ const model = {
                     selectedDate: 0,
                     selectedPartner: null,
                     partner: [
-                        {
-                            userId: 1,
-                            hasAccepted: false,
-                        }
+                        
                     ],
                     ongoingDate: false,
                     doneDates: ["kino","piknik i parken","sightseeing"],
@@ -113,19 +110,16 @@ const model = {
                     password: "123",
                     birthday: '13.10.16',
                     city: "Larvik",
-                    eMail: "martinskal@paadate.no",
+                    eMail: "martin@date.no",
                     phone: "69696969",
                     userImage: "IMG/users/martin.png",
                     selectedDate: 0,
                     selectedPartner: null,
                     partner: [
-                        {
-                            userId: 0,
-                            hasAccepted: true,
-                        }
+                        
                     ],
                     ongoingDate: false,
-                    doneDates: ["hjemmekino","sightseeing","kino","piknik i parken","museumstur","tur i skogen","baking","brettspillkveld","kafébesøk","konsert i parken"],
+                    doneDates: ["hjemmekino","sightseeing","kino","piknik i parken","tur i skogen","baking","brettspillkveld","kafébesøk","konsert i parken"],
                     finishedDates: [
                         {
                             Name: "hjemmekino",
@@ -237,6 +231,13 @@ const model = {
                         Rating: 2,
                         day: '10.10.2024, 19:10:14',
                         comment: 'Veldig rolig stemning, dårlig valg med Fifty shades.',
+                        memoryPicture: "dateImage/reading.jpg",
+                    },
+                        {
+                        Name: "museumstur",
+                        Rating: 3,
+                        day: '10.10.2024, 19:10:14',
+                        comment: 'Gode vafler.',
                         memoryPicture: "dateImage/reading.jpg",
                     },
                     ],
@@ -415,6 +416,11 @@ const model = {
                         userId: 1,    
                         comment: 'Alt for mye gamle folk.',
                         Rating: 1,
+                    },
+                    {
+                        userId: 3,    
+                        comment: 'Gode vafler.',
+                        Rating: 3,
                     },
                 ]
             },

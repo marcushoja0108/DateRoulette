@@ -22,7 +22,7 @@ function deletePartner(){
     if (coupleIndex > -1) {
         model.data.couples.splice(coupleIndex, 1);
     }
-    selectedPartner.selectPartner = null;
+    selectedPartner.selectedPartner = null;
     user.selectedPartner = null;
     changeView();
 }

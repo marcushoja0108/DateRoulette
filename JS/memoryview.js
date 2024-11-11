@@ -22,7 +22,7 @@ function createImages(){
         html += `
         <div class="memoryCard">
         <strong class="memoryNameText">${user.finishedDates[i].Name}</strong>
-        <div class= "memoryImgFrame"> <img src="${user.finishedDates[i].memoryPicture}" height = 200px/> </div>
+        <div class= "memoryImgFrame"> <img src="${user.finishedDates[i].memoryPicture}" width = 310px/> </div>
         <div style="color: gold">${starRating}</div>
         ${user.finishedDates[i].comment}<br>
         <div style="font-size: 10px">${user.finishedDates[i].day}</div>
