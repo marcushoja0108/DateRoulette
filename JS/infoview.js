@@ -37,7 +37,10 @@ function updateInfoView() {
       <div class='info-cont'>
           <h2>Tidsforbruk:</h2>
           <p>${selectedDate.timeSpent} timer</p>
-          
+      </div>
+      <div class='info-cont'>
+          <h2>Kostnad:</h2>
+          <p>${selectedDate.maxPrice} kr</p>
       </div>
       <div class='info-contCat'>
           <h2>Kategori:</h2>
